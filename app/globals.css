@@ -1,26 +1,104 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+body {
+  background: #ffffff;
+  color: #1f2329;
+  font-family: "Helvetica", "Arial", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+p {
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Custom Cursor Styles */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.15s ease-out;
+  will-change: transform;
+}
+
+.custom-cursor.visible {
+  opacity: 1;
+}
+
+/* Hollow ring - always visible */
+.cursor-ring {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #0080FF;
+  background-color: transparent;
+  opacity: 0.7;
+  filter: blur(0.4px);
+  box-shadow: 0 0 6px rgba(0, 128, 255, 0.4), inset 0 0 6px rgba(0, 128, 255, 0.2);
+  transition: width 0.18s ease-out, height 0.18s ease-out, opacity 0.18s ease-out, filter 0.18s ease-out, box-shadow 0.18s ease-out;
+}
+
+/* Hovering state - ring scales up */
+.custom-cursor.hovering .cursor-ring {
+  width: 28px;
+  height: 28px;
+  opacity: 0.75;
+  filter: blur(0.6px);
+  box-shadow: 0 0 10px rgba(0, 128, 255, 0.5), inset 0 0 8px rgba(0, 128, 255, 0.25);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor,
+  .cursor-ring {
+    transition: none !important;
+  }
+  
+  .custom-cursor.hovering .cursor-ring {
+    width: 20px !important;
+    height: 20px !important;
+    filter: blur(0.4px) !important;
+    box-shadow: 0 0 6px rgba(0, 128, 255, 0.4), inset 0 0 6px rgba(0, 128, 255, 0.2) !important;
+  }
+}
+
+/* Work Preview - hide on touch devices and small screens */
+.work-preview-container {
+  display: none;
+}
+
+@media (min-width: 768px) and (pointer: fine) {
+  .work-preview-container {
+    display: block;
+  }
+}
+
+/* Work Preview animations - progressive fade + scale */
+.work-preview-visible,
+.work-preview-hidden {
+  transform-origin: center bottom;
+  will-change: opacity, transform;
+}
+
+.work-preview-visible {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 180ms ease-out, transform 180ms ease-out;
+}
+
+.work-preview-hidden {
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 160ms ease-in, transform 160ms ease-in;
 }
