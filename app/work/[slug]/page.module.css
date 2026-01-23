@@ -1,0 +1,13 @@
+/* Case study detail page typography - scoped to detail pages only */
+
+.caseStudyContent :is(p, li) {
+  font-weight: 300;
+}
+
+.caseStudyContent :is(strong, b) {
+  font-weight: 600;
+}
+
+.caseStudyContent :is(h3, h4) {
+  font-weight: 700;
+}

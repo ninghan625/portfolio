@@ -63,7 +63,7 @@ For most non-data transfer tasks, users had **no visibility** into the specific 
 Designed distinct icons for each of the three states to help users visualize progress and prompt necessary actions.
 
 ### Media
-![](/images/task/Task 05.jpg)
+![](/images/task/Task05.jpg?v=202501230001)
 
 ### Media
 ![Showcase: Task Status Transitions in Cross-Cluster VM Migration](/images/task/Task 06.jpg)

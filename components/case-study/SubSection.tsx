@@ -21,7 +21,7 @@ export default function SubSection({ data, sectionLabel }: SubSectionProps) {
   
   return (
     <div className="flex w-full flex-col">
-      <p className="w-full font-bold text-[16px] leading-[24px] text-[#272e3b]">{data.heading}</p>
+      <h3 className="w-full font-semibold text-[16px] leading-[24px] text-[#272e3b]">{data.heading}</h3>
       
       {/* Render content in order (text and media interleaved) */}
       {data.content && data.content.map((item, index) => {

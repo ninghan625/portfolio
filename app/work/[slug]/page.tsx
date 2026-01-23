@@ -7,6 +7,7 @@ import { getWorkBySlug, getNextWork } from "@/data/works";
 import { getCaseStudyBySlug } from "@/lib/markdown";
 import { notFound } from "next/navigation";
 import Image from "next/image";
+import styles from "./page.module.css";
 
 // Map slug to hero image path with cache-busting version
 function getHeroImagePath(slug: string): string {
@@ -84,7 +85,7 @@ export default async function CaseStudyPage({
           </div>
 
           {/* Right Column: Article Content */}
-          <article className="mx-auto flex w-full max-w-[680px] flex-col gap-[60px] min-[840px]:mx-0">
+          <article className={`${styles.caseStudyContent} mx-auto flex w-full max-w-[680px] flex-col gap-[60px] min-[840px]:mx-0`}>
             <CaseHeader
               title={caseStudyData.title}
               subtitle={caseStudyData.subtitle}
