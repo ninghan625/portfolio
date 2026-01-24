@@ -8,14 +8,16 @@ export default function Header() {
         <div className="flex h-full items-center justify-between">
           <Link
             href="/"
-            className="flex items-center gap-[8px] text-[16px] font-light text-black hover:text-[#0080FF] transition-colors"
+            className="flex items-center gap-[8px] text-[16px] font-normal text-black hover:text-[#0080FF] transition-colors"
           >
             <span className="h-[16px] w-[16px] rounded-full bg-[#0080FF]" />
-            Built by Claire
+            Claire
           </Link>
           <a
-            href="#"
-            className="text-[16px] font-light text-black hover:text-[#0080FF] transition-colors"
+            href="/Resume_ClaireHan.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[16px] font-normal text-black hover:text-[#0080FF] transition-colors"
           >
             Resume
           </a>

@@ -34,7 +34,7 @@ export const works: WorkItem[] = [
   },
   {
     title: "Business Travel Initiatives Across Mobile & Web",
-    subtitle: "Design contributions across request, booking, and in-trip management",
+    subtitle: "Design contributions across travel request and hotel booking",
     slug: "business-travel-initiatives-across-mobile-web",
     iconType: "travel",
     previewImage: "/images/travel/hero.jpg",

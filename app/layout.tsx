@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Claire Han - Portfolio",
+  title: "Claire Han | Product Designer",
   description: "Portfolio homepage",
 };
 

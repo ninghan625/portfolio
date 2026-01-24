@@ -22,13 +22,13 @@ export default function Intro() {
           About me
         </p>
         <div className="flex flex-col gap-[16px] text-[16px] text-[#1f2329]">
-          <p>
+          <p className="font-normal">
           A product designer with 6 years of experience building B2B and enterprise platforms.
           </p>
-          <p>
+          <p className="font-normal">
            I specialize in turning complex, high-stakes workflows into clear, scalable experiences. I explore AI tools and vibe coding to improve design efficiency and quality.
           </p>
-          <p>
+          <p className="font-normal">
             When I’m offline, I run 🏃🏻‍♀️. I completed my first Hong Kong half
             marathon and I’m training for the next one.
           </p>

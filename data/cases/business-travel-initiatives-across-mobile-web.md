@@ -2,7 +2,6 @@
 title: Business Travel Initiatives Across Mobile & Web
 slug: business-travel-initiatives-across-mobile-web
 date: 2025-05
-subtitle: Design contributions across request, booking, and in-trip management
 ---
 
 ## Role&Scope

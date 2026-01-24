@@ -47,9 +47,9 @@ A task transitions through various states from initiation by the user to complet
 
 ## Solution
 
-### Part 1:
+### Part 1: Refining Icon Design for Intuitive Progress Tracking
 
-**❗️Before: No visibility into the task progress**
+**Before: No visibility into the task progress**
 
 Regardless of whether it was a step-based task or a data transfer task, the same generic "In Progress" icon was used.
 
@@ -58,7 +58,7 @@ For most non-data transfer tasks, users had **no visibility** into the specific 
 ### Media
 ![](/images/task/Task 04.jpg)
 
-**✅ After: Visualize progress and prompt necessary actions**
+**After: Visualize progress and prompt necessary actions**
 
 Designed distinct icons for each of the three states to help users visualize progress and prompt necessary actions.
 
@@ -68,17 +68,17 @@ Designed distinct icons for each of the three states to help users visualize pro
 ### Media
 ![Showcase: Task Status Transitions in Cross-Cluster VM Migration](/images/task/Task 06.jpg)
 
-### Part 2:
+### Part 2: Optimizing Task Panel Display & Sorting Rules
 
 
-**❗️Before: Sorting logic issues - critical tasks buried**
+**Before: Sorting logic issues - critical tasks buried**
 
 Sorting strictly by "Start Time" pushed critical "Paused" tasks (which require user action) out of the viewport. Users were forced to scroll extensively to locate them.
 
 ### Media
 ![](/images/task/Task 07.jpg)
 
-**✅ After: Prioritize paused tasks**
+**After: Prioritize paused tasks**
 
 The sorting logic is no longer strictly chronological (newest to oldest). Instead, I implemented **status-based sorting**.
 
@@ -87,49 +87,49 @@ Tasks requiring user attention are prioritized at the top, ensuring critical ite
 ### Media
 ![](/images/task/Task 08.jpg)
 
-### Part 3:
+### Part 3: Unstable Experience: Tasks Disappeared Prematurely
 
 
-**❗️Before: Completed tasks vanished immediately**
+**Before: Completed tasks vanished immediately**
 
 Completed tasks vanished immediately after the panel was closed (marked as "Read"). This created an unstable experience—if a user closed the panel by mistake, they were forced to navigate to the full "All Tasks" page to find.
 
 ### Media
 ![](/images/task/Task 09.jpg)
 
-**✅ After: Stable task history**
+**After: Stable task history**
 
 I removed the volatile "Read/Unread" states. Recently completed tasks are now **persistently displayed** in the panel, ensuring a stable reference for users.
 
 ### Media
 ![](/images/task/Task 10.jpg)
 
-### Part 4:
+### Part 4: Limited Viewport - Inefficient Browsing
 
-**❗️Before: Users had to scroll repeatedly within a small window to track tasks**
+**Before: Users had to scroll repeatedly within a small window to track tasks**
 
 The panel's fixed maximum height severely limited the number of visible tasks. During high-volume operations, users had to scroll repeatedly within a small window to track their target tasks.
 
 ### Media
 ![](/images/task/Task 11.jpg)
 
-**✅ After: Dynamic height with fixed viewport bottom margin**
+**After: Dynamic height with fixed viewport bottom margin**
 
 Removed the fixed height of the task panel. Instead, it now maintains a fixed 64px gap from the bottom of the screen, maximizing the available space to show more tasks.
 
 ### Media
 ![](/images/task/Task 12.jpg)
 
-### Part 5:
+### Part 5: Instant Progress Awareness via Dynamic Icons
 
-**❗️Before: No status indication on task icon**
+**Before: No status indication on task icon**
 
 The task center button did not reflect any status changes. Users had to click the icon to view any specific details about task execution.
 
 ### Media
 ![](/images/task/Task 13.jpg)
 
-**✅ After: Status combinations to inform task progress**
+**After: Status combinations to inform task progress**
 
 ### Media
 ![](/images/task/Task 14.jpg)

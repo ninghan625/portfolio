@@ -16,7 +16,7 @@ export default function Home() {
         </main>
       </Container>
       <Container>
-        <p className="w-full text-[16px] text-[#1f2329]">
+        <p className="w-full text-[13px] font-light text-[#1f2329]">
           @ 2026 Claire Han
         </p>
       </Container>

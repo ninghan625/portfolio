@@ -1,5 +1,6 @@
 import { SubSectionData } from "./types";
 import MediaBlock from "./MediaBlock";
+import styles from "../../app/work/[slug]/page.module.css";
 
 interface SubSectionProps {
   data: SubSectionData;
@@ -19,9 +20,12 @@ export default function SubSection({ data, sectionLabel }: SubSectionProps) {
   // Check if heading starts with a number followed by a dot (e.g., "1. ", "2. ", "3. ")
   const isNumericListHeading = /^\d+\.\s/.test(data.heading);
   
+  // Check if this specific heading should be styled as a callout
+  const isCalloutHeading = data.heading === "Deliver a toolkit, not just formatting rules";
+  
   return (
     <div className="flex w-full flex-col">
-      <h3 className="w-full font-semibold text-[16px] leading-[24px] text-[#272e3b]">{data.heading}</h3>
+      <h3 className={`w-full font-semibold text-[16px] leading-[24px] text-[#272e3b] ${isCalloutHeading ? styles.calloutHeading : ''}`}>{data.heading}</h3>
       
       {/* Render content in order (text and media interleaved) */}
       {data.content && data.content.map((item, index) => {
@@ -80,8 +84,7 @@ export default function SubSection({ data, sectionLabel }: SubSectionProps) {
           return (
             <div
               key={index}
-              className={`w-full text-[16px] leading-[24px] text-[#272e3b] [&_ul]:list-disc [&_ul]:pl-[20px] [&_ul]:space-y-[4px] [&_li]:text-[16px] [&_li]:leading-[24px] ${marginClass}`}
-              style={{ color: 'rgba(0, 0, 0, 1)' }}
+              className={`w-full text-[16px] leading-[24px] [&_ul]:list-disc [&_ul]:pl-[20px] [&_ul]:space-y-[4px] [&_li]:text-[16px] [&_li]:leading-[24px] ${marginClass} ${styles.paragraphContent}`}
               dangerouslySetInnerHTML={{ __html: item.content }}
             />
           );

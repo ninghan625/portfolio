@@ -85,7 +85,7 @@ export default async function CaseStudyPage({
           </div>
 
           {/* Right Column: Article Content */}
-          <article className={`${styles.caseStudyContent} mx-auto flex w-full max-w-[680px] flex-col gap-[60px] min-[840px]:mx-0`}>
+          <article className={`${styles.caseStudyContent} mx-auto flex w-full max-w-[680px] flex-col gap-[60px] min-[840px]:mx-0`} data-slug={slug}>
             <CaseHeader
               title={caseStudyData.title}
               subtitle={caseStudyData.subtitle}
