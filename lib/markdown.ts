@@ -155,18 +155,47 @@ function parseSectionContent(
       return;
     }
 
-    // For non-media subsections, initialize with text content
-    const paragraphs = parseParagraphs(subsectionContent);
-    const contentItems = paragraphs.map((paragraph) => ({
-      type: "text" as const,
-      content: paragraph,
-    }));
+    // For non-media subsections, check if content is only a blockquote
+    const hasOnlyBlockquote = subsectionContent.trim().startsWith('>') && 
+                              !subsectionContent.includes('\n\n') &&
+                              subsectionContent.split('\n').every(line => 
+                                line.trim() === '' || line.trim().startsWith('>')
+                              );
     
-    subSections.push({
-      heading: subsectionHeading,
-      body: paragraphs,
-      content: contentItems,
-    });
+    if (hasOnlyBlockquote) {
+      // Extract blockquote content
+      const blockquoteText = subsectionContent
+        .split('\n')
+        .map(line => line.replace(/^>\s*/, '').trim())
+        .filter(line => line.length > 0)
+        .join(' ');
+      
+      // Create an inline callout content item
+      subSections.push({
+        heading: subsectionHeading,
+        body: [], // Empty body since this is a callout-only subsection
+        content: [{
+          type: "callout" as const,
+          data: {
+            heading: subsectionHeading,
+            body: blockquoteText,
+          },
+        }],
+      });
+    } else {
+      // For non-media subsections with regular text content
+      const paragraphs = parseParagraphs(subsectionContent);
+      const contentItems = paragraphs.map((paragraph) => ({
+        type: "text" as const,
+        content: paragraph,
+      }));
+      
+      subSections.push({
+        heading: subsectionHeading,
+        body: paragraphs,
+        content: contentItems,
+      });
+    }
   });
 
   // Extract callout if present (blockquote or special marker)
@@ -198,12 +227,56 @@ function parseSectionContent(
       pdfUrl,
     };
   } else {
-    // Fallback to simple blockquote callout
-    const calloutMatch = content.match(/^> (.+)$/m);
-    if (calloutMatch) {
+    // Fallback to multi-line blockquote callout with optional label
+    const multiLineBlockquoteRegex = /^> (.+?)(?:\n>\s*\n> (.+?))?(?:\n> (.+?))?$/gm;
+    const blockquoteLines: string[] = [];
+    let blockquoteLabel = "";
+    
+    // Collect all blockquote lines
+    const lines = content.split('\n');
+    let inBlockquote = false;
+    
+    for (const line of lines) {
+      if (line.trim().startsWith('>')) {
+        inBlockquote = true;
+        const cleanLine = line.replace(/^>\s*/, '').trim();
+        if (cleanLine) {
+          blockquoteLines.push(cleanLine);
+        }
+      } else if (inBlockquote) {
+        break; // End of blockquote
+      }
+    }
+    
+    if (blockquoteLines.length > 0) {
+      // Check if first line looks like a label/title
+      const firstLine = blockquoteLines[0];
+      
+      // Pattern 1: Short line without punctuation at end (e.g., "Design goal")
+      const isShortLabel = firstLine.length < 50 && !firstLine.endsWith('.') && blockquoteLines.length > 1;
+      
+      // Pattern 2: Line ending with colon (e.g., "Design Principle:")
+      const hasColonEnding = firstLine.includes(':');
+      
+      if (isShortLabel) {
+        blockquoteLabel = firstLine;
+        blockquoteLines.shift(); // Remove the label from body
+      } else if (hasColonEnding) {
+        // Split on the colon
+        const colonIndex = firstLine.indexOf(':');
+        blockquoteLabel = firstLine.substring(0, colonIndex).trim();
+        const restOfFirstLine = firstLine.substring(colonIndex + 1).trim();
+        
+        // Remove first line and add back content after colon if exists
+        blockquoteLines.shift();
+        if (restOfFirstLine) {
+          blockquoteLines.unshift(restOfFirstLine);
+        }
+      }
+      
       callout = {
-        heading: "Note",
-        body: calloutMatch[1].replace(/^Callout:\s*/i, "").trim(),
+        heading: blockquoteLabel || "Note",
+        body: blockquoteLines.join(' ').trim(),
       };
     }
   }

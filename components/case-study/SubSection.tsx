@@ -1,5 +1,6 @@
 import { SubSectionData } from "./types";
 import MediaBlock from "./MediaBlock";
+import Callout from "./Callout";
 import styles from "../../app/work/[slug]/page.module.css";
 
 interface SubSectionProps {
@@ -20,14 +21,14 @@ export default function SubSection({ data, sectionLabel }: SubSectionProps) {
   // Check if heading starts with a number followed by a dot (e.g., "1. ", "2. ", "3. ")
   const isNumericListHeading = /^\d+\.\s/.test(data.heading);
   
-  // Check if this specific heading should be styled as a callout
-  const isCalloutHeading = data.heading === "Deliver a toolkit, not just formatting rules";
-  
   return (
     <div className="flex w-full flex-col">
-      <h3 className={`w-full font-semibold text-[16px] leading-[24px] text-[#272e3b] ${isCalloutHeading ? styles.calloutHeading : ''}`}>{data.heading}</h3>
+      {/* Only show heading if there's actual body content (not just a callout) */}
+      {data.body && data.body.length > 0 && (
+        <h3 className="w-full font-semibold text-[16px] leading-[24px] text-[#272e3b]">{data.heading}</h3>
+      )}
       
-      {/* Render content in order (text and media interleaved) */}
+      {/* Render content in order (text, media, and callouts interleaved) */}
       {data.content && data.content.map((item, index) => {
         // Helper function to check if text is a heading-like paragraph (short, bold-only)
         const isHeadingLikeParagraph = (content: string) => {
@@ -90,6 +91,8 @@ export default function SubSection({ data, sectionLabel }: SubSectionProps) {
           );
         } else if (item.type === "media") {
           return <MediaBlock key={index} media={item.data} className={marginClass} />;
+        } else if (item.type === "callout") {
+          return <Callout key={index} data={item.data} />;
         }
         return null;
       })}

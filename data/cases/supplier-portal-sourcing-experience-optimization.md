@@ -38,8 +38,8 @@ Although we had a supplier portal, **most sourcing activities happened in offlin
 - Suppliers missed critical requirements → **got blocked by confusing steps or dense legal content**
 - Compliance lacked consistent checkpoints → **consent and traceability were fragile**
 
-**Design goal**
-
+> Design goal
+>
 > Rebuild trust and auditability by making the portal the source of truth—without adding steps to suppliers' core tasks.
 
 

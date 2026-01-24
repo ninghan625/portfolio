@@ -6,7 +6,8 @@ export interface MediaBlockData {
 
 export type ContentItem = 
   | { type: "text"; content: string }
-  | { type: "media"; data: MediaBlockData };
+  | { type: "media"; data: MediaBlockData }
+  | { type: "callout"; data: CalloutData };
 
 export interface SubSectionData {
   heading: string;

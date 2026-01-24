@@ -69,7 +69,9 @@ From research + internal needs, I consolidated the system into three formats tha
 
 ## Solution
 
-### Deliver a toolkit, not just formatting rules
+### Design Principle
+
+> Deliver a toolkit, not just formatting rules
 
 ### 1. Clear format definitions teams can trust
 I documented the core rules (ISO usage, spacing conventions, separators…) so teams had a single source of truth for implementation.
