@@ -11,33 +11,33 @@ export interface WorkItem {
 
 export const works: WorkItem[] = [
   {
-    title: "i18n Currency Formatting Toolkit",
-    subtitle: "Guidelines + Figma plugin for consistent multi-currency UI.",
-    slug: "i18n-currency-formatting-toolkit",
-    iconType: "toolkit",
-    previewImage: "/images/Currency/hero.jpg",
-  },
-  {
     title: "Supplier Portal Sourcing Experience Optimization",
-    subtitle: "Boosted adoption with an email-first, transparent workflow.",
+    subtitle: "Increased online sourcing adoption by redesigning the supplier email + portal workflows end-to-end.",
     slug: "supplier-portal-sourcing-experience-optimization",
     iconType: "procurement",
     previewImage: "/images/supplier/hero.jpg",
     previewObjectPosition: "40% 50%",
   },
   {
-    title: "CloudTower Task Center Redesign",
-    subtitle: "Simplified status tracking with reusable components.",
-    slug: "cloudtower-task-center-redesign",
-    iconType: "task",
-    previewImage: "/images/task/hero.jpg",
+    title: "i18n Currency Formatting Toolkit",
+    subtitle: "Standardized multi-currency patterns across products with guidelines + a Figma plugin.",
+    slug: "i18n-currency-formatting-toolkit",
+    iconType: "toolkit",
+    previewImage: "/images/Currency/hero.jpg",
   },
   {
     title: "Business Travel Initiatives Across Mobile & Web",
-    subtitle: "Design contributions across travel request and hotel booking",
+    subtitle: "Designed travel request and hotel selection flows across mobile and web.",
     slug: "business-travel-initiatives-across-mobile-web",
     iconType: "travel",
     previewImage: "/images/travel/hero.jpg",
+  },
+  {
+    title: "CloudTower Task Center Redesign",
+    subtitle: "Rebuilt task tracking for complex workstreams with reusable components.",
+    slug: "cloudtower-task-center-redesign",
+    iconType: "task",
+    previewImage: "/images/task/hero.jpg",
   },
 ];
 

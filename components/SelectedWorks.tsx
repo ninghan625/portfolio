@@ -39,7 +39,7 @@ export default function SelectedWorks() {
             <Link
               key={item.title}
               href={`/work/${item.slug}`}
-              className="group flex w-full items-center gap-[12px] cursor-pointer"
+              className="group flex w-full items-center gap-[24px] cursor-pointer"
               onMouseEnter={() => setHoveredWork({ image: item.previewImage, objectPosition: item.previewObjectPosition })}
             >
               <div className="flex flex-1 flex-col gap-[4px]">

@@ -13,7 +13,7 @@ export default function Intro() {
         </div>
         <div className="flex flex-1 flex-col gap-0 text-[18px] text-[#1f2329]">
           <p>Hi, I’m Claire Han</p>
-          <p>Product Designer @ByteDance, based in Dubai</p>
+          <p>Product Designer @ByteDance</p>
         </div>
       </div>
 
@@ -26,11 +26,10 @@ export default function Intro() {
           A product designer with 6 years of experience building B2B and enterprise platforms.
           </p>
           <p className="font-normal">
-           I specialize in turning complex, high-stakes workflows into clear, scalable experiences. I explore AI tools and vibe coding to improve design efficiency and quality.
+          I turn high-stakes workflows into clear systems—grounded in research, constraints, and measurable outcomes. I also experiment with AI tools for faster synthesis, documentation, and early prototyping.
           </p>
           <p className="font-normal">
-            When I’m offline, I run 🏃🏻‍♀️. I completed my first Hong Kong half
-            marathon and I’m training for the next one.
+          📍 Based in Dubai, open to relocate
           </p>
         </div>
       </div>
