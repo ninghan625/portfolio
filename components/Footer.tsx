@@ -9,7 +9,7 @@ export default function Footer() {
           href="https://www.linkedin.com/in/claire-han-604194114/"
           target="_blank"
           rel="noreferrer"
-          className="group inline-flex w-fit items-center gap-[8px] self-start cursor-pointer text-[#1f2329] hover:text-[#0080FF] transition-colors"
+          className="group inline-flex w-fit items-center gap-[8px] self-start cursor-pointer text-[#00122E] hover:text-[#0080FF] transition-colors"
         >
           <svg
             className="h-[16px] w-[16px]"
@@ -27,7 +27,7 @@ export default function Footer() {
         </a>
         <a
           href="mailto:clairehan4869@gmail.com"
-          className="group inline-flex w-fit items-center gap-[8px] self-start cursor-pointer text-[#1f2329] hover:text-[#0080FF] transition-colors"
+          className="group inline-flex w-fit items-center gap-[8px] self-start cursor-pointer text-[#00122E] hover:text-[#0080FF] transition-colors"
         >
           <svg
             className="shrink-0 p-0"

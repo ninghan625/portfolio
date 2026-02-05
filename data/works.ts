@@ -7,6 +7,9 @@ export interface WorkItem {
   iconType: IconType;
   previewImage: string;
   previewObjectPosition?: string;
+  company: string;
+  companyLogo: string;
+  tags: string[];
 }
 
 export const works: WorkItem[] = [
@@ -17,27 +20,39 @@ export const works: WorkItem[] = [
     iconType: "procurement",
     previewImage: "/images/supplier/hero.jpg",
     previewObjectPosition: "40% 50%",
+    company: "ByteDance",
+    companyLogo: "/icons/Bytedance.png",
+    tags: ["Enterprise UX", "Redesign", "User Research", "Design Strategy"],
   },
   {
-    title: "i18n Currency Formatting Toolkit",
-    subtitle: "Standardized multi-currency patterns across products with guidelines + a Figma plugin.",
+    title: "Internationalization Quality: Currency Amount Formatting Toolkit",
+    subtitle: "Standardized currency amount formatting across multi-currency products with clear guidelines and a Figma plugin.",
     slug: "i18n-currency-formatting-toolkit",
     iconType: "toolkit",
     previewImage: "/images/Currency/hero.jpg",
-  },
-  {
-    title: "Business Travel Initiatives Across Mobile & Web",
-    subtitle: "Designed travel request and hotel selection flows across mobile and web.",
-    slug: "business-travel-initiatives-across-mobile-web",
-    iconType: "travel",
-    previewImage: "/images/travel/hero.jpg",
+    company: "ByteDance",
+    companyLogo: "/icons/Bytedance.png",
+    tags: ["i18n", "Design Guidelines", "Figma Plugin", "Vibe Coding"],
   },
   {
     title: "CloudTower Task Center Redesign",
-    subtitle: "Rebuilt task tracking for complex workstreams with reusable components.",
+    subtitle: "Redesigned the Task Center to simplify complex status tracking and created a standardized component library to boost development efficiency.",
     slug: "cloudtower-task-center-redesign",
     iconType: "task",
     previewImage: "/images/task/hero.jpg",
+    company: "SmartX",
+    companyLogo: "/icons/smartx.png",
+    tags: ["Infrastructure", "Redesign"],
+  },
+  {
+    title: "Business Travel Initiatives Across Mobile & Web",
+    subtitle: "Designed travel request and hotel selection flows acrossmobile and web.",
+    slug: "business-travel-initiatives-across-mobile-web",
+    iconType: "travel",
+    previewImage: "/images/travel/hero.jpg",
+    company: "ByteDance",
+    companyLogo: "/icons/Bytedance.png",
+    tags: ["0-1", "Map Design", "Enterprise Platform"],
   },
 ];
 

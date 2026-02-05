@@ -2,20 +2,21 @@
 
 body {
   background: #ffffff;
-  color: #1f2329;
+  color: #00122E;
+  cursor: auto;
 }
 
 p {
   line-height: 1.375;
 }
 
-/* Custom Cursor Styles */
-@media (pointer: fine) {
-  * {
-    cursor: none !important;
-  }
+/* Highlight component - ensures multi-line background wrapping */
+.highlight-text {
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
+/* Custom Cursor Styles */
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -29,46 +30,6 @@ p {
 
 .custom-cursor.visible {
   opacity: 1;
-}
-
-/* Hollow ring - always visible */
-.cursor-ring {
-  position: absolute;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #0080FF;
-  background-color: transparent;
-  opacity: 0.7;
-  filter: blur(0.4px);
-  box-shadow: 0 0 6px rgba(0, 128, 255, 0.4), inset 0 0 6px rgba(0, 128, 255, 0.2);
-  transition: width 0.18s ease-out, height 0.18s ease-out, opacity 0.18s ease-out, filter 0.18s ease-out, box-shadow 0.18s ease-out;
-}
-
-/* Hovering state - ring scales up */
-.custom-cursor.hovering .cursor-ring {
-  width: 28px;
-  height: 28px;
-  opacity: 0.75;
-  filter: blur(0.6px);
-  box-shadow: 0 0 10px rgba(0, 128, 255, 0.5), inset 0 0 8px rgba(0, 128, 255, 0.25);
-}
-
-/* Respect reduced motion preference */
-@media (prefers-reduced-motion: reduce) {
-  .custom-cursor,
-  .cursor-ring {
-    transition: none !important;
-  }
-  
-  .custom-cursor.hovering .cursor-ring {
-    width: 20px !important;
-    height: 20px !important;
-    filter: blur(0.4px) !important;
-    box-shadow: 0 0 6px rgba(0, 128, 255, 0.4), inset 0 0 6px rgba(0, 128, 255, 0.2) !important;
-  }
 }
 
 /* Work Preview - hide on touch devices and small screens */

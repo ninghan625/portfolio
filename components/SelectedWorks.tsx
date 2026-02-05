@@ -43,10 +43,10 @@ export default function SelectedWorks() {
               onMouseEnter={() => setHoveredWork({ image: item.previewImage, objectPosition: item.previewObjectPosition })}
             >
               <div className="flex flex-1 flex-col gap-[4px]">
-                <p className="font-normal text-[16px] text-[#1f2329] group-hover:text-[#0080FF] transition-colors">
+                <p className="font-normal text-[16px] text-[#00122E] group-hover:text-[#0080FF] transition-colors">
                   {item.title}
                 </p>
-                <p className="text-[14px] font-light leading-normal text-[rgba(143,149,158,1)] group-hover:text-[#0080FF] transition-colors">
+                <p className="text-[14px] font-light leading-normal text-[#8f959e] group-hover:text-[#0080FF] transition-colors">
                   {item.subtitle}
                 </p>
               </div>

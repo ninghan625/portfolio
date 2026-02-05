@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
+import { CursorProvider } from "@/context/CursorContext";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,9 +23,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <CustomCursor />
-        <Header />
-        <div className="pt-[72px]">{children}</div>
+        <CursorProvider>
+          <CustomCursor />
+          <Header />
+          <div className="pt-[72px]">{children}</div>
+        </CursorProvider>
       </body>
     </html>
   );

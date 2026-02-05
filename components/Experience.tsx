@@ -35,9 +35,9 @@ export default function Experience() {
       <div className="flex w-full flex-col gap-[24px]">
         {items.map((item) => (
           <div key={item.title} className="flex w-full items-center gap-[12px]">
-            <div className="flex flex-1 flex-col gap-[4px] text-[#1f2329]">
+            <div className="flex flex-1 flex-col gap-[4px] text-[#00122E]">
               <p className="font-normal text-[16px]">{item.title}</p>
-              <p className="text-[14px] font-light leading-normal text-[rgba(143,149,158,1)]">
+              <p className="text-[14px] font-light leading-normal text-[#8f959e]">
                 {item.subtitle}
               </p>
             </div>

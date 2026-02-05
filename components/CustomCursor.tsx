@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
+import { useCursor } from "@/context/CursorContext";
 
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
+  const { isProjectHovered } = useCursor();
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const positionRef = useRef({ x: 0, y: 0 });
@@ -78,7 +80,18 @@ export default function CustomCursor() {
       className={`custom-cursor ${isHovering ? 'hovering' : ''} ${isVisible ? 'visible' : ''}`}
       aria-hidden="true"
     >
-      <div className="cursor-ring" />
+      {isProjectHovered && (
+        <div className="absolute top-0 left-0 w-max flex items-center gap-2 bg-[#0080FF] text-white px-4 py-2 rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2">
+          <img
+            src="/icons/Eye.svg"
+            alt=""
+            className="w-5 h-5 brightness-0 invert"
+          />
+          <span className="text-[15px] font-medium leading-none whitespace-nowrap">
+            View Project
+          </span>
+        </div>
+      )}
     </div>
   );
 }
