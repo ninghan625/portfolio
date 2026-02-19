@@ -2,7 +2,6 @@ import AnchorNav from "@/components/case-study/AnchorNav";
 import CaseHeader from "@/components/case-study/CaseHeader";
 import CaseSection from "@/components/case-study/CaseSection";
 import CaseCTA from "@/components/case-study/CaseCTA";
-import Container from "@/components/Container";
 import { getWorkBySlug, getNextWork } from "@/data/works";
 import { getCaseStudyBySlug } from "@/lib/markdown";
 import { notFound } from "next/navigation";
@@ -13,19 +12,19 @@ import styles from "./page.module.css";
 function getHeroImagePath(slug: string): string {
   const heroImageMap: Record<string, { path: string; version: string }> = {
     "i18n-currency-formatting-toolkit": { 
-      path: "/images/Currency/hero.jpg",
+      path: "/images/Currency/Cover.jpg",
       version: "202501220844"
     },
     "supplier-portal-sourcing-experience-optimization": { 
-      path: "/images/supplier/hero.jpg",
+      path: "/images/supplier/Cover.jpg",
       version: "202501222126" // Updated Jan 22, 21:26
     },
     "cloudtower-task-center-redesign": { 
-      path: "/images/task/hero.jpg",
+      path: "/images/task/Cover.jpg",
       version: "202501220845"
     },
     "business-travel-initiatives-across-mobile-web": { 
-      path: "/images/travel/hero.jpg",
+      path: "/images/travel/Cover.jpg",
       version: "202501222126"
     },
   };
@@ -58,34 +57,38 @@ export default async function CaseStudyPage({
   const heroImagePath = getHeroImagePath(slug);
 
   return (
-    <div className="min-h-screen bg-white pb-[120px]">
-      {/* Hero Image - Full width at the top, 56px space below header */}
-      {heroImagePath && (
-        <Container maxWidth="868px" className="mb-[64px] pt-[56px]">
+    <div className="flex min-h-screen flex-col items-center bg-white pb-[120px]">
+      {/* Single container — matches Supplier layout exactly */}
+      <div className="flex w-full max-w-[1080px] flex-col gap-[64px] px-[60px]">
+
+        {/* 8px spacer + 64px container gap = 72px header clearance */}
+        <div style={{ height: 8 }} />
+
+        {/* Hero cover image */}
+        {heroImagePath && (
           <div className="w-full">
             <Image
               src={heroImagePath}
               alt={caseStudyData.title}
-              width={852}
+              width={1080}
               height={0}
               className="h-auto w-full"
               priority
               unoptimized
             />
           </div>
-        </Container>
-      )}
+        )}
 
-      {/* Two-column layout: TOC + Content */}
-      <Container maxWidth="868px">
-        <div className="relative flex min-[840px]:gap-[64px]">
-          {/* Left Column: Anchor Navigation (Sticky) */}
-          <div className="hidden min-[840px]:block min-[840px]:w-[108px] min-[840px]:flex-shrink-0">
+        {/* Two-column layout: 108px sidebar + article */}
+        <div className="flex w-full flex-row items-stretch gap-[80px] max-[839px]:flex-col max-[839px]:gap-[32px]">
+
+          {/* Left: Anchor Navigation (sticky) */}
+          <div className="hidden w-[108px] flex-shrink-0 min-[840px]:block">
             <AnchorNav items={caseStudyData.anchors} />
           </div>
 
-          {/* Right Column: Article Content */}
-          <article className={`${styles.caseStudyContent} mx-auto flex w-full max-w-[680px] flex-col gap-[60px] min-[840px]:mx-0`} data-slug={slug}>
+          {/* Right: Article Content */}
+          <article className={`${styles.caseStudyContent} flex min-w-0 flex-1 flex-col gap-[60px]`} data-slug={slug}>
             <CaseHeader
               title={caseStudyData.title}
               subtitle={caseStudyData.subtitle}
@@ -103,8 +106,9 @@ export default async function CaseStudyPage({
               {caseStudyData.footerText}
             </p>
           </article>
+
         </div>
-      </Container>
+      </div>
     </div>
   );
 }

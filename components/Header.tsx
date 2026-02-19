@@ -1,5 +1,6 @@
 "use client";
 
+import Container from "@/components/Container";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -8,7 +9,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 z-50 h-[72px] w-full border-b border-[#E5E7EB] bg-white">
-      <div className="flex h-full items-center justify-between px-4 md:px-20 max-w-[1440px] mx-auto">
+      <Container className="flex h-full items-center justify-between">
         <div className="flex gap-3 items-center">
           <div className="size-[18px] rounded-full bg-[#0080FF]" />
           <Link
@@ -44,7 +45,7 @@ export default function Header() {
             Resume
           </a>
         </nav>
-      </div>
+      </Container>
     </header>
   );
 }

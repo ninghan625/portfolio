@@ -36,7 +36,7 @@ export default function ProjectCard({ work, index }: ProjectCardProps) {
     <Link
       ref={cardRef}
       href={`/work/${work.slug}`}
-      className={`relative group flex flex-col md:flex-row items-stretch bg-white rounded-xl shadow-[0px_1px_3px_0px_rgba(0,0,0,0.08)] overflow-hidden max-w-[1280px] mx-auto w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)] ${isHovered ? 'cursor-none' : ''}`}
+      className={`relative group flex flex-col md:flex-row items-stretch bg-white rounded-xl shadow-[0px_1px_3px_0px_rgba(0,0,0,0.08)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)] ${isHovered ? 'cursor-none' : ''}`}
       onMouseEnter={() => {
         setIsHovered(true);
         setIsProjectHovered(true);
