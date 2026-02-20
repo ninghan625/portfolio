@@ -205,7 +205,7 @@ export default function CurrencyCasePage() {
                     <li>Define visual hierarchy rules for totals</li>
                   </ol>
                   <Image
-                    src="/images/Currency/5.png"
+                    src="/images/Currency/5.jpg"
                     alt="Define visual hierarchy rules for totals"
                     width={892}
                     height={449}
@@ -285,10 +285,10 @@ export default function CurrencyCasePage() {
                   {/* image 73: aspect-[4096/2204], full width — "Formatting Problems Collection" */}
                   <div className={s.mediaBlock}>
                     <Image
-                      src="/images/Currency/6.png"
+                      src="/images/Currency/6.jpg"
                       alt="Formatting Problems Collection"
-                      width={4096}
-                      height={2204}
+                      width={892}
+                      height={480}
                       className={s.img}
                       unoptimized
                     />
@@ -323,10 +323,10 @@ export default function CurrencyCasePage() {
                   {/* image 74: aspect-[4096/2141], full width — "References from different industries" */}
                   <div className={s.mediaBlock}>
                     <Image
-                      src="/images/Currency/7.png"
+                      src="/images/Currency/7.jpg"
                       alt="References from different industries"
-                      width={4096}
-                      height={2141}
+                      width={892}
+                      height={467}
                       className={s.img}
                       unoptimized
                     />
@@ -438,10 +438,10 @@ export default function CurrencyCasePage() {
 
                   {/* image 77: aspect-[1997/4096] tall portrait, full width */}
                   <Image
-                    src="/images/Currency/9.png"
+                    src="/images/Currency/9.jpg"
                     alt="Format rules teams can implement"
-                    width={1997}
-                    height={4096}
+                    width={892}
+                    height={1830}
                     className={s.img}
                     unoptimized
                   />
@@ -468,10 +468,10 @@ export default function CurrencyCasePage() {
 
                   {/* image 10 (img111111): aspect-[1347/4096] very tall portrait, full width */}
                   <Image
-                    src="/images/Currency/10.png"
+                    src="/images/Currency/10.jpg"
                     alt="Decision guidance for choosing formats"
-                    width={1347}
-                    height={4096}
+                    width={789}
+                    height={2400}
                     className={s.img}
                     unoptimized
                   />
@@ -500,10 +500,10 @@ export default function CurrencyCasePage() {
 
                   {/* image 89: aspect-[1513/4096] tall portrait, full width */}
                   <Image
-                    src="/images/Currency/11.png"
+                    src="/images/Currency/11.jpg"
                     alt="Components and patterns for money workflows"
-                    width={1513}
-                    height={4096}
+                    width={886}
+                    height={2400}
                     className={s.img}
                     unoptimized
                   />
@@ -514,7 +514,14 @@ export default function CurrencyCasePage() {
                     <p className={s.p}>
                       If you&apos;re interested in the full specification (format rules, scenario
                       examples, and component usage), you can view the document here:{" "}
-                      <span className={s.pdfLink}>Currency Amount Formatting Guidelines.pdf</span>
+                      <a
+                        href="/images/Currency/Currency_Amount_Formatting_Guidelines.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={s.pdfLink}
+                      >
+                        Currency Amount Formatting Guidelines.pdf
+                      </a>
                     </p>
                   </div>
                 </div>
