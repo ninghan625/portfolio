@@ -1,0 +1,458 @@
+/* ============================================================
+   Currency Case Study — Scoped CSS Module
+   All tokens extracted directly from Figma frame 534:5776.
+   DO NOT import from shared components or other pages.
+   ============================================================ */
+
+/* ── Page shell ──────────────────────────────────────────── */
+.page {
+  background: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Outer container (max 1080px, centered) ─────────────── */
+.container {
+  width: 100%;
+  max-width: 1080px;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+/* ── Hero image ─────────────────────────────────────────── */
+.hero { width: 100%; }
+.heroImg { width: 100%; height: auto; display: block; }
+
+/* ── Two-column layout ───────────────────────────────────── */
+.twoCol {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+  align-items: stretch;
+  width: 100%;
+}
+.sidebar {
+  width: 108px;
+  flex-shrink: 0;
+}
+
+/* ── Article column ──────────────────────────────────────── */
+/* gap-60px between ALL direct children: title, sections, dividers, CTA */
+.article {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+/* ── Typography: Project title ───────────────────────────── */
+/* Helvetica 700 24px / normal #272E3B */
+.title {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* ── Typography: Section label (anchor nav label) ────────── */
+/* Heiti SC 400 15px / normal #86909C */
+.label {
+  font-family: 'Heiti SC', 'PingFang SC', Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: normal;
+  color: #86909C;
+  margin: 0;
+}
+
+/* ── Typography: Sub-heading (18px bold) ─────────────────── */
+/* Helvetica 700 18px / 24px #272E3B */
+.h2 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* ── Typography: Card label (16px bold) ─────────────────── */
+/* Helvetica 700 16px / 24px #272E3B */
+.h {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* ── Typography: Body regular ────────────────────────────── */
+/* Helvetica 400 16px / 24px #272E3B */
+.p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* ── Typography: Small body (info card body) ─────────────── */
+/* Helvetica 400 15px / 24px #4E5969 */
+.pSm {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #4E5969;
+  margin: 0;
+}
+
+/* ── Typography: Caption (centered, gray) ────────────────── */
+/* Helvetica 400 14px / normal CENTER #86909C */
+.caption {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #86909C;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Bullet list ─────────────────────────────────────────── */
+.bulletList {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+  padding-left: 24px;
+  list-style-type: disc;
+}
+.bulletList li { margin: 0; }
+.bulletList li + li { margin-top: 0; }
+
+/* ── Numbered list (context section headings) ────────────── */
+.numberedList {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+  padding-left: 27px;
+  list-style-type: decimal;
+}
+.numberedList li { margin: 0; }
+
+/* ── Dividers ────────────────────────────────────────────── */
+/* Full-width divider */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #E5E8ED;
+  flex-shrink: 0;
+}
+/* 680px short divider (after TL;DR and Approach) */
+.dividerShort {
+  width: 680px;
+  height: 1px;
+  background: #E5E8ED;
+  flex-shrink: 0;
+}
+
+/* ── Section block (col gap-16, scroll-margin-top 72px) ──── */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  scroll-margin-top: 72px;
+}
+
+/* ── Sub-section block (col gap-8) ───────────────────────── */
+.subSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* ── Sub-section cluster (col gap-24, within Context) ─────── */
+.subSectionCluster {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* ════════════════════════════════════════════════════════════
+   TL;DR SECTION
+   ════════════════════════════════════════════════════════════ */
+
+/* Summary card: bg #F7F9FC, border #E5E8ED, r12, col gap-8, pad 20 */
+.tldrSummaryCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Info row card (Problem / Solution / Impact): white bg, border, r8, gap-16, pad 21 */
+.infoCard {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  padding: 21px;
+  background: #ffffff;
+  border: 1px solid #E5E8ED;
+  border-radius: 8px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* Icon circle (40×40, full border-radius) */
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Text column inside info card: col gap-4, flex-1 */
+.infoTextCol {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ════════════════════════════════════════════════════════════
+   APPROACH SECTION
+   ════════════════════════════════════════════════════════════ */
+
+/* Steps cluster: col gap-80 */
+.stepsCluster {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  width: 100%;
+}
+
+/* Single approach step: col gap-16 */
+.approachStep {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Objective + Action side-by-side row: gap-16, stretch */
+.objActionRow {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Objective card: col gap-12, pad 20, bg #F7F9FC, border #E5E8ED, r12, flex-1 */
+.objCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Action card: same as objCard */
+.actionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Output card: col gap-8, pad 20, bg #F7F9FC, border #E5E8ED, r12 */
+.outputCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SOLUTION SECTION
+   ════════════════════════════════════════════════════════════ */
+
+/* Solution outer wrapper: col gap-24 */
+.solutionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  scroll-margin-top: 72px;
+}
+
+/* Solution sub-sections cluster: col gap-60 */
+.solutionCluster {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+}
+
+/* Single solution sub-section: col gap-16 */
+.solutionStep {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* "What teams get" card: col gap-12, pad 20, bg #F7F9FC, border #E5E8ED, r12 */
+.whatCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* "Read the full guideline" callout: bg #E6F4FF, border #D1E9FC, r12 */
+.blueCallout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #E6F4FF;
+  border: 1px solid #D1E9FC;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* PDF link text */
+.pdfLink {
+  color: #0080FF;
+  text-decoration: none;
+}
+.pdfLink:hover { text-decoration: underline; }
+
+/* ════════════════════════════════════════════════════════════
+   MEDIA BLOCK
+   ════════════════════════════════════════════════════════════ */
+
+/* image + caption: col gap-8 */
+.mediaBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+/* Full-width image (aspect from Figma handled by style prop or natural ratio) */
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fixed-width images (Context items 2 and 3) */
+.imgFixed {
+  display: block;
+  height: auto;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CTA ROW
+   ════════════════════════════════════════════════════════════ */
+
+/* row gap-20 */
+.ctaRow {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+}
+
+/* Outlined button: border #272E3B, r100, pad 6 14, Helvetica 400 14px */
+.ctaOutlined {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  border: 1px solid #272E3B;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #272E3B;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ctaOutlined:hover { background: #f5f5f5; }
+
+/* Filled button: bg #272E3B, r100, pad 6 14, white text */
+.ctaFilled {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  background: #272E3B;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background 0.15s;
+}
+.ctaFilled:hover { background: #1f2329; }
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════════════ */
+
+@media (max-width: 839px) {
+  .twoCol { flex-direction: column; gap: 32px; }
+  .sidebar { width: 100%; }
+  .objActionRow { flex-direction: column; }
+  .dividerShort { width: 100%; }
+}

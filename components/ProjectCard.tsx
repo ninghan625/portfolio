@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useRef, MouseEvent, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useCursor } from "@/context/CursorContext";
 
 interface Work {
@@ -22,7 +22,6 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ work, index }: ProjectCardProps) {
   const isEven = index % 2 === 0;
-  const [isHovered, setIsHovered] = useState(false);
   const { setIsProjectHovered } = useCursor();
   const cardRef = useRef<HTMLAnchorElement>(null);
 
@@ -36,15 +35,9 @@ export default function ProjectCard({ work, index }: ProjectCardProps) {
     <Link
       ref={cardRef}
       href={`/work/${work.slug}`}
-      className={`relative group flex flex-col md:flex-row items-stretch bg-white rounded-xl shadow-[0px_1px_3px_0px_rgba(0,0,0,0.08)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)] ${isHovered ? 'cursor-none' : ''}`}
-      onMouseEnter={() => {
-        setIsHovered(true);
-        setIsProjectHovered(true);
-      }}
-      onMouseLeave={() => {
-        setIsHovered(false);
-        setIsProjectHovered(false);
-      }}
+      className="relative group flex flex-col md:flex-row items-stretch bg-white rounded-xl shadow-[0px_1px_3px_0px_rgba(0,0,0,0.08)] overflow-hidden w-full transition-all duration-300 hover:-translate-y-1 hover:shadow-[0px_4px_12px_0px_rgba(0,0,0,0.12)]"
+      onMouseEnter={() => setIsProjectHovered(true)}
+      onMouseLeave={() => setIsProjectHovered(false)}
     >
       {isEven ? (
         <>
