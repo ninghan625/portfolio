@@ -10,20 +10,18 @@ export default function Header() {
   return (
     <header className="fixed top-0 z-50 h-[72px] w-full border-b border-[#E5E7EB] bg-white">
       <Container className="flex h-full items-center justify-between">
-        <div className="flex gap-3 items-center">
+        <Link
+          href="/"
+          className="flex gap-3 items-center group transition-colors"
+        >
           <div className="size-[18px] rounded-full bg-[#0080FF]" />
-          <Link
-            href="/"
-            className="flex gap-2 items-center group transition-colors"
-          >
-            <span className="font-medium text-[#1F2937] text-[16px] leading-[20px] group-hover:text-[#0080FF] transition-colors">
-              Claire Han
-            </span>
-            <span className="font-normal text-[#6B7280] text-[16px] leading-[20px] group-hover:text-[#0080FF] transition-colors">
-              Portfolio
-            </span>
-          </Link>
-        </div>
+          <span className="font-medium text-[#1F2937] text-[16px] leading-[20px] group-hover:text-[#0080FF] transition-colors">
+            Claire Han
+          </span>
+          <span className="font-normal text-[#6B7280] text-[16px] leading-[20px] group-hover:text-[#0080FF] transition-colors">
+            Portfolio
+          </span>
+        </Link>
         
         <nav className="flex gap-8 items-center">
           <Link

@@ -47,6 +47,8 @@ export default function ProjectCard({ work, index }: ProjectCardProps) {
               alt={work.title}
               className="object-cover size-full transition-transform duration-500 group-hover:scale-105"
               src={work.previewImage}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               style={work.previewObjectPosition ? { objectPosition: work.previewObjectPosition } : undefined}
             />
           </div>
@@ -111,6 +113,8 @@ export default function ProjectCard({ work, index }: ProjectCardProps) {
               alt={work.title}
               className="object-cover size-full transition-transform duration-500 group-hover:scale-105"
               src={work.previewImage}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
               style={work.previewObjectPosition ? { objectPosition: work.previewObjectPosition } : undefined}
             />
           </div>
