@@ -81,14 +81,14 @@ export default function CustomCursor() {
       aria-hidden="true"
     >
       {isProjectHovered && (
-        <div className="absolute top-0 left-0 w-max flex items-center gap-2 bg-[#0080FF] text-white px-4 py-2 rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute top-0 left-0 w-max flex items-center gap-[6px] bg-[#0080FF] text-white px-[18px] py-[10px] rounded-full shadow-lg transform -translate-x-1/2 -translate-y-1/2">
           <img
             src="/icons/Eye.svg"
             alt=""
-            className="w-5 h-5 brightness-0 invert"
+            className="w-4 h-4 brightness-0 invert"
           />
-          <span className="text-[15px] font-medium leading-none whitespace-nowrap">
-            View Project
+          <span className="text-[12px] font-semibold tracking-[0.06em] leading-none whitespace-nowrap uppercase">
+            View Case Study
           </span>
         </div>
       )}
