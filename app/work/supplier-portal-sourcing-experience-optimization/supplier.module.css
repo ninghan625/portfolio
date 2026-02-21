@@ -14,11 +14,11 @@
   align-items: center;
 }
 
-/* ── Outer container (1440px, items centered) ──────────────── */
+/* ── Outer container (max 1080px, centered) ──────────────── */
 .container {
   width: 100%;
   max-width: 1080px;
-  padding: 0 16px;
+  padding: 0 60px;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -493,6 +493,6 @@
 
 @media (max-width: 839px) {
   .twoCol { flex-direction: column; gap: 32px; }
-  .sidebar { width: 100%; }
+  .sidebar { display: none; }
   .objActionRow { flex-direction: column; }
 }
