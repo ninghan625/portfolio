@@ -141,10 +141,10 @@ export default function CurrencyCasePage() {
                       <li>Inconsistent ISO code placement (e.g., USD 1,000 vs 1,000 USD)</li>
                     </ol>
                     <Image
-                      src="/images/Currency/1.png"
+                      src="/images/Currency/1.webp"
                       alt="Inconsistent ISO code placement"
-                      width={892}
-                      height={142}
+                      width={1704}
+                      height={271}
                       className={s.img}
                       unoptimized
                     />
@@ -158,10 +158,10 @@ export default function CurrencyCasePage() {
                       <li>Mixed currency format（$ / USD / US$）</li>
                     </ol>
                     <Image
-                      src="/images/Currency/2.png"
+                      src="/images/Currency/2.webp"
                       alt="Mixed currency format"
-                      width={430}
-                      height={140}
+                      width={860}
+                      height={281}
                       className={s.imgFixed}
                       style={{ width: 430, height: "auto" }}
                       unoptimized
@@ -176,10 +176,10 @@ export default function CurrencyCasePage() {
                       <li>Unclear large-number formatting (K / M / B)</li>
                     </ol>
                     <Image
-                      src="/images/Currency/3.png"
+                      src="/images/Currency/3.webp"
                       alt="Unclear large-number formatting"
-                      width={425}
-                      height={88}
+                      width={850}
+                      height={175}
                       className={s.imgFixed}
                       style={{ width: 425, height: "auto" }}
                       unoptimized
