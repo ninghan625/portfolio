@@ -116,104 +116,111 @@ export default function CurrencyCasePage() {
             <section id="context" className={s.section}>
               <span className={s.label}>Context</span>
 
-              <div className={s.subSectionCluster}>
+              {/* Intro text — node 534:5818 */}
+              <div className={s.subSection}>
+                <p className={s.h2}>
+                  Currency formatting was inconsistent—and expensive to maintain
+                </p>
+                <p className={s.p}>
+                  As our products scaled globally, currency amounts showed up everywhere—travel,
+                  procurement, contracts, finance. But teams used different formats and precision,
+                  leading to inconsistent UI and slow, repetitive reviews.
+                </p>
+              </div>
 
-                {/* Intro text — node 534:5818 */}
-                <div className={s.subSection}>
-                  <p className={s.h2}>
-                    Currency formatting was inconsistent—and expensive to maintain
-                  </p>
-                  <p className={s.p}>
-                    As our products scaled globally, currency amounts showed up everywhere—travel,
-                    procurement, contracts, finance. But teams used different formats and precision,
-                    leading to inconsistent UI and slow, repetitive reviews.
-                  </p>
-                </div>
+              {/* Inconsistencies card — node 566:5380
+                  bg #F7F9FC, border #E5E8ED, r12, pad 20, col gap-24 */}
+              <div className={s.contextCard}>
+                <p className={s.contextCardTitle}>Key Currency Formatting Inconsistencies</p>
 
-                {/* Context item 1 — node 536:7530: numbered heading + image 64 */}
-                {/* image 64: aspect-[2883/458], full width */}
-                <div className={s.subSection}>
-                  <ol className={s.numberedList} start={1}>
-                    <li>Inconsistent ISO code placement (e.g., USD 1,000 vs 1,000 USD)</li>
-                  </ol>
-                  <div className={s.mediaBlock}>
+                <div className={s.contextItemsCluster}>
+
+                  {/* Item 1 — aspect-[2883/458], full width */}
+                  <div className={s.contextItem}>
+                    <ol className={s.numberedList} start={1}>
+                      <li>Inconsistent ISO code placement (e.g., USD 1,000 vs 1,000 USD)</li>
+                    </ol>
                     <Image
                       src="/images/Currency/1.png"
                       alt="Inconsistent ISO code placement"
-                      width={2883}
-                      height={458}
+                      width={892}
+                      height={142}
                       className={s.img}
                       unoptimized
                     />
                   </div>
-                </div>
 
-                {/* Context item 2 — node 536:7586: numbered heading + image 65 */}
-                {/* image 65: h-140.123px w-430px fixed size */}
-                <div className={s.subSection}>
-                  <ol className={s.numberedList} start={2}>
-                    <li>Mixed currency format（$ / USD / US$）</li>
-                  </ol>
-                  <Image
-                    src="/images/Currency/2.png"
-                    alt="Mixed currency format"
-                    width={430}
-                    height={140}
-                    className={s.imgFixed}
-                    style={{ width: 430, height: "auto" }}
-                    unoptimized
-                  />
-                </div>
+                  <div className={s.contextDivider} />
 
-                {/* Context item 3 — node 536:7642: numbered heading + image 66 */}
-                {/* image 66: h-87.5px w-425px fixed size */}
-                <div className={s.subSection}>
-                  <ol className={s.numberedList} start={3}>
-                    <li>Unclear large-number formatting (K / M / B)</li>
-                  </ol>
-                  <Image
-                    src="/images/Currency/3.png"
-                    alt="Unclear large-number formatting"
-                    width={425}
-                    height={88}
-                    className={s.imgFixed}
-                    style={{ width: 425, height: "auto" }}
-                    unoptimized
-                  />
-                </div>
+                  {/* Item 2 — w-430px fixed */}
+                  <div className={s.contextItem}>
+                    <ol className={s.numberedList} start={2}>
+                      <li>Mixed currency format（$ / USD / US$）</li>
+                    </ol>
+                    <Image
+                      src="/images/Currency/2.png"
+                      alt="Mixed currency format"
+                      width={430}
+                      height={140}
+                      className={s.imgFixed}
+                      style={{ width: 430, height: "auto" }}
+                      unoptimized
+                    />
+                  </div>
 
-                {/* Context item 4 — node 536:7711: numbered heading + image 70 */}
-                {/* image 70: h-108px w-892px → effectively full-width of article */}
-                <div className={s.subSection}>
-                  <ol className={s.numberedList} start={4}>
-                    <li>Inconsistent currency picker options</li>
-                  </ol>
-                  <Image
-                    src="/images/Currency/4.png"
-                    alt="Inconsistent currency picker options"
-                    width={892}
-                    height={108}
-                    className={s.img}
-                    unoptimized
-                  />
-                </div>
+                  <div className={s.contextDivider} />
 
-                {/* Context item 5 — node 536:7719: numbered heading + image 69 */}
-                {/* image 69: h-449px w-892px → effectively full-width of article */}
-                <div className={s.subSection}>
-                  <ol className={s.numberedList} start={5}>
-                    <li>Define visual hierarchy rules for totals</li>
-                  </ol>
-                  <Image
-                    src="/images/Currency/5.jpg"
-                    alt="Define visual hierarchy rules for totals"
-                    width={892}
-                    height={449}
-                    className={s.img}
-                    unoptimized
-                  />
-                </div>
+                  {/* Item 3 — w-425px fixed */}
+                  <div className={s.contextItem}>
+                    <ol className={s.numberedList} start={3}>
+                      <li>Unclear large-number formatting (K / M / B)</li>
+                    </ol>
+                    <Image
+                      src="/images/Currency/3.png"
+                      alt="Unclear large-number formatting"
+                      width={425}
+                      height={88}
+                      className={s.imgFixed}
+                      style={{ width: 425, height: "auto" }}
+                      unoptimized
+                    />
+                  </div>
 
+                  <div className={s.contextDivider} />
+
+                  {/* Item 4 — aspect-[1784/216], full width */}
+                  <div className={s.contextItem}>
+                    <ol className={s.numberedList} start={4}>
+                      <li>Inconsistent currency picker options</li>
+                    </ol>
+                    <Image
+                      src="/images/Currency/4.png"
+                      alt="Inconsistent currency picker options"
+                      width={892}
+                      height={108}
+                      className={s.img}
+                      unoptimized
+                    />
+                  </div>
+
+                  <div className={s.contextDivider} />
+
+                  {/* Item 5 — aspect-[1784/898], full width */}
+                  <div className={s.contextItem}>
+                    <ol className={s.numberedList} start={5}>
+                      <li>Define visual hierarchy rules for totals</li>
+                    </ol>
+                    <Image
+                      src="/images/Currency/5.jpg"
+                      alt="Define visual hierarchy rules for totals"
+                      width={892}
+                      height={449}
+                      className={s.img}
+                      unoptimized
+                    />
+                  </div>
+
+                </div>
               </div>
             </section>
 
@@ -441,7 +448,7 @@ export default function CurrencyCasePage() {
                     src="/images/Currency/9.jpg"
                     alt="Format rules teams can implement"
                     width={892}
-                    height={1830}
+                    height={719}
                     className={s.img}
                     unoptimized
                   />
@@ -466,12 +473,12 @@ export default function CurrencyCasePage() {
                     </ul>
                   </div>
 
-                  {/* image 10 (img111111): aspect-[1347/4096] very tall portrait, full width */}
+                  {/* image 10 (img111111): aspect-[1623/4934] very tall portrait, full width */}
                   <Image
-                    src="/images/Currency/10.jpg"
+                    src="/images/Currency/10.webp"
                     alt="Decision guidance for choosing formats"
-                    width={789}
-                    height={2400}
+                    width={1623}
+                    height={4934}
                     className={s.img}
                     unoptimized
                   />
@@ -515,7 +522,7 @@ export default function CurrencyCasePage() {
                       If you&apos;re interested in the full specification (format rules, scenario
                       examples, and component usage), you can view the document here:{" "}
                       <a
-                        href="/images/Currency/Currency_Amount_Formatting_Guidelines.pdf"
+                        href="/images/Currency/Currency%20Amount%20Formatting%20Guidelines.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
                         className={s.pdfLink}

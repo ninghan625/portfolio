@@ -143,15 +143,15 @@
 .bulletList li { margin: 0; }
 .bulletList li + li { margin-top: 0; }
 
-/* ── Numbered list (context section headings) ────────────── */
+/* ── Numbered list (context section item headings) ───────── */
 .numberedList {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 400;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
-  padding-left: 27px;
+  padding-left: 24px;
   list-style-type: decimal;
 }
 .numberedList li { margin: 0; }
@@ -164,9 +164,9 @@
   background: #E5E8ED;
   flex-shrink: 0;
 }
-/* 680px short divider (after TL;DR and Approach) */
+/* Short divider (after TL;DR and Approach) */
 .dividerShort {
-  width: 680px;
+  width: 100%;
   height: 1px;
   background: #E5E8ED;
   flex-shrink: 0;
@@ -195,6 +195,53 @@
   flex-direction: column;
   gap: 24px;
   width: 100%;
+}
+
+/* ── Context inconsistencies card ────────────────────────── */
+/* bg #F7F9FC, border #E5E8ED, r12, pad 20, col gap-24 */
+.contextCard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Card title: 16px bold */
+.contextCardTitle {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* Items cluster inside context card: col gap-16 */
+.contextItemsCluster {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Single context item (numbered heading + image): col gap-4 */
+.contextItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Divider between context items: 1px #E5E8ED */
+.contextDivider {
+  width: 100%;
+  height: 1px;
+  background: #E5E8ED;
+  flex-shrink: 0;
 }
 
 /* ════════════════════════════════════════════════════════════
