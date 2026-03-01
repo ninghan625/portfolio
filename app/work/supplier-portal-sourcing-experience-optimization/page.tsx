@@ -8,23 +8,24 @@ export default function SupplierCasePage() {
     <div className={s.page}>
       <div className={s.container}>
 
-        {/* ── Header spacer: 8px + 64px container gap = 72px header clearance ── */}
+        {/* ── 8px top spacer (container gap-64px gives 72px total clearance below fixed header) ── */}
         <div style={{ height: 8 }} />
 
-        {/* ── Hero cover image (1080px wide in Figma) ─────────── */}
+        {/* ── Hero cover image ── */}
+        {/* Figma: aspect-[4096/1815] at full container width */}
         <div className={s.hero}>
           <Image
             src="/images/supplier/Cover.jpg"
             alt="Supplier Portal Sourcing Experience Optimization"
-            width={1080}
-            height={454}
+            width={1240}
+            height={550}
             className={s.heroImg}
             priority
             unoptimized
           />
         </div>
 
-        {/* ── Two-column: 108px sidebar + flex article ─────────── */}
+        {/* ── Two-column: 108px sidebar + flex-1 article, gap 80px ── */}
         <div className={s.twoCol}>
           <aside className={s.sidebar}>
             <SupplierAnchorNav />
@@ -33,36 +34,36 @@ export default function SupplierCasePage() {
           <article className={s.article}>
 
             {/* ════════════════════════════════════════════════════
-                Project Title
-                style_3YXEYS: Helvetica 700 24px / 1.15em #272E3B
+                Project Title — Helvetica 700 24px / normal #272E3B
                 ════════════════════════════════════════════════════ */}
             <h1 className={s.title}>
               Supplier Portal Sourcing Experience Optimization
             </h1>
 
             {/* ════════════════════════════════════════════════════
-                TL;DR
+                TL;DR — col gap-16px
                 ════════════════════════════════════════════════════ */}
             <section id="tldr" className={s.section}>
               <span className={s.label}>TL;DR</span>
 
-              {/* Summary card — #F7F9FC bg, border, r12, col gap 8 pad 20 */}
+              {/* Summary card: bg #F7F9FC border #E5E8ED r12 col gap-8px p20 */}
               <div className={s.tldrSummaryCard}>
-                <p className={s.h}>
+                <p className={s.hLg}>
                   Bring critical sourcing actions back into the system
                 </p>
-                <p className={s.p}>
+                <p className={s.tldrBody}>
                   I redesigned ByteDance&apos;s Supplier Portal sourcing experience,
                   focusing on the key moments where suppliers, buyers, and legal
-                  teams needed critical information to act. The result improved
-                  online sourcing adoption and reduced email back-and-forth.
+                  teams needed critical information to act. The result{" "}
+                  <strong>improved online sourcing adoption and reduced email back-and-forth</strong>
+                  .
                 </p>
               </div>
 
-              {/* Problem info card — row, icon #FFF4E6, border r8 */}
+              {/* Problem — bg white border #E5E8ED r8 p21 gap-16 */}
               <div className={s.infoCard}>
                 <div className={s.iconCircle} style={{ background: "#FFF4E6" }}>
-                  <img src="/images/supplier/Icon 1.svg" alt="Problem" width={20} height={20} />
+                  <img src="/images/supplier/Icon 1.svg" alt="" width={20} height={20} />
                 </div>
                 <div className={s.infoTextCol}>
                   <p className={s.h}>Problem</p>
@@ -73,179 +74,167 @@ export default function SupplierCasePage() {
                 </div>
               </div>
 
-              {/* Solution info card — row, icon #E6F4FF */}
+              {/* Solution — bg white border #E5E8ED r8 p21 gap-16 */}
               <div className={s.infoCard}>
                 <div className={s.iconCircle} style={{ background: "#E6F4FF" }}>
-                  <img src="/images/supplier/Icon 2.svg" alt="Solution" width={20} height={20} />
+                  <img src="/images/supplier/Icon 2.svg" alt="" width={20} height={20} />
                 </div>
                 <div className={s.infoTextCol}>
                   <p className={s.h}>Solution</p>
-                  <p className={s.p}>
-                    Fix the 3 key moments—Email → Terms → Progress.
-                  </p>
+                  <div>
+                    <p className={s.p} style={{ marginBottom: 0 }}>
+                      Redesigned the workflow around 4 key moments where users
+                      needed clarity to act:
+                    </p>
+                    <ul className={s.bulletList}>
+                      <li><strong>Email:</strong>{" "}Make invites scannable</li>
+                      <li><strong>Terms:</strong>{" "}Separate requirements from legal</li>
+                      <li><strong>Participation:</strong>{" "}Clarify intent + reduce CTA ambiguity</li>
+                      <li><strong>Progress:</strong>{" "}Make stages and deadlines trackable</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
 
-              {/* Impact info card — row, icon #E6F9F0 */}
+              {/* Impact — bg white border #E5E8ED r8 p21 gap-16 */}
               <div className={s.infoCard}>
                 <div className={s.iconCircle} style={{ background: "#E6F9F0" }}>
-                  <img src="/images/supplier/Icon 3.svg" alt="Impact" width={20} height={20} />
+                  <img src="/images/supplier/Icon 3.svg" alt="" width={20} height={20} />
                 </div>
                 <div className={s.infoTextCol}>
                   <p className={s.h}>Impact</p>
-                  <p className={s.p}>
-                    Online sourcing adoption (Global General Procurement Team Q4 pilot) 3.9% → 19.92%
+                  <p className={s.pSm}>
+                    Online sourcing adoption (GGP Q4 pilot) 3.9% → 19.92%
                     (vs. 15% target); buyer validation 4.7–4.8/5.
                   </p>
                 </div>
               </div>
+
             </section>
 
-            {/* divider */}
             <div className={s.divider} />
 
             {/* ════════════════════════════════════════════════════
-                Context
+                Context — col gap-16px
                 ════════════════════════════════════════════════════ */}
             <section id="context" className={s.section}>
               <span className={s.label}>Context</span>
 
               <div className={s.subSection}>
-                <p className={s.h}>Why sourcing adoption stayed low</p>
+                <p className={s.hLg}>
+                  Sourcing leaked into email because the portal wasn&apos;t reliable
+                </p>
                 <p className={s.p}>
                   Sourcing is a high-stakes workflow involving multiple roles
-                  (buyers, suppliers, compliance, legal). But the process often
-                  fell back to email because the portal was hard to use and felt
-                  unreliable—making status unclear, follow-ups easy to miss, and
-                  audits difficult.
+                  (buyers, suppliers, compliance, and legal). The process often
+                  fell back to email because the portal was hard to use and
+                  didn&apos;t feel reliable. As a result, status was unclear,
+                  follow-ups were easy to miss, and audits were difficult.
                 </p>
               </div>
 
-              {/* image 1 — Sourcing Journey */}
+              {/* image 1: aspect 4096/1815 ≈ 1052×467 */}
               <div className={s.mediaBlock}>
                 <Image
                   src="/images/supplier/1.png"
-                  alt="Sourcing Journey"
-                  width={1080}
-                  height={400}
+                  alt="Buyer–supplier back-and-forth happens in email, making the workflow hard to track."
+                  width={1052}
+                  height={467}
                   className={s.img}
                   unoptimized
                 />
-                <p className={s.caption}>Sourcing Journey</p>
+                <p className={s.caption}>
+                  Buyer–supplier back-and-forth happens in email, making the
+                  workflow hard to track.
+                </p>
               </div>
             </section>
 
-            {/* divider */}
             <div className={s.divider} />
 
             {/* ════════════════════════════════════════════════════
-                Goal
+                Goal — col gap-16px
                 ════════════════════════════════════════════════════ */}
             <section id="goal" className={s.section}>
               <span className={s.label}>Goal</span>
 
-              {/* Goal item 1 */}
+              {/* Goal 1 */}
               <div className={s.goalItem}>
                 <div className={s.goalBullet} />
-                <p className={s.h}>
-                  Improve usability
-                  <br />
-                  <span style={{ fontWeight: 400 }}>
+                <div className={s.goalText}>
+                  <p>Improve usability</p>
+                  <p className={s.goalDesc}>
                     Reduce friction so suppliers can complete key steps without
                     workarounds.
-                  </span>
-                </p>
+                  </p>
+                </div>
               </div>
 
-              {/* Goal item 2 */}
+              {/* Goal 2 */}
               <div className={s.goalItem}>
                 <div className={s.goalBullet} />
-                <p className={s.h}>
-                  Improve visibility and tracking
-                  <br />
-                  <span style={{ fontWeight: 400 }}>
+                <div className={s.goalText}>
+                  <p>Improve visibility and tracking</p>
+                  <p className={s.goalDesc}>
                     Keep status, deadlines, and key actions visible in one place.
-                  </span>
-                </p>
+                  </p>
+                </div>
               </div>
 
-              {/* Goal item 3 */}
+              {/* Goal 3 */}
               <div className={s.goalItem}>
                 <div className={s.goalBullet} />
-                <p className={s.h}>
-                  Build trust early
-                  <br />
-                  <span style={{ fontWeight: 400 }}>
+                <div className={s.goalText}>
+                  <p>Build trust early</p>
+                  <p className={s.goalDesc}>
                     Make each step clear and predictable so users rely on the
                     system status.
-                  </span>
-                </p>
+                  </p>
+                </div>
               </div>
             </section>
 
-            {/* divider */}
             <div className={s.divider} />
 
             {/* ════════════════════════════════════════════════════
-                Design Process  (section label: Approach)
-                4 step cards stacked with gap 32px
+                Approach — col gap-16px, steps cluster col gap-80px
                 ════════════════════════════════════════════════════ */}
             <section id="design-process" className={s.section}>
               <span className={s.label}>Approach</span>
 
               <div className={s.stepsCluster}>
 
-                {/* ── Step 1 ─────────────────────────────────────── */}
+                {/* ── Step 1 ─────────────────────────────────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
-                    <p className={s.h}>
+                    <p className={s.hLg}>
                       Step 1: Cross-functional workshop to align on the real
                       problems
                     </p>
-                    <p className={s.p}>
-                      Align the team and quickly surface obvious usability
-                      blockers in a legacy system.
-                    </p>
                   </div>
 
+                  {/* Objective + Action side-by-side */}
                   <div className={s.objActionRow}>
                     <div className={s.objCard}>
                       <p className={s.h}>🎯 Objective</p>
                       <p className={s.p}>
-                        Get multiple stakeholders on the same page by walking
-                        through the legacy supplier journey together.
-                      </p>
-                      <p className={s.p}>
-                        Build a shared understanding of why suppliers avoid the
-                        portal and default to email.
+                        Align stakeholders by{" "}
+                        <strong>walking through the legacy supplier journey together</strong>{" "}
+                        and clarifying why suppliers default to email.
                       </p>
                     </div>
                     <div className={s.actionCard}>
                       <p className={s.h}>💪 Action</p>
                       <p className={s.p}>
-                        Ran a guided walkthrough as &quot;first-time suppliers&quot; to
-                        spot issues we didn&apos;t need external testing to validate.
-                      </p>
-                      <p className={s.p}>
-                        Logged and tagged each issue by journey step and problem
-                        type, then aligned on severity and effort.
+                        <strong>Ran a first-time-supplier walkthrough</strong>
+                        , then logged and{" "}
+                        <strong>tagged issues</strong>{" "}
+                        by journey step and type to align on severity and effort.
                       </p>
                     </div>
                   </div>
 
-                  {/* image 47 — Issue log from workshop */}
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/supplier/2.png"
-                      alt="Issue log from workshop"
-                      width={1080}
-                      height={320}
-                      className={s.img}
-                      unoptimized
-                    />
-                    <p className={s.caption}>Issue log from workshop</p>
-                  </div>
-
+                  {/* Output card */}
                   <div className={s.outputCard}>
                     <p className={s.h}>✅ Output</p>
                     <p className={s.p}>
@@ -253,125 +242,84 @@ export default function SupplierCasePage() {
                       the baseline for design and engineering planning.
                     </p>
                   </div>
+
+                  {/* image 47: aspect 3900/1482 ≈ 1052×400 */}
+                  <div className={s.mediaBlock}>
+                    <Image
+                      src="/images/supplier/2.png"
+                      alt="Issue log from workshop"
+                      width={1052}
+                      height={400}
+                      className={s.img}
+                      unoptimized
+                    />
+                    <p className={s.caption}>Issue log from workshop</p>
+                  </div>
                 </div>
 
-                {/* ── Step 2 ─────────────────────────────────────── */}
+                {/* ── Step 2 ─────────────────────────────────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
-                    <p className={s.h}>Step 2: Explore a task center as entry</p>
+                    <p className={s.hLg}>
+                      Step 2: Competitive analysis - Task Center as a common
+                      entry
+                    </p>
                     <p className={s.p}>
-                      Competitor patterns suggested a task hub—so I prototyped
-                      it to see if it could solve discoverability.
+                      I benchmarked mainstream sourcing portals (e.g., Coupa and
+                      Oracle), then prototyped a lightweight Task Center and ran
+                      quick walkthroughs to gather early feedback before
+                      committing engineering time.
                     </p>
                   </div>
 
-                  <div className={s.objActionRow}>
-                    <div className={s.objCard}>
-                      <p className={s.h}>🎯 Objective</p>
-                      <p className={s.p}>
-                        Explore whether a &quot;Task Center&quot; homepage could address
-                        the common feedback: suppliers couldn&apos;t find where to
-                        start.
-                      </p>
-                    </div>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>💪 Action</p>
-                      <p className={s.p}>
-                        Benchmarked competitor sourcing portals and found many
-                        use a clear homepage task hub to guide users to next
-                        actions.
-                      </p>
-                      <p className={s.p}>
-                        Built a lightweight Task Center demo and ran quick
-                        walkthroughs to gather early feedback before committing
-                        engineering time.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* image 46 — Competitor pattern */}
+                  {/* image 45: aspect 1052/611 ≈ 1052×612 */}
                   <div className={s.mediaBlock}>
                     <Image
                       src="/images/supplier/3.png"
-                      alt="Competitor pattern"
-                      width={1080}
-                      height={500}
-                      className={s.img}
-                      unoptimized
-                    />
-                    <p className={s.caption}>Competitor pattern</p>
-                  </div>
-
-                  {/* image 45 — Task Center demo */}
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/supplier/4.png"
                       alt="Task Center demo (explore direction, not final solution)"
-                      width={1080}
-                      height={533}
+                      width={1052}
+                      height={612}
                       className={s.img}
                       unoptimized
                     />
-                    <p className={s.caption}>
+                    <p className={s.captionLg}>
                       Task Center demo (explore direction, not final solution)
-                    </p>
-                  </div>
-
-                  <div className={s.outputCard}>
-                    <p className={s.h}>✅ Output</p>
-                    <p className={s.p}>
-                      The concept helped us align on a possible direction, but
-                      it also raised a key question:
-                    </p>
-                    <p className={s.h}>
-                      Would changing the homepage actually change supplier
-                      behavior?
-                    </p>
-                    <p className={s.p}>
-                      This led to the next step—validating the real entry point.
                     </p>
                   </div>
                 </div>
 
-                {/* ── Step 3 ─────────────────────────────────────── */}
+                {/* ── Insight block ──────────────────────────────────── */}
+                <div className={s.insightBlock}>
+                  <p className={s.p}>
+                    The concept helped us align on a possible direction, but it
+                    also raised a key question:
+                  </p>
+                  <div className={s.insightCallout}>
+                    <p className={s.insightText}>
+                      💡 Would building the task center actually change supplier
+                      behavior?
+                    </p>
+                  </div>
+                </div>
+
+                {/* ── Step 3 ─────────────────────────────────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
-                    <p className={s.h}>
+                    <p className={s.hLg}>
                       Step 3: Pressure-test the Task Center direction
                     </p>
                     <p className={s.p}>
-                      Walkthroughs + data helped us pivot.
+                      Used the Task Center demo to prompt walkthroughs with
+                      suppliers and buyers
                     </p>
                   </div>
 
-                  <div className={s.objActionRow}>
-                    <div className={s.objCard}>
-                      <p className={s.h}>🎯 Objective</p>
-                      <p className={s.p}>
-                        Validate whether a task center would solve suppliers&apos;
-                        biggest pain points—and pinpoint the biggest blockers
-                        before scaling any redesign.
-                      </p>
-                    </div>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>💪 Action</p>
-                      <p className={s.p}>
-                        Used the Task Center demo to prompt walkthroughs with
-                        suppliers and buyers: where they started, what info they
-                        looked for, and where they got stuck.
-                      </p>
-                      <p className={s.p}>
-                        Cross-checked product data to validate the entry path we
-                        observed.
-                      </p>
-                    </div>
-                  </div>
-
+                  {/* Pivot Point output card */}
                   <div className={s.outputCard}>
                     <p className={s.h}>⚡️ Pivot Point</p>
                     <p className={s.h}>
                       The task center wasn&apos;t the highest-leverage place to fix
-                      first.
+                      first, email is.
                     </p>
                     <p className={s.p}>
                       Data showed ~70% of suppliers entered from email deep
@@ -380,13 +328,13 @@ export default function SupplierCasePage() {
                     </p>
                   </div>
 
-                  {/* image 50 — Most Suppliers Skip the Homepage */}
+                  {/* image 50: aspect 4096/1214 ≈ 1052×312 */}
                   <div className={s.mediaBlock}>
                     <Image
-                      src="/images/supplier/5.png"
+                      src="/images/supplier/4.png"
                       alt="Most Suppliers Skip the Homepage"
-                      width={1080}
-                      height={250}
+                      width={1052}
+                      height={312}
                       className={s.img}
                       unoptimized
                     />
@@ -394,122 +342,101 @@ export default function SupplierCasePage() {
                   </div>
                 </div>
 
-                {/* ── Step 4 ─────────────────────────────────────── */}
+                {/* ── What to fix: 4 key moments ─────────────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
-                    <p className={s.h}>
-                      Step 4: Map the key moments where users needed critical
-                      info
+                    <p className={s.hLg}>
+                      What to fix: 4 key moments in the sourcing journey
                     </p>
                     <p className={s.p}>
-                      We synthesized cross-role feedback into a clear &quot;what to
-                      fix&quot; map.
+                      Instead of scattered UI fixes, we focused on helping users
+                      find critical info and take the right action—across email
+                      + web.
                     </p>
                   </div>
 
-                  <div className={s.objActionRow}>
-                    <div className={s.objCard}>
-                      <p className={s.h}>🎯 Objective</p>
-                      <p className={s.p}>
-                        Turn scattered feedback from suppliers, buyers, and legal
-                        into a clear set of high-impact moments to fix—so the
-                        workflow is easy to follow and trustable.
-                      </p>
+                  {/* Row 1: Moments 1 & 2 */}
+                  <div className={s.momentGrid}>
+                    <div className={s.momentCard2}>
+                      <div className={s.momentCardHeader}>
+                        <p className={s.momentTitle}>
+                          Moment 1: Invitation received (Email)
+                        </p>
+                        <p className={s.momentDesc}>
+                          Essentials weren&apos;t scannable in the email, so buyers
+                          resorted to manual follow-ups.
+                        </p>
+                      </div>
+                      <div className={s.momentQuote}>
+                        <p className={s.quoteText}>
+                          &ldquo;I always end up manually re-sending the email to
+                          suppliers just to double-check that they saw the
+                          requirements.&rdquo;
+                        </p>
+                        <p className={s.momentAttrib}>— From Buyers</p>
+                      </div>
                     </div>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>💪 Action</p>
-                      <p className={s.p}>
-                        Synthesized findings across suppliers / buyers / legal,
-                        mapped them to the sourcing journey, then prioritized by
-                        impact and feasibility.
-                      </p>
+
+                    <div className={s.momentCard2}>
+                      <div className={s.momentCardHeader}>
+                        <p className={s.momentTitle}>
+                          Moment 2: Before participation (Legal terms)
+                        </p>
+                        <p className={s.momentDesc}>
+                          Requirements were mixed into long legal text, making
+                          key info hard to find—while legal still needed
+                          explicit consent before suppliers could proceed.
+                        </p>
+                      </div>
+                      <div className={s.momentQuote}>
+                        <p className={s.quoteText}>
+                          &ldquo;The legal terms always dominate the top of the page.
+                          Can you separate the standard terms from the actual
+                          project requirements?&rdquo;
+                        </p>
+                        <p className={s.momentAttrib}>— From Buyers</p>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Output card with 3 moments */}
-                  <div className={s.outputCardLg}>
-                    <div className={s.subSection}>
-                      <p className={s.h}>✅ Output</p>
-                      <p className={s.p}>
-                        These three moments became the structure of the final
-                        solution (Email → Terms → Progress).
-                      </p>
+                  {/* Row 2: Moments 3 & 4 */}
+                  <div className={s.momentGrid}>
+                    <div className={s.momentCard2}>
+                      <div className={s.momentCardHeader}>
+                        <p className={s.momentTitle}>
+                          Moment 3: Confirm participation (CTA)
+                        </p>
+                        <p className={s.momentDesc}>
+                          Two CTAs compete（Confirm Participation vs
+                          Respond/Quote）
+                        </p>
+                      </div>
+                      <div className={s.momentQuote}>
+                        <p className={s.quoteText}>
+                          &ldquo;Do I need to quote now?&rdquo;
+                        </p>
+                        <p className={s.momentAttrib}>— From Buyers</p>
+                      </div>
                     </div>
 
-                    <div className={s.momentsCol}>
-
-                      {/* Moment 1 */}
-                      <div className={s.momentItem}>
-                        <div className={s.momentCard}>
-                          <p className={s.h}>Moment 1</p>
-                          <p className={s.p}>
-                            <strong>Invitation received (Email)</strong>
-                          </p>
-                          <ul className={s.bulletList}>
-                            <li>Essentials weren&apos;t scannable in the email, so buyers resorted to manual follow-ups.</li>
-                            <li>Deadline buried in paragraph</li>
-                            <li>No clear primary action</li>
-                          </ul>
-                        </div>
-                        <Image
-                          src="/images/supplier/6.png"
-                          alt="Moment 1 — Email invitation"
-                          width={1080}
-                          height={400}
-                          className={s.img}
-                          unoptimized
-                        />
+                    <div className={s.momentCard2}>
+                      <div className={s.momentCardHeader}>
+                        <p className={s.momentTitle}>
+                          Moment 4: During participation (Progress)
+                        </p>
+                        <p className={s.momentDesc}>
+                          Stage context unclear（&ldquo;what happens after
+                          participation?&rdquo;）, causing hesitation and missed
+                          actions.
+                        </p>
                       </div>
-
-                      <div className={s.momentDivider} />
-
-                      {/* Moment 2 */}
-                      <div className={s.momentItem}>
-                        <div className={s.momentCard}>
-                          <p className={s.h}>Moment 2</p>
-                          <p className={s.p}>
-                            <strong>Before participation (Legal terms)</strong>
-                            <br />
-                            Requirements were mixed into long legal text, making
-                            key info hard to find—while legal still needed
-                            explicit consent before suppliers could proceed.
-                          </p>
-                        </div>
-                        <Image
-                          src="/images/supplier/7.png"
-                          alt="Moment 2 — Legal terms"
-                          width={804}
-                          height={737}
-                          className={s.img}
-                          unoptimized
-                        />
+                      <div className={s.momentQuote}>
+                        <p className={s.quoteText}>
+                          &ldquo;I clicked &lsquo;Participate&rsquo;, but nothing happened.
+                          Did you get my intention?&rdquo;
+                        </p>
+                        <p className={s.momentAttrib}>— From Buyers</p>
                       </div>
-
-                      <div className={s.momentDivider} />
-
-                      {/* Moment 3 */}
-                      <div className={s.momentItem}>
-                        <div className={s.momentCard}>
-                          <p className={s.h}>Moment 3</p>
-                          <p className={s.p}>
-                            <strong>During participation (Progress)</strong>
-                          </p>
-                          <ul className={s.bulletList}>
-                            <li>Status, deadlines, and next steps weren&apos;t clear on the detail page, causing hesitation and missed actions.</li>
-                            <li>Two CTAs compete（Confirm Participation vs Respond/Quote）</li>
-                            <li>Stage context unclear（&quot;what happens after participation?&quot;）</li>
-                          </ul>
-                        </div>
-                        <Image
-                          src="/images/supplier/8.png"
-                          alt="Moment 3 — Progress page"
-                          width={1080}
-                          height={206}
-                          className={s.img}
-                          unoptimized
-                        />
-                      </div>
-
                     </div>
                   </div>
                 </div>
@@ -517,97 +444,48 @@ export default function SupplierCasePage() {
               </div>
             </section>
 
-            {/* divider */}
             <div className={s.divider} />
 
             {/* ════════════════════════════════════════════════════
-                Solution
-                Outer: col gap 24px (layout_RYU7JT)
+                Solution — col gap-24px, cluster col gap-60px
                 ════════════════════════════════════════════════════ */}
             <section id="solution" className={s.solutionSection}>
+              <span className={s.label}>Solution</span>
 
-              {/* Intro block */}
-              <div className={s.section} style={{ scrollMarginTop: 0 }}>
-                <span className={s.label}>Solution</span>
-                <div className={s.subSection}>
-                  <p className={s.h}>
-                    Design for the 3 key moments in the sourcing journey
-                  </p>
-                  <p className={s.p}>
-                    Instead of scattered UI fixes, we focused on helping users
-                    find critical info and take the right action—across email +
-                    web.
-                  </p>
-                </div>
-              </div>
-
-              {/* 3 solution sub-sections — col gap 24px */}
               <div className={s.solutionCluster}>
 
-                {/* ── Solution 1 ─────────────────────────────────── */}
+                {/* ── Moment 1: Email ─────────────────────────────────── */}
                 <div className={s.approachStepCard}>
-                  <p className={s.h}>
-                    Solution 1: Email as a clear starting point
-                  </p>
-
-                  <div className={s.objActionRow}>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>🛠️ Problem</p>
-                      <p className={s.p}>
-                        <strong>Invitation received (Email)</strong>
-                      </p>
-                      <ul className={s.bulletList}>
-                        <li>Essentials weren&apos;t scannable in the email, so buyers resorted to manual follow-ups.</li>
-                        <li>Deadline buried in paragraph</li>
-                        <li>No clear primary action</li>
-                      </ul>
-                    </div>
-                    <div className={s.objCard}>
-                      <p className={s.h}>❇️ What changed</p>
-                      <p className={s.p}>
-                        Put the essentials up front: deadline / key changes /
-                        required action
-                        <br />
-                        Used a consistent card layout for fast scanning
-                        <br />
-                        Deep-link to the sourcing detail page
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* image 54 — Email redesign */}
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/supplier/9.png"
-                      alt="Email redesign"
-                      width={1080}
-                      height={689}
-                      className={s.img}
-                      unoptimized
-                    />
-                  </div>
-
-                  <div className={s.whyCard}>
-                    <p className={s.h}>💡 Why it matters</p>
-                    <p className={s.p}>
-                      Clear emails reduce missed updates and manual
-                      follow-ups—and bring actions back into the system.
+                  <div className={s.subSection}>
+                    <p className={s.hLg}>
+                      Moment 1: Email as a clear starting point
                     </p>
                   </div>
 
-                  <div className={s.whyCard}>
-                    <p className={s.h}>🚀 Bonus — Build for scale</p>
+                  {/* image 63: aspect 2532/3030 ≈ 1052×1259 */}
+                  <Image
+                    src="/images/supplier/5.png"
+                    alt="Email redesign"
+                    width={1052}
+                    height={1259}
+                    className={s.img}
+                    unoptimized
+                  />
+
+                  {/* Bonus card */}
+                  <div className={s.bonusCard}>
+                    <p className={s.h}>🚀 Bonus - Build for scale</p>
                     <p className={s.p}>
                       Standardized the layout into a reusable email template
                       component for other procurement teams.
                     </p>
-                    {/* image 55 — Email template */}
+                    {/* image 64: aspect 4092/2050 ≈ 1012×507 */}
                     <div className={s.mediaBlock}>
                       <Image
-                        src="/images/supplier/10.png"
+                        src="/images/supplier/6.png"
                         alt="Email template for all types of emails and other procurement teams"
-                        width={1080}
-                        height={372}
+                        width={1012}
+                        height={507}
                         className={s.img}
                         unoptimized
                       />
@@ -619,105 +497,129 @@ export default function SupplierCasePage() {
                   </div>
                 </div>
 
-                {/* ── Solution 2 ─────────────────────────────────── */}
+                {/* ── Moment 2: Legal Terms ───────────────────────────── */}
                 <div className={s.approachStepCard}>
-                  <p className={s.h}>
-                    Solution 2: Compliance at the moment of commitment
-                  </p>
-
-                  <div className={s.objActionRow}>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>🛠️ Problem</p>
-                      <p className={s.p}>
-                        <strong>Before participation (Legal terms)</strong>
-                        <br />
-                        Requirements were mixed into long legal text, making key
-                        info hard to find—while legal still needed explicit
-                        consent before suppliers could proceed.
-                      </p>
-                    </div>
-                    <div className={s.objCard}>
-                      <p className={s.h}>❇️ What changed</p>
-                      <p className={s.p}>
-                        Separated project requirements from long legal terms
-                        <br />
-                        Added an explicit consent checkbox right before
-                        submission
-                      </p>
-                    </div>
+                  <div className={s.subSection}>
+                    <p className={s.momentTitle}>
+                      Moment 2: Separate Legal Terms from Project Details
+                    </p>
                   </div>
 
-                  {/* image 57 — Compliance */}
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/supplier/11.png"
-                      alt="Compliance redesign"
-                      width={1080}
-                      height={847}
-                      className={s.img}
-                      unoptimized
-                    />
+                  {/* image 65: aspect 1929/3250 ≈ 1052×1773 */}
+                  <Image
+                    src="/images/supplier/7.png"
+                    alt="Separate Legal Terms from Project Details"
+                    width={1052}
+                    height={1773}
+                    className={s.img}
+                    unoptimized
+                  />
+                </div>
+
+                {/* ── Moment 3: Participate CTA ───────────────────────── */}
+                <div className={s.approachStepCard}>
+                  <div className={s.subSection}>
+                    <p className={s.hLg}>
+                      Moment 3: Clarify the &ldquo;Participate&rdquo; intent
+                    </p>
                   </div>
 
-                  <div className={s.whyCard}>
-                    <p className={s.h}>💡 Why it matters</p>
-                    <p className={s.p}>
-                      Legal requirements are met without burying the information
-                      suppliers need to act.
+                  {/* image 71: aspect 3600/4060 ≈ 1052×1187 */}
+                  <Image
+                    src="/images/supplier/8.png"
+                    alt="Clarify the Participate intent"
+                    width={1052}
+                    height={1187}
+                    className={s.img}
+                    unoptimized
+                  />
+                </div>
+
+                {/* ── Moment 4: Journey ────────────────────────────────── */}
+                <div className={s.approachStepCard}>
+                  <div className={s.subSection}>
+                    <p className={s.hLg}>
+                      Moment 4: Visualize the sourcing journey
+                    </p>
+                  </div>
+
+                  {/* image 70: aspect 3602/2414 ≈ 1052×706 */}
+                  <Image
+                    src="/images/supplier/9.png"
+                    alt="Visualize the sourcing journey"
+                    width={1052}
+                    height={706}
+                    className={s.img}
+                    unoptimized
+                  />
+                </div>
+
+              </div>
+            </section>
+
+            <div className={s.divider} />
+
+            {/* ════════════════════════════════════════════════════
+                Impact — col gap-16px
+                ════════════════════════════════════════════════════ */}
+            <section id="impact" className={s.section}>
+              <span className={s.label}>Impact</span>
+
+              <p className={s.p}>
+                Improved online sourcing adoption and earned strong buyer
+                feedback.
+              </p>
+
+              <div className={s.statRow}>
+
+                {/* Adoption */}
+                <div className={s.statCard}>
+                  <div className={s.statHeader}>
+                    <div className={s.statIconCircle} style={{ background: "#F0FDF4" }}>
+                      <img src="/images/supplier/icon 4.svg" alt="" width={16} height={16} />
+                    </div>
+                    <p className={s.h}>Adoption</p>
+                  </div>
+                  <div>
+                    <div className={s.statNumRow}>
+                      <span className={s.statNum}>3.9%</span>
+                      <span className={s.statArrow}>→</span>
+                      <span className={`${s.statNum} ${s.statNumGreen}`}>19.92%</span>
+                    </div>
+                    <p className={s.statSub}>Q4 pilot (GGP) vs. 15% target</p>
+                  </div>
+                </div>
+
+                {/* Supplier Efficiency */}
+                <div className={s.statCard}>
+                  <div className={s.statHeader}>
+                    <div className={s.statIconCircle} style={{ background: "#EFF6FF" }}>
+                      <img src="/images/supplier/icon 5.svg" alt="" width={16} height={16} />
+                    </div>
+                    <p className={s.h}>Supplier Efficiency</p>
+                  </div>
+                  <div>
+                    <p className={s.statNum}>~90%</p>
+                    <p className={s.statSub}>
+                      of buyers agreed the redesign would improve supplier
+                      efficiency and reduce buyer–supplier back-and-forth
                     </p>
                   </div>
                 </div>
 
-                {/* ── Solution 3 ─────────────────────────────────── */}
-                <div className={s.approachStepCard}>
-                  <p className={s.h}>
-                    Solution 3: Progress you can follow on the detail page
-                  </p>
-
-                  <div className={s.objActionRow}>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>🛠️ Problem</p>
-                      <p className={s.p}>
-                        <strong>During participation (Progress)</strong>
-                      </p>
-                      <ul className={s.bulletList}>
-                        <li>Status, deadlines, and next steps weren&apos;t clear on the detail page, causing hesitation and missed actions.</li>
-                        <li>Two CTAs compete（Confirm Participation vs Respond/Quote）</li>
-                        <li>Stage context unclear（&quot;what happens after participation?&quot;）</li>
-                      </ul>
+                {/* Buyer Confidence */}
+                <div className={s.statCard}>
+                  <div className={s.statHeader}>
+                    <div className={s.statIconCircle} style={{ background: "#FAF5FF" }}>
+                      <img src="/images/supplier/icon 6.svg" alt="" width={16} height={16} />
                     </div>
-                    <div className={s.objCard}>
-                      <p className={s.h}>❇️ What changed</p>
-                      <p className={s.p}>
-                        Added a stage-based timeline: stage / deadline / next
-                        step
-                        <br />
-                        Showed one primary action per stage to avoid competing
-                        CTAs
-                        <br />
-                        Made participation signals visible earlier to reduce
-                        buyer uncertainty
-                      </p>
-                    </div>
+                    <p className={s.h}>Buyer Confidence</p>
                   </div>
-
-                  {/* image 61 — Stage model / Progress */}
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/supplier/12.png"
-                      alt="Stage-based progress view"
-                      width={1080}
-                      height={970}
-                      className={s.img}
-                      unoptimized
-                    />
-                  </div>
-
-                  <div className={s.whyCard}>
-                    <p className={s.h}>💡 Why it matters</p>
-                    <p className={s.p}>
-                      When progress is easy to see, users spend less time
-                      guessing and more time completing tasks.
+                  <div>
+                    <p className={s.statNumLg}>All buyers</p>
+                    <p className={s.statSub}>
+                      reported higher confidence in the system and said they
+                      were more willing to promote it to suppliers
                     </p>
                   </div>
                 </div>
@@ -725,52 +627,42 @@ export default function SupplierCasePage() {
               </div>
             </section>
 
-            {/* divider */}
             <div className={s.divider} />
 
             {/* ════════════════════════════════════════════════════
-                Impact
-                style_Z82JZ9: regular 16px / 1.5em #272E3B
-                ════════════════════════════════════════════════════ */}
-            <section id="impact" className={s.section}>
-              <span className={s.label}>Impact</span>
-              <p className={s.p}>
-                Improved online sourcing adoption and earned strong buyer
-                feedback.
-              </p>
-              <p className={s.p}>
-                Adoption (Q4 pilot, Global General Procurement Team): 3.9% → 19.92% (vs. 15% target)
-              </p>
-              <p className={s.p}>
-                Usability validation (buyers): 4.7–4.8 / 5 across key questions
-              </p>
-            </section>
-
-            {/* divider */}
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                Reflection  (anchor label: Thoughts)
-                style_7GS763: bold 16px / 1.5em #272E3B
+                Reflection — col gap-16px
                 ════════════════════════════════════════════════════ */}
             <section id="thoughts" className={s.section}>
               <span className={s.label}>Reflection</span>
-              <p className={s.hLight}>
-                Simple UI changes can still require complex cross-functional
-                alignment.
-              </p>
-              <p className={s.hLight}>
-                Align early across roles: translated buyer / supplier / legal
-                needs into one shared stage model and clear priorities.
-              </p>
-              <p className={s.hLight}>
-                Balance usability and compliance: kept the main flow
-                task-focused while meeting compliance requirements.
-              </p>
+
+              <div className={s.reflectionItem}>
+                <p className={s.h}>
+                  Reflection 1: Validate real pain points, not ideal assumptions
+                </p>
+                <p className={s.p}>
+                  I started with a reasonable assumption (a Task Center entry),
+                  but user walkthroughs showed the real friction lived elsewhere.
+                  The key lesson was to stay close to users and validate pain
+                  points with real behavior before scaling a direction.
+                </p>
+              </div>
+
+              <div className={s.reflectionItem}>
+                <p className={s.h}>
+                  Reflection 2: Align early to avoid costly rework
+                </p>
+                <p className={s.p}>
+                  A key takeaway was how much cross-functional coordination the
+                  work required. With Legal, Compliance, Engineering, and Ops
+                  all shaping the workflow, early alignment became critical. By
+                  validating decisions before build, we avoided backtracking and
+                  kept the project efficient for R&amp;D.
+                </p>
+              </div>
             </section>
 
             {/* ════════════════════════════════════════════════════
-                CTA — layout_78K8HE: row gap 20px hug
+                CTA row — gap-20px
                 ════════════════════════════════════════════════════ */}
             <div className={s.ctaRow}>
               <Link href="/" className={s.ctaOutlined}>

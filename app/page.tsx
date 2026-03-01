@@ -1,17 +1,12 @@
 "use client";
 
 import ProjectCard from "@/components/ProjectCard";
-import Link from "next/link";
 import { works } from "@/data/works";
 import Highlight from "@/components/Highlight";
 import TextType from "@/components/TextType";
-import { useEffect, useRef, useState } from "react";
 import Container from "@/components/Container";
 
 export default function Home() {
-  const [isDocked, setIsDocked] = useState(false);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-
   const scrollToWork = () => {
     const element = document.getElementById('selected-work');
     if (element) {
@@ -19,32 +14,11 @@ export default function Home() {
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!titleRef.current) return;
-
-      const rect = titleRef.current.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      
-      // Fixed button bottom is at bottom-16 (64px).
-      // Fixed button top = viewportHeight - 64 - 24 (line-height) = viewportHeight - 88.
-      
-      const dockThreshold = viewportHeight - 88;
-      
-      // Using a slightly looser threshold to ensure it snaps in time
-      setIsDocked(rect.top <= dockThreshold + 2);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
     <div className="bg-white flex flex-col items-center w-full">
       {/* Hero Section */}
-      <Container className="flex flex-col gap-8 h-[100svh] min-h-[700px] max-h-[1000px] pt-[180px] pb-[10vh]">
+      <Container className="flex flex-col min-h-[100svh] pt-[180px] pb-16">
+        {/* Content */}
         <div className="flex flex-col gap-8 w-full max-w-[1280px]">
           {/* Avatar */}
           <div className="relative rounded-full shrink-0 size-20">
@@ -122,31 +96,25 @@ export default function Home() {
             </a>
           </div>
         </div>
-      </Container>
 
-      {/* Floating Button - Dockable State A */}
-      <div 
-        className={`fixed inset-x-0 bottom-16 z-50 pointer-events-none transition-opacity duration-100 ease-out will-change-[opacity,transform] transform-gpu [backface-visibility:hidden] ${isDocked ? 'opacity-0' : 'opacity-100'}`}
-      >
-        <Container className="pointer-events-none">
-          <button
-            onClick={scrollToWork}
-            className={`pointer-events-auto font-normal text-[#8f959e] text-[18px] leading-[24px] hover:text-[#0080ff] transition-colors flex items-center gap-2 ${isDocked ? '!pointer-events-none' : ''}`}
-          >
-            Selected Work <span className="text-lg">↓</span>
-          </button>
-        </Container>
-      </div>
+        {/* Spacer — fixed 100px gap between content and button */}
+        <div className="h-[100px] shrink-0" />
+
+        {/* View Case Studies Button */}
+        <button
+          onClick={scrollToWork}
+          className="font-normal text-[#0080ff] text-[16px] leading-[20px] border border-[#0080ff] rounded-full pl-4 pr-4 py-[8px] hover:bg-[#0080ff]/10 transition-colors flex items-center gap-1.5 self-start"
+        >
+          View Case Studies <span className="text-[18px]">↓</span>
+        </button>
+      </Container>
 
       {/* Selected Works */}
       <div id="selected-work" className="w-full py-[80px] scroll-mt-24">
         <Container className="flex flex-col gap-8">
-          {/* Section Title - Dockable State B */}
-          <h2 
-            ref={titleRef} 
-            className={`font-normal text-[#8f959e] text-[18px] leading-[24px] w-full flex items-center gap-2 transition-opacity duration-100 ease-out will-change-[opacity] ${isDocked ? 'opacity-100' : 'opacity-0'}`}
-          >
-            Selected Work <span className="text-lg">↓</span>
+          {/* Section Title */}
+          <h2 className="font-normal text-[#8f959e] text-[18px] leading-[24px] w-full">
+            Selected Work
           </h2>
 
           <div className="flex flex-col gap-[60px] w-full">

@@ -1,7 +1,9 @@
 /* ============================================================
    Supplier Portal Case Study — Scoped CSS Module
-   All tokens extracted directly from Figma node 492:8293.
-   DO NOT import from shared components or other pages.
+   Tokens extracted from Figma node 622:7845.
+   Container: max-width 1440px, px 100px → at 1440px viewport
+   article width = 1440 - 200 - 108 sidebar - 80 gap = 1052px
+   (matches native image resolution exactly).
    ============================================================ */
 
 /* ── Page shell ──────────────────────────────────────────── */
@@ -14,11 +16,12 @@
   align-items: center;
 }
 
-/* ── Outer container (max 1080px, centered) ──────────────── */
+/* ── Outer container ─────────────────────────────────────── */
+/* Figma: px-[100px] on a 1440px-wide frame */
 .container {
   width: 100%;
-  max-width: 1080px;
-  padding: 0 60px;
+  max-width: 1440px;
+  padding: 0 100px;
   display: flex;
   flex-direction: column;
   gap: 64px;
@@ -29,19 +32,23 @@
 .heroImg { width: 100%; height: auto; display: block; }
 
 /* ── Two-column layout ───────────────────────────────────── */
+/* Figma: gap-[80px] items-start */
 .twoCol {
   display: flex;
   flex-direction: row;
   gap: 80px;
-  align-items: stretch;
+  align-items: flex-start;
   width: 100%;
 }
+
+/* Figma sidebar: w-[108px] */
 .sidebar {
   width: 108px;
   flex-shrink: 0;
 }
 
 /* ── Article column ──────────────────────────────────────── */
+/* Figma: flex-[1_0_0] gap-[60px] items-start */
 .article {
   flex: 1;
   min-width: 0;
@@ -50,107 +57,216 @@
   gap: 60px;
 }
 
-/* ── Typography: Project title ───────────────────────────── */
-/* style_3YXEYS: Helvetica 700 24px / 1.15em #272E3B */
+/* ══════════════════════════════════════════════════════════
+   TYPOGRAPHY
+   ══════════════════════════════════════════════════════════ */
+
+/* Project title: Helvetica 700 24px / normal #272E3B */
 .title {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 24px;
   font-weight: 700;
-  line-height: 1.15em;
+  line-height: normal;
   color: #272E3B;
   margin: 0;
 }
 
-/* ── Typography: Section label (gray nav label) ─────────── */
-/* style_Y9EIOU: Heiti SC 400 15px / 1.03em #86909C */
+/* Section label (nav labels): Heiti SC Medium 15px / normal #86909C */
 .label {
   font-family: 'Heiti SC', 'PingFang SC', Helvetica, sans-serif;
   font-size: 15px;
-  font-weight: 400;
-  line-height: 1.03em;
+  font-weight: 500;
+  line-height: normal;
   color: #86909C;
 }
 
-/* ── Typography: Heading bold ────────────────────────────── */
-/* style_7GS763: Helvetica 700 16px / 1.5em #272E3B */
+/* Section heading: Helvetica 700 18px / 24px #272E3B */
+.hLg {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* Heading bold 16px: Helvetica 700 16px / 24px #272E3B */
 .h {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  line-height: 1.5em;
+  line-height: 24px;
   color: #272E3B;
   margin: 0;
 }
 
-/* ── Typography: Heading light (Reflection section) ─────── */
-.hLight {
+/* Moment card title: Helvetica 700 17px / 24px #1A2332 */
+.momentTitle {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #1A2332;
+  margin: 0;
+}
+
+/* Moment card description: Helvetica 400 15px / 22px #4A5568 */
+.momentDesc {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 22px;
+  color: #4A5568;
+  margin: 0;
+}
+
+/* Quote text: Helvetica 400 14px / 21px #64748B */
+.quoteText {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  color: #64748B;
+  margin: 0;
+}
+
+/* Quote attribution: Helvetica 400 13px / 20px #94A3B8 */
+.momentAttrib {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #94A3B8;
+  margin: 0;
+}
+
+/* Insight callout: Inter 500 18px / normal #3B82F6 */
+.insightText {
+  font-family: Inter, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  line-height: normal;
+  color: #3B82F6;
+  margin: 0;
+}
+
+/* Stat number 24px: Helvetica 700 24px / 28px #272E3B */
+.statNum {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  color: #272E3B;
+  margin: 0;
+}
+.statNumGreen { color: #00A63E; }
+
+/* Stat "All buyers": Helvetica 700 20px / 28px #272E3B */
+.statNumLg {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
   color: #272E3B;
   margin: 0;
 }
 
-/* ── Typography: Body regular ────────────────────────────── */
-/* style_Z82JZ9: Helvetica 400 16px / 1.5em #272E3B */
+/* Stat arrow: 20px / 30px #86909C */
+.statArrow {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #86909C;
+  margin: 0;
+}
+
+/* Stat subtitle: Helvetica 400 14px / 20px #86909C */
+.statSub {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #86909C;
+  margin: 0;
+}
+
+/* Body regular: Helvetica 400 16px / 24px #272E3B */
 .p {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5em;
+  line-height: 24px;
   color: #272E3B;
   margin: 0;
 }
 
-/* ── Typography: Caption (centered, gray) ────────────────── */
-/* style_02L7B7: Helvetica 400 14px / 1.15em CENTER #86909C */
-.caption {
+/* Body regular italic (goal description override) */
+.pRegular {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 1.15em;
-  color: #86909C;
-  text-align: center;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
 }
 
-/* ── Typography: Small body (info cards) ────────────────── */
-/* style_AKD9SN: Helvetica 400 15px / 1.6em #4E5969 */
+/* Small body: Helvetica 400 15px / 24px #4E5969 */
 .pSm {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.6em;
+  line-height: 24px;
   color: #4E5969;
   margin: 0;
 }
 
-.bulletList {
+/* Caption: Helvetica 400 14px / normal CENTER #86909C */
+.caption {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  color: #86909C;
+  text-align: center;
+  margin: 0;
+}
+
+/* Caption large: Helvetica 400 16px / normal CENTER #86909C */
+.captionLg {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
-  line-height: 1.5em;
-  color: #272E3B;
-  margin: 4px 0 0 0;
-  padding-left: 20px;
-  list-style-type: disc;
-}
-.bulletList li + li {
-  margin-top: 4px;
+  line-height: normal;
+  color: #86909C;
+  text-align: center;
+  margin: 0;
 }
 
-/* ── Section block ───────────────────────────────────────── */
-/* layout_14QO1I: col gap 16px fill */
+/* ══════════════════════════════════════════════════════════
+   LAYOUT PRIMITIVES
+   ══════════════════════════════════════════════════════════ */
+
+/* Section block: col gap-16px, scroll-margin for sticky nav */
 .section {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  scroll-margin-top: 72px;
+  scroll-margin-top: 80px;
 }
 
-/* ── Divider ─────────────────────────────────────────────── */
-/* fill_RYWJ6O: #E5E8ED, 1px height */
+/* Section with larger gap (solution) */
+.solutionSection {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  scroll-margin-top: 80px;
+}
+
+/* Divider: 1px #E5E8ED */
 .divider {
   width: 100%;
   height: 1px;
@@ -158,8 +274,7 @@
   flex-shrink: 0;
 }
 
-/* ── Sub-section cluster ─────────────────────────────────── */
-/* layout_ZD2FUZ: col gap 8px fill */
+/* Sub-section: col gap-8px */
 .subSection {
   display: flex;
   flex-direction: column;
@@ -167,12 +282,11 @@
   width: 100%;
 }
 
-/* ════════════════════════════════════════════════════════════
-   TL;DR SECTION
-   ════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════
+   TL;DR
+   ══════════════════════════════════════════════════════════ */
 
-/* Summary card (white bg, border, 12px radius) */
-/* layout_T3FYYW: col gap 8px padding 20px fill, bg #F7F9FC border #E5E8ED r12 */
+/* Summary card: bg #F7F9FC border #E5E8ED r12 col gap-8px p20 */
 .tldrSummaryCard {
   display: flex;
   flex-direction: column;
@@ -184,13 +298,30 @@
   width: 100%;
 }
 
-/* Info row card (Problem / Solution / Impact) */
-/* layout_I1CSLB: row gap 16px padding 20px fill, bg white border #E5E8ED r8 */
+/* Body text with mixed bold/regular inline spans */
+.tldrBody {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+}
+
+/* Wrapper for 3 info cards: col gap-4px */
+.infoCardsGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Info card row: bg white, border #E5E8ED, r8, p21, gap-16px */
 .infoCard {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  padding: 20px;
+  padding: 21px;
   background: #ffffff;
   border: 1px solid #E5E8ED;
   border-radius: 8px;
@@ -198,8 +329,7 @@
   align-items: flex-start;
 }
 
-/* Icon circle (40×40) */
-/* layout_DNYLQX: row center 40×40, borderRadius ~full */
+/* Icon circle 40×40 */
 .iconCircle {
   width: 40px;
   height: 40px;
@@ -210,8 +340,7 @@
   justify-content: center;
 }
 
-/* Text column inside info card */
-/* layout_UPZC88 / CIEB8V: col gap 4px fill */
+/* Text column inside info card: col gap-4px flex-1 */
 .infoTextCol {
   display: flex;
   flex-direction: column;
@@ -220,45 +349,70 @@
   min-width: 0;
 }
 
-/* ════════════════════════════════════════════════════════════
-   GOAL SECTION
-   ════════════════════════════════════════════════════════════ */
+/* Bullet list for Solution info card */
+.bulletList {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #272E3B;
+  margin: 0;
+  padding-left: 24px;
+  list-style-type: disc;
+}
+.bulletList li + li { margin-top: 0; }
 
-/* layout_ZCAETB: row gap 12px fill r8 */
+/* ══════════════════════════════════════════════════════════
+   GOAL
+   ══════════════════════════════════════════════════════════ */
+
+/* Goal item: row gap-12px items-start */
 .goalItem {
   display: flex;
   flex-direction: row;
   gap: 12px;
-  border-radius: 8px;
   align-items: flex-start;
 }
 
-/* 6×24 bar with centered 6×6 blue dot */
-/* layout_KEPF6J: none 6×24; layout_06T9DK: none 6×6 at (0,9) #0080FF */
+/* 6×24 column with centered 6×6 blue dot */
 .goalBullet {
   width: 6px;
   height: 24px;
   flex-shrink: 0;
   position: relative;
-  margin-top: 4px;
 }
 .goalBullet::after {
   content: '';
   position: absolute;
-  top: 9px;
+  top: 50%;
   left: 0;
+  transform: translateY(-50%);
   width: 6px;
   height: 6px;
   background: #0080FF;
   border-radius: 50%;
 }
 
-/* ════════════════════════════════════════════════════════════
-   DESIGN PROCESS SECTION
-   ════════════════════════════════════════════════════════════ */
+/* Goal text block: bold outer, regular inner override */
+.goalText {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #272E3B;
+  flex: 1;
+  min-width: 0;
+}
+.goalText p { margin: 0; }
+.goalDesc {
+  font-weight: 400;
+}
 
-/* 4 approach steps stacked — gap updated to 80px per Figma */
-/* layout_YAPIRB: col gap 80px fill */
+/* ══════════════════════════════════════════════════════════
+   APPROACH
+   ══════════════════════════════════════════════════════════ */
+
+/* Steps cluster: col gap-80px */
 .stepsCluster {
   display: flex;
   flex-direction: column;
@@ -266,29 +420,15 @@
   width: 100%;
 }
 
-/* Approach step card — stroke removed per Figma update */
+/* Approach step card: col gap-16px (no border) */
 .approachStepCard {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 0;
   width: 100%;
 }
 
-/* Solution step card (retains border) */
-/* layout_ICX1KV: col gap 16px padding 24px fill, border #E5E8ED r12 */
-.stepCard {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  padding: 24px;
-  border: 1px solid #E5E8ED;
-  border-radius: 12px;
-  width: 100%;
-}
-
-/* Objective + Action side-by-side row */
-/* layout_PKNNBT: row gap 16px stretch fill */
+/* Objective + Action side-by-side: row gap-16px stretch */
 .objActionRow {
   display: flex;
   flex-direction: row;
@@ -297,8 +437,7 @@
   width: 100%;
 }
 
-/* Objective card (fill height) */
-/* layout_0JUON0: col gap 12px padding 20px fill×fill, bg #F7F9FC border r12 */
+/* Objective card: col gap-12px p20 bg #F7F9FC border r12 flex-1 self-stretch */
 .objCard {
   display: flex;
   flex-direction: column;
@@ -308,10 +447,10 @@
   border: 1px solid #E5E8ED;
   border-radius: 12px;
   flex: 1;
+  align-self: stretch;
 }
 
-/* Action card (hug height) */
-/* layout_CYXBM4: col gap 12px padding 20px fill×hug, bg #F7F9FC border r12 */
+/* Action card: same but hug height */
 .actionCard {
   display: flex;
   flex-direction: column;
@@ -323,8 +462,7 @@
   flex: 1;
 }
 
-/* Output / Pivot card */
-/* layout_T3FYYW: col gap 8px padding 20px fill, bg #F7F9FC border r12 */
+/* Output / Pivot card: col gap-8px p20 bg #F7F9FC border r12 */
 .outputCard {
   display: flex;
   flex-direction: column;
@@ -336,93 +474,154 @@
   width: 100%;
 }
 
-/* Layout for output cards that need gap 16px */
-.outputCardLg {
+/* Insight block: col gap-16px */
+.insightBlock {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding: 20px;
-  background: #F7F9FC;
-  border: 1px solid #E5E8ED;
+  width: 100%;
+}
+
+/* Insight callout: col py-28px px-32px bg #E6F4FF border #D1E9FC r12 */
+.insightCallout {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 32px;
+  background: #E6F4FF;
+  border: 1px solid #D1E9FC;
   border-radius: 12px;
   width: 100%;
 }
 
-/* Moment cards column (Step 4 output) */
-/* layout_RYU7JT: col gap 24px fill */
-.momentsCol {
+/* Moment 2×2 grid: row gap-16px stretch */
+.momentGrid {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-direction: row;
+  gap: 16px;
+  align-items: stretch;
   width: 100%;
 }
 
-/* Single moment item (text card + image) */
-/* layout_BL2OPS: col gap 12px fill */
-.momentItem {
+/* Moment card: col gap-20px p20 bg #F5FBFF border #D1E9FC r12 flex-1 */
+.momentCard2 {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  background: #F5FBFF;
+  border: 1px solid #D1E9FC;
+  border-radius: 12px;
+  flex: 1;
 }
 
-/* Moment text card */
-/* layout_X5PXTF: col gap 4px fill r8 */
-.momentCard {
+/* Moment card header: col gap-8px */
+.momentCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Moment quote: col gap-4px pt-2px pl-19px border-left 3px #3B82F6 */
+.momentQuote {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  border-radius: 8px;
-  width: 100%;
+  padding: 2px 0 0 19px;
+  border-left: 3px solid #3B82F6;
 }
 
-/* Moment divider */
-.momentDivider {
-  width: 100%;
-  height: 1px;
-  background: #E5E8ED;
-}
+/* ══════════════════════════════════════════════════════════
+   SOLUTION
+   ══════════════════════════════════════════════════════════ */
 
-/* ════════════════════════════════════════════════════════════
-   SOLUTION SECTION
-   ════════════════════════════════════════════════════════════ */
-
-/* Solution section overall (col gap 24px) */
-/* layout_RYU7JT: col gap 24px fill */
-.solutionSection {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-  scroll-margin-top: 72px;
-}
-
-/* Solution sub-sections cluster (col gap 80px) */
+/* Solution cluster: col gap-60px */
 .solutionCluster {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 60px;
   width: 100%;
 }
 
-/* Why it matters / Bonus card */
-/* layout_BOWMTY: col gap 12px padding 20px fill, bg #F7F9FC border r12 */
-.whyCard {
+/* Bonus card: col gap-12px p20 bg #F7F9FC (no border) r12 */
+.bonusCard {
   display: flex;
   flex-direction: column;
   gap: 12px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   width: 100%;
 }
 
-/* ════════════════════════════════════════════════════════════
-   MEDIA BLOCK
-   ════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════
+   IMPACT STAT CARDS
+   ══════════════════════════════════════════════════════════ */
 
-/* layout_ZD2FUZ used for image+caption: col gap 8px fill */
+/* Stat row: row gap-16px stretch */
+.statRow {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* Stat card: col gap-12px p21px bg white border #E5E7EB r10 flex-1 */
+.statCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 21px;
+  background: #ffffff;
+  border: 1px solid #E5E7EB;
+  border-radius: 10px;
+  flex: 1;
+}
+
+/* Stat header: row gap-8px center */
+.statHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Stat icon circle: 32×32 */
+.statIconCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Numbers row "3.9% → 19.92%": row items-start gap-8px */
+.statNumRow {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   REFLECTION
+   ══════════════════════════════════════════════════════════ */
+
+/* Reflection item: col gap-4px */
+.reflectionItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* ══════════════════════════════════════════════════════════
+   MEDIA BLOCK
+   ══════════════════════════════════════════════════════════ */
+
+/* Image + caption: col gap-8px */
 .mediaBlock {
   display: flex;
   flex-direction: column;
@@ -434,14 +633,13 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 4px;
 }
 
-/* ════════════════════════════════════════════════════════════
-   CTA ROW
-   ════════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════
+   CTA
+   ══════════════════════════════════════════════════════════ */
 
-/* layout_78K8HE: row gap 20px hug */
+/* CTA row: row gap-20px */
 .ctaRow {
   display: flex;
   flex-direction: row;
@@ -449,9 +647,7 @@
   align-items: center;
 }
 
-/* Outlined button */
-/* layout_E78OR4: row center padding 6px 14px r100, stroke #272E3B */
-/* style_C5DIAV: Helvetica 400 14px / 1.714em */
+/* Outlined button: border #272E3B r100 px14 py6 */
 .ctaOutlined {
   display: flex;
   align-items: center;
@@ -462,14 +658,14 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.714em;
+  line-height: 24px;
   color: #272E3B;
   text-decoration: none;
   transition: background 0.15s;
 }
 .ctaOutlined:hover { background: #f5f5f5; }
 
-/* Filled button */
+/* Filled button: bg #272E3B r100 px14 py6 white text */
 .ctaFilled {
   display: flex;
   align-items: center;
@@ -480,19 +676,26 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.714em;
+  line-height: 24px;
   color: #ffffff;
   text-decoration: none;
   transition: background 0.15s;
 }
 .ctaFilled:hover { background: #1f2329; }
 
-/* ════════════════════════════════════════════════════════════
+/* ══════════════════════════════════════════════════════════
    RESPONSIVE
-   ════════════════════════════════════════════════════════════ */
+   ══════════════════════════════════════════════════════════ */
+
+@media (max-width: 1100px) {
+  .container { padding: 0 60px; }
+}
 
 @media (max-width: 839px) {
+  .container { padding: 0 24px; gap: 40px; }
   .twoCol { flex-direction: column; gap: 32px; }
   .sidebar { display: none; }
   .objActionRow { flex-direction: column; }
+  .momentGrid { flex-direction: column; }
+  .statRow { flex-direction: column; }
 }

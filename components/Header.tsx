@@ -12,15 +12,18 @@ export default function Header() {
       <Container className="flex h-full items-center justify-between">
         <Link
           href="/"
-          className="flex gap-3 items-center group transition-colors"
+          className="flex gap-[10px] items-center group transition-colors"
         >
-          <div className="size-[18px] rounded-full bg-[#0080FF]" />
-          <span className="font-medium text-[#1F2937] text-[16px] leading-[20px] group-hover:text-[#0080FF] transition-colors">
-            Claire Han
-          </span>
-          <span className="font-normal text-[#6B7280] text-[16px] leading-[20px] group-hover:text-[#0080FF] transition-colors">
-            Portfolio
-          </span>
+          <div className="size-[20px] rounded-full bg-[#0080FF] shrink-0" />
+          <div className="flex gap-[8px] items-center">
+            <span className="font-normal text-[#272E3B] text-[16px] leading-normal group-hover:text-[#0080FF] transition-colors">
+              Claire Han
+            </span>
+            <div className="w-[0.5px] h-[12px] bg-[#86909C] group-hover:bg-[#0080FF] transition-colors shrink-0" />
+            <span className="font-normal text-[#272E3B] text-[16px] leading-normal group-hover:text-[#0080FF] transition-colors">
+              Portfolio
+            </span>
+          </div>
         </Link>
         
         <nav className="flex gap-8 items-center">

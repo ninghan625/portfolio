@@ -277,7 +277,7 @@ export default function CurrencyCasePage() {
                     <div className={s.objCard}>
                       <p className={s.h}>🎯 Objective</p>
                       <p className={s.p}>
-                        Create a complete picture of today&apos;s currency formats—and pinpoint the
+                        Create a complete picture of today&apos;s currency formats and pinpoint the
                         inconsistencies.
                       </p>
                     </div>
@@ -292,7 +292,7 @@ export default function CurrencyCasePage() {
                   {/* image 73: aspect-[4096/2204], full width — "Formatting Problems Collection" */}
                   <div className={s.mediaBlock}>
                     <Image
-                      src="/images/Currency/6.jpg"
+                      src="/images/Currency/6.png"
                       alt="Formatting Problems Collection"
                       width={892}
                       height={480}
@@ -302,10 +302,6 @@ export default function CurrencyCasePage() {
                     <p className={s.caption}>Formatting Problems Collection</p>
                   </div>
 
-                  <div className={s.outputCard}>
-                    <p className={s.h}>✅ Output</p>
-                    <p className={s.p}>A format inventory + a prioritized issue list.</p>
-                  </div>
                 </div>
 
                 {/* ── Step 2 ──────────────────────────────────────── */}
@@ -330,7 +326,7 @@ export default function CurrencyCasePage() {
                   {/* image 74: aspect-[4096/2141], full width — "References from different industries" */}
                   <div className={s.mediaBlock}>
                     <Image
-                      src="/images/Currency/7.jpg"
+                      src="/images/Currency/7.png"
                       alt="References from different industries"
                       width={892}
                       height={467}
@@ -364,24 +360,7 @@ export default function CurrencyCasePage() {
 
                 {/* ── Step 3 ──────────────────────────────────────── */}
                 <div className={s.approachStep}>
-                  <p className={s.h2}>Step 3: Validate the 3-format model with real business needs</p>
-
-                  <div className={s.objActionRow}>
-                    <div className={s.objCard}>
-                      <p className={s.h}>🎯 Objective</p>
-                      <p className={s.p}>
-                        Confirm the 3-format draft works across major business scenarios—and is
-                        feasible to implement as a shared component.
-                      </p>
-                    </div>
-                    <div className={s.actionCard}>
-                      <p className={s.h}>💪 Action</p>
-                      <p className={s.p}>
-                        Reviewed the draft with multiple design teams, and partnered with the
-                        component engineers to assess implementation effort.
-                      </p>
-                    </div>
-                  </div>
+                  <p className={s.h2}>Step 3: Validate the 3-format model with multiple design teams</p>
 
                   <div className={s.outputCard}>
                     <p className={s.h}>✅ Output</p>
@@ -444,14 +423,17 @@ export default function CurrencyCasePage() {
                   </div>
 
                   {/* image 77: aspect-[1997/4096] tall portrait, full width */}
-                  <Image
-                    src="/images/Currency/9.jpg"
-                    alt="Format rules teams can implement"
-                    width={892}
-                    height={719}
-                    className={s.img}
-                    unoptimized
-                  />
+                  <div className={s.mediaBlock}>
+                    <Image
+                      src="/images/Currency/9.png"
+                      alt="Format rules teams can implement"
+                      width={892}
+                      height={719}
+                      className={s.img}
+                      unoptimized
+                    />
+                    <p className={s.caption}>Format rules for Short and Standard formats (USD)</p>
+                  </div>
                 </div>
 
                 {/* ── Part 2: Decision guidance ─────────────────── */}
@@ -474,14 +456,17 @@ export default function CurrencyCasePage() {
                   </div>
 
                   {/* image 10 (img111111): aspect-[1623/4934] very tall portrait, full width */}
-                  <Image
-                    src="/images/Currency/10.webp"
-                    alt="Decision guidance for choosing formats"
-                    width={1623}
-                    height={4934}
-                    className={s.img}
-                    unoptimized
-                  />
+                  <div className={s.mediaBlock}>
+                    <Image
+                      src="/images/Currency/10.png"
+                      alt="Decision guidance for choosing formats"
+                      width={1623}
+                      height={4934}
+                      className={s.img}
+                      unoptimized
+                    />
+                    <p className={s.caption}>Decision guidance for Standard formats</p>
+                  </div>
                 </div>
 
                 {/* ── Part 3: Components & patterns ────────────── */}
@@ -507,7 +492,7 @@ export default function CurrencyCasePage() {
 
                   {/* image 89: aspect-[1513/4096] tall portrait, full width */}
                   <Image
-                    src="/images/Currency/11.jpg"
+                    src="/images/Currency/11.png"
                     alt="Components and patterns for money workflows"
                     width={886}
                     height={2400}
@@ -566,6 +551,28 @@ export default function CurrencyCasePage() {
 
               </div>
             </div>
+
+            {/* Divider full */}
+            <div className={s.divider} />
+
+            {/* ════════════════════════════════════════════════════
+                Next Step
+                ════════════════════════════════════════════════════ */}
+            <section id="next-step" className={s.section}>
+              <span className={s.label}>Next Step</span>
+
+              <p className={s.p}>Partner with engineering on adoption and migration.</p>
+
+              <div className={s.nextStepItem}>
+                <p className={s.pBold} style={{ marginBottom: 0 }}>New work (default by design):</p>
+                <p className={s.p}>Use the latest currency component and guideline for all new features and surfaces.</p>
+              </div>
+
+              <div className={s.nextStepItem}>
+                <p className={s.pBold} style={{ marginBottom: 0 }}>Existing inconsistency (incremental migration):</p>
+                <p className={s.p}>Migrate legacy screens during feature iterations.</p>
+              </div>
+            </section>
 
             {/* Divider full — node 534:6001 */}
             <div className={s.divider} />
