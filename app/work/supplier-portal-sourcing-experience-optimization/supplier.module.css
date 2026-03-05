@@ -567,6 +567,12 @@
 }
 
 /* Stat card: col gap-12px p21px bg white border #E5E7EB r10 flex-1 */
+.statBody {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .statCard {
   display: flex;
   flex-direction: column;

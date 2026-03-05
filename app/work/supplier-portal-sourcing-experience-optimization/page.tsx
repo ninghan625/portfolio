@@ -52,11 +52,11 @@ export default function SupplierCasePage() {
                   Bring critical sourcing actions back into the system
                 </p>
                 <p className={s.tldrBody}>
-                  I redesigned ByteDance&apos;s Supplier Portal sourcing experience,
-                  focusing on the key moments where suppliers, buyers, and legal
-                  teams needed critical information to act. The result{" "}
-                  <strong>improved online sourcing adoption and reduced email back-and-forth</strong>
-                  .
+                  I redesigned a key slice of ByteDance&apos;s Supplier Portal sourcing
+                  experience, from invitation → participation confirmation → progress
+                  tracking, so suppliers, buyers, and legal teams had the context they
+                  needed to move forward.{" "}
+                  <strong>This increased online sourcing adoption and reduced reliance on email.</strong>
                 </p>
               </div>
 
@@ -83,14 +83,13 @@ export default function SupplierCasePage() {
                   <p className={s.h}>Solution</p>
                   <div>
                     <p className={s.p} style={{ marginBottom: 0 }}>
-                      Redesigned the workflow around 4 key moments where users
-                      needed clarity to act:
+                      Redesigned the workflow around 4 decision moments where users needed clarity to act:
                     </p>
                     <ul className={s.bulletList}>
-                      <li><strong>Email:</strong>{" "}Make invites scannable</li>
-                      <li><strong>Terms:</strong>{" "}Separate requirements from legal</li>
-                      <li><strong>Participation:</strong>{" "}Clarify intent + reduce CTA ambiguity</li>
-                      <li><strong>Progress:</strong>{" "}Make stages and deadlines trackable</li>
+                      <li><strong>Email entry:</strong>{" "}Make invites scannable and action-oriented</li>
+                      <li><strong>Requirements vs. Terms:</strong>{" "}Separate project requirements from legal terms to reduce cognitive load</li>
+                      <li><strong>Participation decision:</strong>{" "}Clarify intent and remove CTA ambiguity</li>
+                      <li><strong>Progress tracking:</strong>{" "}Make stages, deadlines, and next steps trackable</li>
                     </ul>
                   </div>
                 </div>
@@ -104,8 +103,7 @@ export default function SupplierCasePage() {
                 <div className={s.infoTextCol}>
                   <p className={s.h}>Impact</p>
                   <p className={s.pSm}>
-                    Online sourcing adoption (GGP Q4 pilot) 3.9% → 19.92%
-                    (vs. 15% target); buyer validation 4.7–4.8/5.
+                    Q4 pilot: Adoption 3.9% → 19.92% (vs. 15% target); supplier satisfaction 4.91/5; stronger buyer confidence.
                   </p>
                 </div>
               </div>
@@ -346,12 +344,10 @@ export default function SupplierCasePage() {
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
                     <p className={s.hLg}>
-                      What to fix: 4 key moments in the sourcing journey
+                      What to fix: 4 decision moments in the supplier participation flow
                     </p>
                     <p className={s.p}>
-                      Instead of scattered UI fixes, we focused on helping users
-                      find critical info and take the right action—across email
-                      + web.
+                      <strong>Flow overview</strong>: Email invite → Review requirements &amp; legal terms → Confirm participation → Track progress &amp; deadlines
                     </p>
                   </div>
 
@@ -360,7 +356,7 @@ export default function SupplierCasePage() {
                     <div className={s.momentCard2}>
                       <div className={s.momentCardHeader}>
                         <p className={s.momentTitle}>
-                          Moment 1: Invitation received (Email)
+                          Moment 1: Email invitation received
                         </p>
                         <p className={s.momentDesc}>
                           Essentials weren&apos;t scannable in the email, so buyers
@@ -380,7 +376,7 @@ export default function SupplierCasePage() {
                     <div className={s.momentCard2}>
                       <div className={s.momentCardHeader}>
                         <p className={s.momentTitle}>
-                          Moment 2: Before participation (Legal terms)
+                          Moment 2: Review requirements &amp; legal terms
                         </p>
                         <p className={s.momentDesc}>
                           Requirements were mixed into long legal text, making
@@ -404,7 +400,7 @@ export default function SupplierCasePage() {
                     <div className={s.momentCard2}>
                       <div className={s.momentCardHeader}>
                         <p className={s.momentTitle}>
-                          Moment 3: Confirm participation (CTA)
+                          Moment 3: Confirm participation
                         </p>
                         <p className={s.momentDesc}>
                           Two CTAs compete（Confirm Participation vs
@@ -422,7 +418,7 @@ export default function SupplierCasePage() {
                     <div className={s.momentCard2}>
                       <div className={s.momentCardHeader}>
                         <p className={s.momentTitle}>
-                          Moment 4: During participation (Progress)
+                          Moment 4: Track progress &amp; deadlines
                         </p>
                         <p className={s.momentDesc}>
                           Stage context unclear（&ldquo;what happens after
@@ -458,8 +454,22 @@ export default function SupplierCasePage() {
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
                     <p className={s.hLg}>
-                      Moment 1: Email as a clear starting point
+                      Moment 1: Email invitation received
                     </p>
+                  </div>
+
+                  <div className={s.objActionRow}>
+                    <div className={s.objCard}>
+                      <p className={s.h}>🎯 Users need</p>
+                      <div>
+                        <p className={s.h} style={{ marginBottom: 0 }}>Understand the ask and the next step</p>
+                        <p className={s.p}>Suppliers need a <strong>scannable summary</strong> (what this is, deadline, and where to click).</p>
+                      </div>
+                    </div>
+                    <div className={s.actionCard}>
+                      <p className={s.h}>💪 Design move</p>
+                      <p className={s.p}>I redesigned the invite email to surface the essentials and make the primary action clear.</p>
+                    </div>
                   </div>
 
                   {/* image 63: aspect 2532/3030 ≈ 1052×1259 */}
@@ -497,18 +507,32 @@ export default function SupplierCasePage() {
                   </div>
                 </div>
 
-                {/* ── Moment 2: Legal Terms ───────────────────────────── */}
+                {/* ── Moment 2: Requirements & Legal Terms ────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
                     <p className={s.momentTitle}>
-                      Moment 2: Separate Legal Terms from Project Details
+                      Moment 2: Review requirements &amp; legal terms
                     </p>
+                  </div>
+
+                  <div className={s.objActionRow}>
+                    <div className={s.objCard}>
+                      <p className={s.h}>🎯 Users need</p>
+                      <div>
+                        <p className={s.h} style={{ marginBottom: 0 }}>Review requirements separately from legal consent</p>
+                        <p className={s.p}>Suppliers need to find project requirements fast without wading through legal text, while still giving explicit consent.</p>
+                      </div>
+                    </div>
+                    <div className={s.actionCard}>
+                      <p className={s.h}>💪 Design move</p>
+                      <p className={s.p}>I separated requirements from legal terms and added a mandatory &ldquo;agree&rdquo; step to unblock participation.</p>
+                    </div>
                   </div>
 
                   {/* image 65: aspect 1929/3250 ≈ 1052×1773 */}
                   <Image
                     src="/images/supplier/7.png"
-                    alt="Separate Legal Terms from Project Details"
+                    alt="Review requirements and legal terms"
                     width={1052}
                     height={1773}
                     className={s.img}
@@ -516,18 +540,32 @@ export default function SupplierCasePage() {
                   />
                 </div>
 
-                {/* ── Moment 3: Participate CTA ───────────────────────── */}
+                {/* ── Moment 3: Confirm participation ─────────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
                     <p className={s.hLg}>
-                      Moment 3: Clarify the &ldquo;Participate&rdquo; intent
+                      Moment 3: Confirm participation
                     </p>
+                  </div>
+
+                  <div className={s.objActionRow}>
+                    <div className={s.objCard}>
+                      <p className={s.h}>🎯 Users need</p>
+                      <div>
+                        <p className={s.h} style={{ marginBottom: 0 }}>Make intent explicit before asking for a quote</p>
+                        <p className={s.p}>Suppliers need to clearly signal &ldquo;I intend to participate&rdquo; before they invest time preparing a response.</p>
+                      </div>
+                    </div>
+                    <div className={s.actionCard}>
+                      <p className={s.h}>💪 Design move</p>
+                      <p className={s.p}>I clarified the participate intent and removed competing CTAs so users always know the correct next action.</p>
+                    </div>
                   </div>
 
                   {/* image 71: aspect 3600/4060 ≈ 1052×1187 */}
                   <Image
                     src="/images/supplier/8.png"
-                    alt="Clarify the Participate intent"
+                    alt="Confirm participation"
                     width={1052}
                     height={1187}
                     className={s.img}
@@ -535,18 +573,32 @@ export default function SupplierCasePage() {
                   />
                 </div>
 
-                {/* ── Moment 4: Journey ────────────────────────────────── */}
+                {/* ── Moment 4: Track progress & deadlines ─────────────── */}
                 <div className={s.approachStepCard}>
                   <div className={s.subSection}>
                     <p className={s.hLg}>
-                      Moment 4: Visualize the sourcing journey
+                      Moment 4: Track progress &amp; deadlines
                     </p>
+                  </div>
+
+                  <div className={s.objActionRow}>
+                    <div className={s.objCard}>
+                      <p className={s.h}>🎯 Users need</p>
+                      <div>
+                        <p className={s.h} style={{ marginBottom: 0 }}>Track progress and deadlines at a glance</p>
+                        <p className={s.p}>Suppliers need visibility into where they are in the sourcing lifecycle and what&apos;s due next to avoid missed actions.</p>
+                      </div>
+                    </div>
+                    <div className={s.actionCard}>
+                      <p className={s.h}>💪 Design move</p>
+                      <p className={s.p}>I visualized the full journey with stages, deadlines, and status so progress becomes trackable.</p>
+                    </div>
                   </div>
 
                   {/* image 70: aspect 3602/2414 ≈ 1052×706 */}
                   <Image
                     src="/images/supplier/9.png"
-                    alt="Visualize the sourcing journey"
+                    alt="Track progress and deadlines"
                     width={1052}
                     height={706}
                     className={s.img}
@@ -580,7 +632,7 @@ export default function SupplierCasePage() {
                     </div>
                     <p className={s.h}>Adoption</p>
                   </div>
-                  <div>
+                  <div className={s.statBody}>
                     <div className={s.statNumRow}>
                       <span className={s.statNum}>3.9%</span>
                       <span className={s.statArrow}>→</span>
@@ -590,19 +642,19 @@ export default function SupplierCasePage() {
                   </div>
                 </div>
 
-                {/* Supplier Efficiency */}
+                {/* Supplier Satisfaction */}
                 <div className={s.statCard}>
                   <div className={s.statHeader}>
                     <div className={s.statIconCircle} style={{ background: "#EFF6FF" }}>
                       <img src="/images/supplier/icon 5.svg" alt="" width={16} height={16} />
                     </div>
-                    <p className={s.h}>Supplier Efficiency</p>
+                    <p className={s.h}>Supplier Satisfaction</p>
                   </div>
-                  <div>
-                    <p className={s.statNum}>~90%</p>
+                  <div className={s.statBody}>
+                    <p className={s.statNum}>4.91/5</p>
                     <p className={s.statSub}>
-                      of buyers agreed the redesign would improve supplier
-                      efficiency and reduce buyer–supplier back-and-forth
+                      Supplier satisfaction score for the new sourcing
+                      experience
                     </p>
                   </div>
                 </div>
@@ -615,7 +667,7 @@ export default function SupplierCasePage() {
                     </div>
                     <p className={s.h}>Buyer Confidence</p>
                   </div>
-                  <div>
+                  <div className={s.statBody}>
                     <p className={s.statNumLg}>All buyers</p>
                     <p className={s.statSub}>
                       reported higher confidence in the system and said they
