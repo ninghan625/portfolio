@@ -82,12 +82,13 @@ export default function CurrencyCasePage() {
                 </div>
                 <div className={s.infoTextCol}>
                   <p className={s.h}>Solution</p>
-                  <p className={s.pSm}>
-                    A flexible toolkit: 3 formats (Short / Standard / Explicit) with decision rules +
-                    accepted exceptions, plus code-backed components (estimates/abbreviations,
-                    conversion, currency selector, amount input) and a Figma QA plugin to catch i18n
-                    issues early.
-                  </p>
+                  <p className={s.pSm}>A flexible currency toolkit that teams could apply consistently across products:</p>
+                  <ul className={s.bulletList} style={{ fontSize: 15, color: "#4E5969" }}>
+                    <li><strong>3 display formats:</strong> Short / Standard / Explicit</li>
+                    <li><strong>Decision rules:</strong> when to use each format + accepted exceptions</li>
+                    <li><strong>Code-backed components:</strong> estimates/abbreviations, conversion, currency selector, amount input</li>
+                    <li><strong>Design QA:</strong> a lightweight Figma QA plugin to catch common i18n issues earlier</li>
+                  </ul>
                 </div>
               </div>
 
@@ -99,8 +100,7 @@ export default function CurrencyCasePage() {
                 <div className={s.infoTextCol}>
                   <p className={s.h}>Impact</p>
                   <p className={s.pSm}>
-                    Online sourcing adoption (GGP Q4 pilot) 3.9% → 19.92% (vs. 15% target); buyer
-                    validation 4.7–4.8/5.
+                    Adopted by 10+ design teams and scaled across 20+ product lines, with code-backed components shipped and added to the central design system library.
                   </p>
                 </div>
               </div>
@@ -584,29 +584,21 @@ export default function CurrencyCasePage() {
             <section id="impact" className={s.section}>
               <span className={s.label}>Impact</span>
 
-              {/* "Adoption at scale" paragraph — node 534:6004 */}
               <p className={s.p}>
-                <strong>Adoption at scale: </strong>
-                Rolled out the currency guideline across multiple ByteDance design teams (e.g.,
-                Finance, Procurement, Contracts, Business Travel), and it has been{" "}
-                <strong>reused as a reference by other orgs</strong>{" "}
-                (e.g., Douyin - the China version of TikTok / Volcano Engine).
+                <strong>Shipped and standardized: </strong>
+                Added currency components and guidelines to the central design system library,
+                with code-backed components implemented in production.
               </p>
 
-              {/* "Faster ship" paragraph — node 551:9108 */}
               <p className={s.p}>
-                <strong>Faster ship, fewer review loops: </strong>
-                By shipping{" "}
-                <strong>code-backed currency components</strong>, teams could implement consistently
-                by default—reducing design review churn and design–dev back-and-forth.
+                <strong>Adopted at scale: </strong>
+                Used by 10+ design teams and reused across 20+ product lines.
               </p>
 
-              {/* "Earlier issue detection" paragraph — node 551:9110 */}
               <p className={s.p}>
-                <strong>Earlier issue detection: </strong>
-                A lightweight Figma QA plugin helped designers{" "}
-                <strong>catch i18n issues earlier in the workflow</strong>, lowering avoidable
-                rework.
+                <strong>Reduced rework: </strong>
+                A lightweight Figma QA plugin helped catch common i18n issues earlier and
+                lowered avoidable iterations.
               </p>
             </section>
 
