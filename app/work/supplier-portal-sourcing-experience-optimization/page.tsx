@@ -390,7 +390,7 @@ export default function SupplierCasePage() {
                           Can you separate the standard terms from the actual
                           project requirements?&rdquo;
                         </p>
-                        <p className={s.momentAttrib}>— From Buyers</p>
+                        <p className={s.momentAttrib}>— From Suppliers</p>
                       </div>
                     </div>
                   </div>
@@ -411,7 +411,7 @@ export default function SupplierCasePage() {
                         <p className={s.quoteText}>
                           &ldquo;Do I need to quote now?&rdquo;
                         </p>
-                        <p className={s.momentAttrib}>— From Buyers</p>
+                        <p className={s.momentAttrib}>— From Suppliers</p>
                       </div>
                     </div>
 
@@ -431,7 +431,7 @@ export default function SupplierCasePage() {
                           &ldquo;I clicked &lsquo;Participate&rsquo;, but nothing happened.
                           Did you get my intention?&rdquo;
                         </p>
-                        <p className={s.momentAttrib}>— From Buyers</p>
+                        <p className={s.momentAttrib}>— From Suppliers</p>
                       </div>
                     </div>
                   </div>
