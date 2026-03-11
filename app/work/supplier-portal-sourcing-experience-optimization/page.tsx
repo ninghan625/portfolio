@@ -618,8 +618,8 @@ export default function SupplierCasePage() {
               <span className={s.label}>Impact</span>
 
               <p className={s.p}>
-                Improved online sourcing adoption and earned strong buyer
-                feedback.
+                Improved online sourcing adoption and earned strong buyer and
+                supplier feedback.
               </p>
 
               <div className={s.statRow}>
