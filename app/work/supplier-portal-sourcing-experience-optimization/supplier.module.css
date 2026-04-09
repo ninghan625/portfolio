@@ -635,6 +635,22 @@
   width: 100%;
 }
 
+.mediaRow {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.mediaRowItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
 .img {
   width: 100%;
   height: auto;

@@ -156,39 +156,11 @@ export default function SupplierCasePage() {
             <section id="goal" className={s.section}>
               <span className={s.label}>Goal</span>
 
-              {/* Goal 1 */}
-              <div className={s.goalItem}>
-                <div className={s.goalBullet} />
-                <div className={s.goalText}>
-                  <p>Improve usability</p>
-                  <p className={s.goalDesc}>
-                    Reduce friction so suppliers can complete key steps without
-                    workarounds.
-                  </p>
-                </div>
-              </div>
-
-              {/* Goal 2 */}
-              <div className={s.goalItem}>
-                <div className={s.goalBullet} />
-                <div className={s.goalText}>
-                  <p>Improve visibility and tracking</p>
-                  <p className={s.goalDesc}>
-                    Keep status, deadlines, and key actions visible in one place.
-                  </p>
-                </div>
-              </div>
-
-              {/* Goal 3 */}
-              <div className={s.goalItem}>
-                <div className={s.goalBullet} />
-                <div className={s.goalText}>
-                  <p>Build trust early</p>
-                  <p className={s.goalDesc}>
-                    Make each step clear and predictable so users rely on the
-                    system status.
-                  </p>
-                </div>
+              <div className={s.insightCallout}>
+                <p className={s.insightText}>
+                  💡 Reduce friction so suppliers can complete key sourcing
+                  actions without falling back on email.
+                </p>
               </div>
             </section>
 
@@ -270,18 +242,47 @@ export default function SupplierCasePage() {
                     </p>
                   </div>
 
-                  {/* image 45: aspect 1052/611 ≈ 1052×612 */}
+                  <div className={s.mediaRow}>
+                    <div className={s.mediaRowItem}>
+                      <Image
+                        src="/images/supplier/homepage.png"
+                        alt="Current Homepage"
+                        width={3456}
+                        height={1918}
+                        className={s.img}
+                        unoptimized
+                      />
+                      <p className={s.captionLg}>
+                        Current Homepage（Users don&apos;t know what to do when
+                        they log in）
+                      </p>
+                    </div>
+                    <div className={s.mediaRowItem}>
+                      <Image
+                        src="/images/supplier/3.png"
+                        alt="Task Center demo (explore direction, not final solution)"
+                        width={1052}
+                        height={612}
+                        className={s.img}
+                        unoptimized
+                      />
+                      <p className={s.captionLg}>
+                        Task Center demo (explore direction, not final solution)
+                      </p>
+                    </div>
+                  </div>
+
                   <div className={s.mediaBlock}>
                     <Image
-                      src="/images/supplier/3.png"
-                      alt="Task Center demo (explore direction, not final solution)"
-                      width={1052}
-                      height={612}
+                      src="/images/supplier/x.jpg"
+                      alt="Both Coupa and Oracle provide clear guidance"
+                      width={2688}
+                      height={735}
                       className={s.img}
                       unoptimized
                     />
                     <p className={s.captionLg}>
-                      Task Center demo (explore direction, not final solution)
+                      Both Coupa and Oracle provide clear guidance
                     </p>
                   </div>
                 </div>
