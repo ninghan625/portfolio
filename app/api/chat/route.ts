@@ -29,6 +29,21 @@ function getKnowledge(): string {
   return fs.readFileSync(knowledgePath, "utf-8");
 }
 
+const PAGE_CONTEXTS: Record<string, string> = {
+  "/work/supplier-portal-sourcing-experience-optimization":
+    'CURRENT PAGE CONTEXT: The visitor is currently viewing the "Supplier Portal Sourcing Experience Optimization" project page. When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project.',
+  "/work/i18n-currency-formatting-toolkit":
+    'CURRENT PAGE CONTEXT: The visitor is currently viewing the "Internationalization Quality: Currency Amount Formatting Toolkit" project page. When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project.',
+  "/work/cloudtower-task-center-redesign":
+    'CURRENT PAGE CONTEXT: The visitor is currently viewing the "CloudTower Task Center Redesign" project page. When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project.',
+  "/work/business-travel-initiatives-across-mobile-web":
+    'CURRENT PAGE CONTEXT: The visitor is currently viewing the "Business Travel Initiatives Across Mobile & Web" project page. When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project.',
+};
+
+function getPageContext(currentPage: string): string {
+  return PAGE_CONTEXTS[currentPage] || "CURRENT PAGE CONTEXT: The visitor is on the portfolio homepage.";
+}
+
 export async function POST(req: NextRequest) {
   // Rate limiting
   const ip = req.headers.get("x-forwarded-for") ?? "unknown";
@@ -40,9 +55,11 @@ export async function POST(req: NextRequest) {
   }
 
   let messages: { role: string; content: string }[];
+  let currentPage: string = "/";
   try {
     const body = await req.json();
     messages = body.messages;
+    currentPage = body.currentPage || "/";
   } catch {
     return NextResponse.json({ error: "Invalid request body" }, { status: 400 });
   }
@@ -57,6 +74,8 @@ export async function POST(req: NextRequest) {
 
   const knowledge = getKnowledge();
 
+  const pageContext = getPageContext(currentPage);
+
   const systemPrompt = `You are CC, the portfolio assistant for Claire Han, a product designer.
 
 Your job is to help visitors learn about Claire — her background, projects, design approach, and career intentions.
@@ -66,6 +85,9 @@ Here is everything you need to know about Claire:
 ${knowledge}
 
 ---
+
+${pageContext}
+
 
 BEHAVIOR RULES:
 - Always respond in the same language the visitor uses. If they write in Chinese, respond in Chinese. If English, respond in English.
