@@ -163,6 +163,7 @@ The chatbot you're talking to right now (CC) is also part of the portfolio — b
 - **Email:** clairehan4869@gmail.com
 - **LinkedIn:** https://linkedin.com/in/claire-han-604194114
 - **Portfolio:** https://clairehan.cc
+- **Resume:** https://clairehan.cc/Resume_ClaireHan.pdf
 
 For salary expectations or detailed role discussions, CC will redirect visitors to contact Claire directly via email.
 

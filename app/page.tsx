@@ -17,9 +17,9 @@ export default function Home() {
   return (
     <div className="bg-white flex flex-col items-center w-full">
       {/* Hero Section */}
-      <Container className="flex flex-col min-h-[100svh] pt-[180px] pb-16">
+      <Container className="flex flex-col items-center min-h-[100svh] pt-[180px] pb-16">
         {/* Content */}
-        <div className="flex flex-col gap-8 w-full max-w-[1280px]">
+        <div className="flex flex-col items-center gap-6 w-full max-w-[1280px]">
           {/* Avatar */}
           <div className="relative rounded-full shrink-0 size-20">
             <img
@@ -37,7 +37,7 @@ export default function Home() {
               "I design B2B & enterprise products.",
               "Let's connect!"
             ]}
-            className="font-bold text-[#1f2329] text-[32px] leading-[1.21]"
+            className="font-bold text-[#1f2329] text-[32px] leading-[1.21] text-center"
             typingSpeed={80}
             deletingSpeed={50}
             pauseDuration={2000}
@@ -46,17 +46,11 @@ export default function Home() {
           />
 
           {/* Introduction */}
-          <div className="flex flex-col gap-5 text-[19px] leading-[28px] w-full">
+          <div className="flex flex-col gap-3 text-[19px] leading-[28px] w-full max-w-[680px] text-center">
             <p className="text-[#1f2329]">
-              A product designer focused on <Highlight>B2B systems for the past 6 years</Highlight>. I simplify complex workflows into scalable experiences.
+              A product designer who lives in the messy middle of <Highlight>complex B2B systems</Highlight>. Currently at TikTok. Lately <Highlight>building AI workflows</Highlight> into how I research, QA, and ship.
             </p>
-            <p className="text-[#1f2329]">
-              My experience spans enterprise products and startup environments—at ByteDance, I design <Highlight>internal enterprise workflows</Highlight> across web and mobile; at SmartX, I helped build a <Highlight>data center infrastructure management</Highlight> platform.
-            </p>
-            <p className="text-[#1f2329]">
-              I also <Highlight>leverage AI tools</Highlight> to speed up synthesis, documentation, and early prototyping—so teams can align faster and iterate with higher quality.
-            </p>
-            <p className="text-[#8f959e] text-[18px] leading-[24px]">
+            <p className="text-[#8f959e] text-[18px] leading-[24px] mt-2">
               📍 Based in Dubai, open to relocate
             </p>
           </div>
@@ -103,7 +97,7 @@ export default function Home() {
         {/* View Case Studies Button */}
         <button
           onClick={scrollToWork}
-          className="font-normal text-[#0080ff] text-[16px] leading-[20px] border border-[#0080ff] rounded-full pl-4 pr-4 py-[8px] hover:bg-[#0080ff]/10 transition-colors flex items-center gap-1.5 self-start"
+          className="font-normal text-[#0080ff] text-[16px] leading-[20px] border border-[#0080ff] rounded-full pl-4 pr-4 py-[8px] hover:bg-[#0080ff]/10 transition-colors flex items-center gap-1.5 self-center"
         >
           View Case Studies <span className="text-[18px]">↓</span>
         </button>

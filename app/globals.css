@@ -61,3 +61,13 @@ p {
   transform: scale(0.98);
   transition: opacity 160ms ease-in, transform 160ms ease-in;
 }
+
+/* Thinking dots animation */
+@keyframes dotFade {
+  0%, 20% { opacity: 0; }
+  40%, 100% { opacity: 1; }
+}
+
+.animate-dot1 { animation: dotFade 1.4s infinite; animation-delay: 0s; }
+.animate-dot2 { animation: dotFade 1.4s infinite; animation-delay: 0.2s; }
+.animate-dot3 { animation: dotFade 1.4s infinite; animation-delay: 0.4s; }
