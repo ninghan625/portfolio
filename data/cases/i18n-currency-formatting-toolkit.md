@@ -1,137 +1,130 @@
 ---
-title: "Internationalization Quality: Currency Amount Formatting Toolkit"
+title: "Internationalization at CIS: Mechanism, Specs, and an AI Skill"
 slug: i18n-currency-formatting-toolkit
 date: 2024-12
-subtitle: Standardized currency amount formatting across multi-currency products with clear guidelines and a Figma plugin.
+subtitle: Led CIS's internationalization initiative end-to-end: running the spec lifecycle, delivering the currency standard, and shipping i18n-checker, an AI Skill that brings spec enforcement into design, R&D, and QA.
 ---
 
-## Role&Scope
+> Note: the rendered case study lives in `app/work/i18n-currency-formatting-toolkit/page.tsx`. This markdown is kept as an archive/reference only.
 
-### Guideline + Components: From research to scalable standards
-I owned the **Currency** track in our i18n quality initiative (Date/Time, English Copy, Currency). I led **research and internal audits** to turn fragmented patterns into a clear, scenario-based guideline, then partnered with engineering to ship **code-backed components** that made the standard easy to adopt.
+## TL;DR
 
-### Figma Plugin: Automating i18n QA in the design workflow
-To scale consistency beyond documentation, I also built an **AI-assisted Figma QA plugin** that checks i18n issues across all three areas and provides actionable fix suggestions (including one-click apply where safe).
+I own CIS's internationalization initiative, a company-level OKR covering 20+ product lines and 200K+ global employees. My work spans three pillars:
 
+- **Mechanism**: a Collect → Iterate → Publish lifecycle so the spec system keeps improving itself
+- **Specs**: led the Currency standard end-to-end; maintain the full library (Currency, Date/Time, Writing Style, Glossary)
+- **Skill**: shipped i18n-checker, an AI Skill covering 4 dimensions and 1,939 glossary terms, running across Claude Code / Cursor / Mira
 
-## Background
-
-### Why currency became the first i18n priority
-As our org scaled internationalization (i18n), recurring quality issues showed up across products: **currency amounts, English copy, and date/time formats**. I owned the **currency amounts** track.
-
-Money appears everywhere—travel, procurement, contracts, and finance—yet teams used different conventions and levels of precision. The result was inconsistent UI, extra review cycles, and avoidable implementation churn.
-
-### Media
-![Examples of inconsistent currency formatting across products](/images/Currency/Currency 01.jpg)
+**Impact**: Currency toolkit adopted by 10+ design teams across 20+ product lines. i18n-checker shipped as a distributable Skill, now running across design, R&D, and QA.
 
 
-## Challenge
+## Context
 
-### Scaling one standard across many products
-"Correct formatting" rules were relatively straightforward (e.g., ISO code placement, spacing, separators). The harder part was **how teams choose the right format** across:
+CIS (Corporate Information Systems) serves 200K+ global employees across 20+ product lines such as Travel, Procurement, Contract, Finance, and ByteCanteen. As non-China-region employee share kept growing, i18n experience became a company-level OKR.
 
-- different business contexts (travel vs procurement/contract/finance)
-- different surfaces (cards, tables, forms, detail pages)
-- different intent (scan vs compare vs verify)
-- legacy patterns and edge cases
+State of i18n when I took ownership:
 
-The goal was guidance that is **consistent, practical, and adoptable**—clear defaults with room for valid exceptions.
-
-### Media
-![Different business contexts/surfaces/intents](/images/Currency/Currency 02.jpg)
+- **Specs existed but were scattered.** A 2023–2024 push built the first generation of specs (Currency, Date/Time, English Writing), but they lived across different wiki pages with no single entry point.
+- **Enforcement was fully manual.** Designers had to read the specs, apply them by hand, and cross-reference glossary entries. Coverage was inconsistent and review churn was high.
+- **Coverage was incomplete.** Key modules such as multilingual typesetting, names, addresses, numbers, and RTL had no specs at all.
 
 
-## Design Process
+## Framework: three pillars
 
-### 1. Synthesis from industry references
-I reviewed **50+ references** across B2B and B2C products, official documentation, and design systems to extract durable patterns that work under real UI constraints (layout, truncation, scanability).
+A spec document, by itself, doesn't change behavior. To own i18n at CIS scale, I built three things in parallel:
 
-### Media
-![Competitive analysis snapshot](/images/Currency/Currency 03.jpg)
-
-### 2. Audit and alignment across business lines
-I audited currency usage across key business lines and reviewed real scenarios with domain owners. This helped align on:
-
-- where inconsistency was coming from,
-- what should be treated as best practice,
-- and which variations could remain as accepted exceptions.
-
-### 3. Standardizing into three formats
-From research + internal needs, I consolidated the system into three formats that cover most scenarios while staying easy to learn:
-
-- **Short** — simplified for price display when the currency is unambiguous in context
-- **Standard** — the default when currency can't be safely inferred, keeping amounts accurate and complete
-- **Precise** — symbol + ISO for price displays in multi-currency contexts.
-
-### Media
-![](/images/Currency/Currency 04.jpg)
+| Pillar | What it is | Answers |
+|---|---|---|
+| 1. Mechanism | Collect → Iterate → Publish lifecycle | How does the spec system sustain itself? |
+| 2. Specs | Currency as deep case + full library maintenance | What does a great spec look like? |
+| 3. Skill | i18n-checker (AI Skill across design / R&D / QA) | How do specs actually land in the product? |
 
 
-## Solution
+## Pillar 1 · Mechanism
 
-### Design Principle
+A lifecycle loop, not a one-time publish.
 
-> Deliver a toolkit, not just formatting rules
+1. **Collect**: walkthroughs, reviews, and daily feedback flow into a unified problem log. Priority is data-driven: the shape of the problems decides what specs to build or revise next.
+2. **Iterate**: each spec goes through audit, synthesize, validate. Currency is the showcase of this flow.
+3. **Publish**: specs publish to a single entry point AND ship into i18n-checker the same day. Team sync happens via Bot pushes or focused sessions.
 
-### 1. Clear format definitions teams can trust
-I documented the core rules (ISO usage, spacing conventions, separators…) so teams had a single source of truth for implementation.
+Every round: new problems → new/updated specs → updated Skill → better i18n quality.
 
-### Media
-![](/images/Currency/Currency 05.jpg)
 
-### 2. Scenario-based guidance for choosing formats
-Instead of introducing a rigid decision framework, I documented **recommended usage patterns** for Short / Standard / Explicit across real product scenarios—so teams could make consistent choices based on context.
+## Pillar 2 · Specs: Currency deep case
 
-For each scenario, I provided:
+Currency was the first spec I took from audit to production as owner. Same methodology now runs across Date/Time, Writing Style, and Glossary.
 
-- the **recommended format** (Compact / Standard / Precise)
-- **example UI patterns** (best practice)
+### The problems I was solving
+- Inconsistent ISO code placement (USD 1,000 vs 1,000 USD)
+- Mixed currency format ($ / USD / US$)
+- Unclear large-number formatting (K / M / B)
+- Inconsistent currency picker options
+- Undefined visual hierarchy for totals
 
-I also provide **accepted alternatives** when teams had valid constraints
+### Approach
+1. **Audit** current patterns and tag issues
+2. **Synthesize** from 50+ industry references, producing a draft 3-format framework (Short / Standard / Explicit)
+3. **Validate** the 3-format model across design teams, aligning on edge cases and rollout expectations
 
-This made the guideline easier to adopt because it gave teams a clear "most common best practice" plus flexibility for edge cases.
+### What shipped
+- **Part 1 · Format rules**: ISO/number placement, spacing, separators, with correct vs incorrect examples
+- **Part 2 · Decision guidance**: how to choose Short vs Standard vs Explicit, with accepted exceptions and surface examples
+- **Part 3 · Components & patterns**: large-number shorthand, currency conversion, currency selector, amount input, shipped as code-backed components
 
-### Media
-![](/images/Currency/Currency-06.jpg)
+Full guideline: `/images/Currency/Currency Amount Formatting Guidelines.pdf`
 
-### 3. Patterns and components for money workflows
-Currency display is only one part of a money workflow. To cover end-to-end use cases, I added interaction guidance and reusable patterns for:
+> Currency proved the methodology. But specs alone don't scale: teams can't memorize every rule across Currency, Date/Time, Writing Style, and 1,939 glossary entries. That's what Pillar 3 is for.
 
-- **Estimated amounts** (communicating uncertainty)
-- **Currency conversion** (original vs converted values)
-- **Currency selector** (defaults, fallbacks)
-- **Amount input** (validation, formatting states)
 
-These patterns were implemented as reusable components and added to the component library (code-backed) to keep new work consistent by default.
+## Pillar 3 · Skill: i18n-checker
 
-### Media
-![](/images/Currency/component1.jpg)
+### Evolution
 
-### Media
-![](/images/Currency/component2.jpg)
+**Act 1 · V1: Figma QA plugin** (Cursor + GPT)
+Scanned Figma frames for i18n issues with one-click fixes. Worked, but only inside Figma, only for designers, only at the design stage.
 
-### Media
-![](/images/Currency/component3.jpg)
+**Act 2 · The organizational shift**
+- Designers started vibe coding (shipping code via Claude Code / Cursor, often bypassing Figma)
+- Engineers wanted i18n checks on code, not just designs
+- QA wanted pre-release validation on screenshots
 
-### 4. Figma Plugin - Workflow automation with a design QA checker
-Designers can't realistically memorize every i18n rule across currency, date/time, and English copy. To reduce avoidable mistakes and review churn, I built a lightweight **Figma QA plugin**—**coded with Cursor + GPT**—that brings i18n checks directly into the design workflow.
+The plugin couldn't follow the work. The delivery model had to change.
 
-- **Scans frames** and flags non-compliant patterns
-- Gives **actionable suggestions** (what's wrong + what to change)
-- Supports **one-click apply** for safe fixes
+**Act 3 · V2: i18n-checker Skill**
+One zip. One install. Runs wherever the work happens:
 
-### Media
-![](/images/Currency/Currency 09.gif)
+| Stage | Who | Where it runs |
+|---|---|---|
+| Design | Designers | Figma export → Mira / Cursor |
+| R&D | Engineers (incl. vibe-coding designers) | Claude Code / Cursor / Trae |
+| QA | PM / QA | Mira (screenshot upload) |
 
-> [!PDF]
-> ### Read the full guideline
-> If you're interested in the full specification (format rules, scenario examples, and component usage), you can view the document here:
-> [Currency Amount Formatting Guidelines.pdf](/images/Currency/Currency_Amount_Formatting_Guidelines.pdf)
+### 4 dimensions of coverage
+
+- 💰 **Currency & Amount**: symbol/ISO position, separators, negative amounts, abbreviation, consistency
+- ✍️ **Writing Style**: Title vs Sentence case, CN/EN punctuation, spacing, hyphens/en-dashes, line wrapping
+- 🕐 **Date & Time**: month abbreviations, 12/24h, time ranges, timezones, info density
+- 📖 **Glossary**: 1,939-term CN/EN glossary across Common, Procurement, Contract, Spend, Travel, ByteCanteen
+
+### How it works
+- **Input**: screenshots, UI text, Figma exports
+- **Output**: structured table per dimension (Location / Current / Expected / Rule / Severity), with a summary count
+
+> 4 spec families plus 1,939 glossary entries exceed anyone's memory. An AI Skill is the only scalable enforcement layer, and by delivering it as a Skill (not a plugin), it meets people where they already work.
 
 
 ## Impact
 
-### Scaling consistency across the organization
-- **Department-wide adoption:** The currency formatting toolkit has been adopted across our Corporate Information Systems department and is expected to scale to multiple design teams (Legal, Contracts, Finance, Business Travel, HR). It received strong internal feedback and has also been referenced by other orgs (e.g., Douyin and Volcano Engine) as a reusable best practice.
-- **Efficiency + quality gains through code-backed components:** By partnering with engineering to ship the currency component into the shared component library, we significantly improved design–development efficiency, increased consistency of currency display across products, and raised overall UI quality.
-- **Early validation for the plugin:** In a small pilot, multiple designers reported the Figma QA plugin was highly helpful for catching i18n issues early and reducing avoidable rework.
+- **Currency (Pillar 2)**: adopted by 10+ design teams, 20+ product lines; referenced by Douyin and Volcano Engine as best practice.
+- **i18n-checker (Pillar 3)**: shipped as a distributable Skill; 1,939-term glossary built in; runs across Claude Code / Cursor / Trae / Mira.
+- **Mechanism (Pillar 1)**: lifecycle loop running across CIS; the spec system is now a living asset, not a one-time publish.
+
+
+## Reflection
+
+### 1. Specs ≠ enforcement
+A spec document, no matter how well written, doesn't change behavior by itself. To ship i18n quality you need mechanism (how specs evolve) and tooling (how specs execute) as co-equals with the spec. Specs without a loop rot; specs without tooling live on wikis no one reads.
+
+### 2. AI is the scalable leverage for i18n
+At 4 spec families plus 1,939 glossary terms, human memory fails. Reframing i18n QA as an AI Skill was the unlock, and it only worked because the Skill distributes across wherever people already work, not just where designers happen to work.

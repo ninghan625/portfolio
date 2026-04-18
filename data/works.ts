@@ -25,14 +25,14 @@ export const works: WorkItem[] = [
     tags: ["Enterprise UX", "Redesign", "User Research", "Design Strategy"],
   },
   {
-    title: "Internationalization Quality: Currency Amount Formatting Toolkit",
-    subtitle: "Standardized currency amount formatting across multi-currency products with clear guidelines and a Figma plugin.",
+    title: "Internationalization at CIS: Mechanism, Specs, and an AI Skill",
+    subtitle: "Led CIS's internationalization initiative end-to-end: running the spec lifecycle, delivering the currency standard, and shipping i18n-checker, an AI Skill that brings spec enforcement into design, R&D, and QA.",
     slug: "i18n-currency-formatting-toolkit",
     iconType: "toolkit",
     previewImage: "/images/Currency/hero.jpg",
     company: "ByteDance",
     companyLogo: "/icons/Bytedance.png",
-    tags: ["i18n", "Design Guidelines", "Figma Plugin", "Vibe Coding"],
+    tags: ["i18n", "Design System", "AI Skill", "Vibe Coding", "Design Ops"],
   },
   {
     title: "CloudTower Task Center Redesign",

@@ -5,9 +5,10 @@ import { useState, useEffect } from "react";
 const ITEMS = [
   { label: "TL;DR",      id: "tldr" },
   { label: "Context",    id: "context" },
-  { label: "Goal",       id: "goal" },
-  { label: "Approach",   id: "approach" },
-  { label: "Solution",   id: "solution" },
+  { label: "Framework",  id: "framework" },
+  { label: "Mechanism",  id: "mechanism" },
+  { label: "Specs",      id: "specs" },
+  { label: "Skill",      id: "skill" },
   { label: "Impact",     id: "impact" },
   { label: "Reflection", id: "reflection" },
 ];

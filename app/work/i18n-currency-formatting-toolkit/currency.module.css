@@ -1,5 +1,5 @@
 /* ============================================================
-   Currency Case Study — Scoped CSS Module
+   Currency Case Study · Scoped CSS Module
    All tokens extracted directly from Figma frame 534:5776.
    DO NOT import from shared components or other pages.
    ============================================================ */
@@ -512,6 +512,380 @@
 .ctaFilled:hover { background: #1f2329; }
 
 /* ════════════════════════════════════════════════════════════
+   FRAMEWORK SECTION: 3-pillar grid
+   ════════════════════════════════════════════════════════════ */
+
+/* 3-column pillar grid */
+.pillarGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+/* Single pillar card: col gap-12, pad 20, bg #F7F9FC, border #E5E8ED, r12 */
+.pillarCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+/* Pillar header: label chip + title */
+.pillarHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Pillar label chip: small uppercase tag */
+.pillarChip {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #E6F4FF;
+  color: #0080FF;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.pillarChipGreen { background: #E6F9F0; color: #00B578; }
+.pillarChipPurple { background: #F3EBFF; color: #7B5CD6; }
+
+/* Pillar body text */
+.pillarBody {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #4E5969;
+  margin: 0;
+}
+
+/* Pillar answer line (italicized) */
+.pillarAnswer {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #86909C;
+  margin: 0;
+  font-style: italic;
+  padding-top: 8px;
+  border-top: 1px solid #E5E8ED;
+}
+
+/* ════════════════════════════════════════════════════════════
+   MECHANISM SECTION: lifecycle loop diagram
+   ════════════════════════════════════════════════════════════ */
+
+/* Loop container: 3 nodes + arrows */
+.lifecycleLoop {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  padding: 32px 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  position: relative;
+}
+
+/* Single loop node */
+.loopNode {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 16px;
+  background: #ffffff;
+  border: 1px solid #E5E8ED;
+  border-radius: 10px;
+  position: relative;
+}
+
+.loopNodeNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 100px;
+  background: #E6F4FF;
+  color: #0080FF;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.loopNodeTitle {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #272E3B;
+  margin: 0;
+}
+
+.loopNodeBody {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4E5969;
+  margin: 0;
+}
+
+/* Loop arrow between nodes */
+.loopArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 32px;
+  color: #86909C;
+  font-size: 20px;
+}
+
+/* Return arrow (curved, below the row) */
+.loopReturnArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 0 0 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #86909C;
+  font-style: italic;
+}
+
+/* ════════════════════════════════════════════════════════════
+   SKILL SECTION: evolution acts + coverage table + dimension grid
+   ════════════════════════════════════════════════════════════ */
+
+/* Evolution acts: stacked cards */
+.evolutionActs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Single act card */
+.actCard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Highlighted (V2) variant: soft blue, matches blueCallout family */
+.actCardHighlight {
+  background: #E6F4FF;
+  border-color: #D1E9FC;
+}
+
+/* Act label: "ACT 1 · V1" */
+.actLabel {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 2px 10px;
+  border-radius: 100px;
+  background: #E5E8ED;
+  color: #4E5969;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.actLabelHighlight {
+  background: #ffffff;
+  color: #0080FF;
+  border: 1px solid #D1E9FC;
+}
+
+.actLabelShift {
+  background: #FFF4E6;
+  color: #D97706;
+}
+
+/* Coverage table: 3 columns × 3 rows */
+.coverageTable {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  background: #ffffff;
+}
+
+.coverageTable > div {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E5E8ED;
+  border-right: 1px solid #E5E8ED;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #272E3B;
+}
+
+.coverageTable > div:nth-child(3n) { border-right: none; }
+.coverageTable > div:nth-last-child(-n+3) { border-bottom: none; }
+
+.coverageHead {
+  background: #F7F9FC;
+  font-weight: 700 !important;
+  color: #272E3B !important;
+  font-size: 13px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.coverageStage {
+  background: #F7F9FC;
+  font-weight: 700 !important;
+}
+
+/* Dimension grid: 2×2 */
+.dimensionGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.dimensionCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  min-width: 0;
+}
+
+.dimensionEmoji {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.dimensionTitle {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  color: #272E3B;
+  margin: 0;
+}
+
+.dimensionBody {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4E5969;
+  margin: 0;
+}
+
+/* Inline kv row used for I/O spec */
+.kvRow {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px 16px;
+  width: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.kvRow dt {
+  color: #86909C;
+  font-weight: 700;
+  margin: 0;
+}
+
+.kvRow dd {
+  color: #272E3B;
+  margin: 0;
+}
+
+/* Sub-section label (inside a section, above a sub-block) */
+.subLabel {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+  color: #86909C;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin: 0;
+  padding-top: 8px;
+}
+
+/* Process→Output bridge: image + italic caption */
+.processBridge {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+}
+
+.processBridgeCaption {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #4E5969;
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+/* Transition/closing quote inside a section */
+.transitionQuote {
+  display: block;
+  padding: 16px 20px;
+  background: #F7F9FC;
+  border: 1px solid #E5E8ED;
+  border-radius: 12px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 22px;
+  color: #4E5969;
+  font-style: italic;
+}
+
+/* ════════════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════════════ */
 
@@ -520,4 +894,10 @@
   .sidebar { display: none; }
   .objActionRow { flex-direction: column; }
   .dividerShort { width: 100%; }
+  .pillarGrid { grid-template-columns: 1fr; }
+  .lifecycleLoop { flex-direction: column; gap: 16px; padding: 20px; }
+  .loopArrow { transform: rotate(90deg); width: auto; height: 24px; }
+  .dimensionGrid { grid-template-columns: 1fr; }
+  .coverageTable { grid-template-columns: 100px 1fr 1fr; }
+  .kvRow { grid-template-columns: 1fr; gap: 4px; }
 }
