@@ -389,36 +389,37 @@ export default function CurrencyCasePage() {
               </div>
 
               {/* ─────────────────────────────────────────────────
-                  PROCESS: compact 3-step strip
+                  DESIGN PROCESS: compact 3-step strip
                   ───────────────────────────────────────────────── */}
-              <p className={s.subLabel}>Process</p>
-
-              <div className={s.lifecycleLoop}>
-                <div className={s.loopNode}>
-                  <span className={s.loopNodeNum}>Step 1</span>
-                  <p className={s.loopNodeTitle}>Audit</p>
-                  <p className={s.loopNodeBody}>
-                    Audited key products and surfaces; tagged recurring formatting problems
-                    to build a complete picture of today&apos;s patterns.
-                  </p>
-                </div>
-                <div className={s.loopArrow}>→</div>
-                <div className={s.loopNode}>
-                  <span className={s.loopNodeNum}>Step 2</span>
-                  <p className={s.loopNodeTitle}>Synthesize</p>
-                  <p className={s.loopNodeBody}>
-                    Reviewed 50+ B2B/B2C references and design systems; distilled durable
-                    currency display conventions that hold up under real UI constraints.
-                  </p>
-                </div>
-                <div className={s.loopArrow}>→</div>
-                <div className={s.loopNode}>
-                  <span className={s.loopNodeNum}>Step 3</span>
-                  <p className={s.loopNodeTitle}>Validate</p>
-                  <p className={s.loopNodeBody}>
-                    Aligned the 3-format model with design teams across business lines;
-                    locked edge cases and rollout expectations.
-                  </p>
+              <div className={s.processCard}>
+                <p className={s.h}>Design Process</p>
+                <div className={s.processSteps}>
+                  <div className={s.loopNode}>
+                    <span className={s.loopNodeNum}>Step 1</span>
+                    <p className={s.loopNodeTitle}>Audit</p>
+                    <p className={s.loopNodeBody}>
+                      Audited key products and surfaces; tagged recurring formatting problems
+                      to build a complete picture of today&apos;s patterns.
+                    </p>
+                  </div>
+                  <div className={s.loopArrow}>→</div>
+                  <div className={s.loopNode}>
+                    <span className={s.loopNodeNum}>Step 2</span>
+                    <p className={s.loopNodeTitle}>Synthesize</p>
+                    <p className={s.loopNodeBody}>
+                      Reviewed 50+ B2B/B2C references and design systems; distilled durable
+                      currency display conventions that hold up under real UI constraints.
+                    </p>
+                  </div>
+                  <div className={s.loopArrow}>→</div>
+                  <div className={s.loopNode}>
+                    <span className={s.loopNodeNum}>Step 3</span>
+                    <p className={s.loopNodeTitle}>Validate</p>
+                    <p className={s.loopNodeBody}>
+                      Aligned the 3-format model with design teams across business lines;
+                      locked edge cases and rollout expectations.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -440,19 +441,18 @@ export default function CurrencyCasePage() {
               </div>
 
               {/* ─────────────────────────────────────────────────
-                  WHAT SHIPPED: 3 parts, full depth
+                  WHAT SHIPPED: overview callout → 3 parts
                   ───────────────────────────────────────────────── */}
-              <p className={s.subLabel}>What shipped</p>
+              <div className={s.solutionCallout}>
+                <p className={s.h2}>What shipped: A toolkit, not just formatting rules</p>
+                <p className={s.p}>
+                  A 3-format framework, decision rules, and reusable components, so teams
+                  display and implement money consistently by default. Below are the three
+                  parts that make up the toolkit.
+                </p>
+              </div>
 
               <div className={s.solutionCluster}>
-
-                <div className={s.subSection}>
-                  <p className={s.h2}>A toolkit, not just formatting rules</p>
-                  <p className={s.p}>
-                    A 3-format framework, decision rules, and reusable components, so teams
-                    display and implement money consistently by default.
-                  </p>
-                </div>
 
                 {/* Part 1 */}
                 <div className={s.solutionStep}>
@@ -659,7 +659,7 @@ export default function CurrencyCasePage() {
               </div>
 
               {/* 4 dimensions */}
-              <div className={s.subSection}>
+              <div className={s.subSection} style={{ marginTop: 20 }}>
                 <p className={s.h2}>What it checks: 4 dimensions</p>
                 <p className={s.p}>
                   Four spec families, unified into one Skill. The Glossary alone contains 1,939
