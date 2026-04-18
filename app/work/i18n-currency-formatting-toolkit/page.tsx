@@ -124,32 +124,41 @@ export default function CurrencyCasePage() {
                 </p>
               </div>
 
-              <div className={s.contextCard}>
-                <p className={s.contextCardTitle}>State of i18n when I took ownership</p>
-                <div className={s.contextItemsCluster}>
-                  <div className={s.contextItem}>
-                    <p className={s.p}>
-                      <strong>Specs existed but were scattered.</strong> A 2023–2024 push built
-                      the first generation of specs (Currency, Date/Time, English Writing). They
-                      worked, but lived across different wiki pages with no single entry point.
-                    </p>
+              <p className={s.subLabel}>State of i18n when I took ownership</p>
+
+              <div className={s.pillarGrid}>
+                <div className={s.pillarCard}>
+                  <div className={s.pillarHeader}>
+                    <span className={s.pillarChip}>Problem 1</span>
+                    <p className={s.h}>Scattered</p>
                   </div>
-                  <div className={s.contextDivider} />
-                  <div className={s.contextItem}>
-                    <p className={s.p}>
-                      <strong>Enforcement was fully manual.</strong> Designers had to read the
-                      specs, apply them by hand, and cross-reference glossary entries when naming
-                      things. Coverage was inconsistent, and review churn was high.
-                    </p>
+                  <p className={s.pillarBody}>
+                    A 2023–2024 push built the first generation of specs (Currency, Date/Time,
+                    English Writing). They worked, but lived across different wikis with no
+                    single entry point.
+                  </p>
+                </div>
+
+                <div className={s.pillarCard}>
+                  <div className={s.pillarHeader}>
+                    <span className={`${s.pillarChip} ${s.pillarChipGreen}`}>Problem 2</span>
+                    <p className={s.h}>Manual</p>
                   </div>
-                  <div className={s.contextDivider} />
-                  <div className={s.contextItem}>
-                    <p className={s.p}>
-                      <strong>Coverage was incomplete.</strong> Key modules such as multilingual
-                      typesetting, names, addresses, numbers, and RTL had no specs at all, and it
-                      wasn&apos;t clear whether the specs we did have actually reached every product line.
-                    </p>
+                  <p className={s.pillarBody}>
+                    Designers read specs and cross-referenced glossary entries by hand.
+                    Coverage was inconsistent and review churn was high.
+                  </p>
+                </div>
+
+                <div className={s.pillarCard}>
+                  <div className={s.pillarHeader}>
+                    <span className={`${s.pillarChip} ${s.pillarChipPurple}`}>Problem 3</span>
+                    <p className={s.h}>Incomplete</p>
                   </div>
+                  <p className={s.pillarBody}>
+                    Multilingual typesetting, names, addresses, numbers, and RTL had no spec
+                    at all, and it was unclear whether existing specs reached every product line.
+                  </p>
                 </div>
               </div>
             </section>
@@ -340,7 +349,7 @@ export default function CurrencyCasePage() {
                       width={850}
                       height={175}
                       className={s.imgFixed}
-                      style={{ width: 425, height: "auto" }}
+                      style={{ width: 430, height: "auto" }}
                       unoptimized
                     />
                   </div>
@@ -433,7 +442,7 @@ export default function CurrencyCasePage() {
               {/* ─────────────────────────────────────────────────
                   WHAT SHIPPED: 3 parts, full depth
                   ───────────────────────────────────────────────── */}
-              <p className={s.subLabel} style={{ paddingTop: 24 }}>What shipped</p>
+              <p className={s.subLabel}>What shipped</p>
 
               <div className={s.solutionCluster}>
 
@@ -584,7 +593,7 @@ export default function CurrencyCasePage() {
                     frames for i18n issues and supported one-click fixes. It worked, but only
                     inside Figma, only for designers, only at the design stage.
                   </p>
-                  <div className={s.mediaBlock} style={{ marginTop: 8 }}>
+                  <div className={s.mediaBlock}>
                     <Image
                       src="/images/Currency/12.gif"
                       alt="V1: Figma QA plugin"
@@ -629,7 +638,7 @@ export default function CurrencyCasePage() {
                   </p>
 
                   {/* Coverage table */}
-                  <div className={s.coverageTable} style={{ marginTop: 4 }}>
+                  <div className={s.coverageTable}>
                     <div className={s.coverageHead}>Stage</div>
                     <div className={s.coverageHead}>Who uses it</div>
                     <div className={s.coverageHead}>Where it runs</div>
@@ -650,7 +659,7 @@ export default function CurrencyCasePage() {
               </div>
 
               {/* 4 dimensions */}
-              <div className={s.subSection} style={{ marginTop: 12 }}>
+              <div className={s.subSection}>
                 <p className={s.h2}>What it checks: 4 dimensions</p>
                 <p className={s.p}>
                   Four spec families, unified into one Skill. The Glossary alone contains 1,939

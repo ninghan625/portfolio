@@ -63,12 +63,12 @@
 }
 
 /* ── Typography: Section label (anchor nav label) ────────── */
-/* Heiti SC 400 15px / normal #86909C */
+/* Helvetica 400 15px / 24px #86909C — unified with body font */
 .label {
-  font-family: 'Heiti SC', 'PingFang SC', Helvetica, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: 400;
-  line-height: normal;
+  line-height: 24px;
   color: #86909C;
   margin: 0;
 }
@@ -130,6 +130,7 @@
 }
 
 /* ── Bullet list ─────────────────────────────────────────── */
+/* Flush-left: marker sits at x=0 (aligns with surrounding titles) */
 .bulletList {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -137,13 +138,14 @@
   line-height: 24px;
   color: #272E3B;
   margin: 0;
-  padding-left: 24px;
+  padding-left: 0;
   list-style-type: disc;
+  list-style-position: inside;
 }
 .bulletList li { margin: 0; }
-.bulletList li + li { margin-top: 0; }
 
 /* ── Numbered list (context section item headings) ───────── */
+/* Flush-left: marker sits at x=0 (aligns with surrounding titles) */
 .numberedList {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -151,8 +153,9 @@
   line-height: 24px;
   color: #272E3B;
   margin: 0;
-  padding-left: 24px;
+  padding-left: 0;
   list-style-type: decimal;
+  list-style-position: inside;
 }
 .numberedList li { margin: 0; }
 
@@ -278,15 +281,15 @@
   width: 100%;
 }
 
-/* Info row card (Problem / Solution / Impact): white bg, border, r8, gap-16, pad 21 */
+/* Info row card (Problem / Solution / Impact): white bg, border, r12, gap-16, pad 20 */
 .infoCard {
   display: flex;
   flex-direction: row;
   gap: 16px;
-  padding: 21px;
+  padding: 20px;
   background: #ffffff;
   border: 1px solid #E5E8ED;
-  border-radius: 8px;
+  border-radius: 12px;
   width: 100%;
   align-items: flex-start;
 }
@@ -567,7 +570,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 20px;
   color: #4E5969;
   margin: 0;
 }
@@ -575,7 +578,7 @@
 /* Pillar answer line (italicized) */
 .pillarAnswer {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
   line-height: 20px;
   color: #86909C;
@@ -610,10 +613,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 20px 16px;
+  padding: 20px;
   background: #ffffff;
   border: 1px solid #E5E8ED;
-  border-radius: 10px;
+  border-radius: 12px;
   position: relative;
 }
 
@@ -629,7 +632,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 16px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
@@ -638,7 +641,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 24px;
   color: #272E3B;
   margin: 0;
 }
@@ -671,9 +674,11 @@
   gap: 8px;
   padding: 12px 0 0 0;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 20px;
   color: #86909C;
   font-style: italic;
+  margin: 0;
 }
 
 /* ════════════════════════════════════════════════════════════
@@ -717,7 +722,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 11px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 16px;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
@@ -760,8 +765,9 @@
 .coverageHead {
   background: #F7F9FC;
   font-weight: 700 !important;
-  color: #272E3B !important;
-  font-size: 13px !important;
+  color: #86909C !important;
+  font-size: 11px !important;
+  line-height: 16px;
   text-transform: uppercase;
   letter-spacing: 0.4px;
 }
@@ -799,7 +805,7 @@
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 700;
-  line-height: 22px;
+  line-height: 24px;
   color: #272E3B;
   margin: 0;
 }
@@ -838,11 +844,11 @@
 /* Sub-section label (inside a section, above a sub-block) */
 .subLabel {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
-  line-height: 18px;
+  line-height: 16px;
   color: #86909C;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.4px;
   text-transform: uppercase;
   margin: 0;
   padding-top: 8px;
@@ -874,15 +880,16 @@
 /* Transition/closing quote inside a section */
 .transitionQuote {
   display: block;
-  padding: 16px 20px;
+  padding: 20px;
   background: #F7F9FC;
   border: 1px solid #E5E8ED;
   border-radius: 12px;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 15px;
-  line-height: 22px;
+  line-height: 24px;
   color: #4E5969;
   font-style: italic;
+  margin: 0;
 }
 
 /* ════════════════════════════════════════════════════════════
