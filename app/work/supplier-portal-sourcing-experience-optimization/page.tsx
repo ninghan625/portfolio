@@ -16,7 +16,7 @@ export default function SupplierCasePage() {
         <div className={s.hero}>
           <Image
             src="/images/supplier/Cover.jpg"
-            alt="Supplier Portal Sourcing Experience Optimization"
+            alt="Redesigning the supplier portal so sourcing stops falling back to email"
             width={1240}
             height={550}
             className={s.heroImg}
@@ -37,7 +37,7 @@ export default function SupplierCasePage() {
                 Project Title — Helvetica 700 24px / normal #272E3B
                 ════════════════════════════════════════════════════ */}
             <h1 className={s.title}>
-              Supplier Portal Sourcing Experience Optimization
+              Redesigning the supplier portal so sourcing stops falling back to email
             </h1>
 
             {/* ════════════════════════════════════════════════════

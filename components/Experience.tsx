@@ -29,7 +29,7 @@ const items = [
 export default function Experience() {
   return (
     <section className="flex w-full flex-col gap-[20px]">
-      <p className="font-['Heiti_SC','PingFang_SC','Helvetica',sans-serif] text-[15px] text-[#8f959e]">
+      <p className="text-[15px] text-[#8f959e]">
         Experience
       </p>
       <div className="flex w-full flex-col gap-[24px]">

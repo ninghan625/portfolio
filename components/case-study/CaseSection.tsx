@@ -20,7 +20,7 @@ export default function CaseSection({ data }: CaseSectionProps) {
       id={labelToId(data.label)}
       className="flex w-full flex-col scroll-mt-[72px]"
     >
-      <p className="font-['Heiti_SC','PingFang_SC','Helvetica',sans-serif] text-[15px] leading-normal text-[#86909c]">
+      <p className="text-[15px] leading-normal text-[#86909c]">
         {data.label}
       </p>
       <div className="mt-[12px] flex w-full flex-col gap-[20px]">

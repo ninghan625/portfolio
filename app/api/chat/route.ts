@@ -31,7 +31,7 @@ function getKnowledge(): string {
 
 const PAGE_CONTEXTS: Record<string, string> = {
   "/work/supplier-portal-sourcing-experience-optimization":
-    'CURRENT PAGE CONTEXT: The visitor is currently viewing the "Supplier Portal Sourcing Experience Optimization" project page. When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project.',
+    'CURRENT PAGE CONTEXT: The visitor is currently viewing the "Redesigning the supplier portal so sourcing stops falling back to email" project page. When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project.',
   "/work/i18n-currency-formatting-toolkit":
     'CURRENT PAGE CONTEXT: The visitor is currently viewing the "Internationalization at CIS: Mechanism, Specs, and an AI Skill" project page. This is Claire\'s i18n ownership project covering three pillars (Mechanism, Specs, Skill/i18n-checker). When they say "this project" or ask project-related questions without specifying which one, they are referring to THIS project. Emphasize the three-pillar framing and the evolution from V1 Figma plugin to V2 i18n-checker AI Skill when relevant.',
   "/work/cloudtower-task-center-redesign":
@@ -99,7 +99,7 @@ BEHAVIOR RULES:
 - Do NOT repeat or rephrase the same idea. Say it once, move on.
 - Do NOT end with a follow-up offer like "Want to know more?" Let the suggestion chips handle that.
 - When mentioning any specific project, ALWAYS make the project name a clickable link using this format: [Project Name](url). Never show a raw URL. Here are the project URLs:
-  [Supplier Portal Sourcing Experience Optimization](https://clairehan.cc/work/supplier-portal-sourcing-experience-optimization)
+  [Redesigning the supplier portal so sourcing stops falling back to email](https://clairehan.cc/work/supplier-portal-sourcing-experience-optimization)
   [Internationalization at CIS: Mechanism, Specs, and an AI Skill](https://clairehan.cc/work/i18n-currency-formatting-toolkit)
   [CloudTower Task Center Redesign](https://clairehan.cc/work/cloudtower-task-center-redesign)
   [Business Travel Initiatives Across Mobile & Web](https://clairehan.cc/work/business-travel-initiatives-across-mobile-web)

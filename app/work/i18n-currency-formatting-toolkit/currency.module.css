@@ -54,9 +54,9 @@
 /* ── Typography: Project title ───────────────────────────── */
 /* Helvetica 700 24px / normal #272E3B */
 .title {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: normal;
   color: #272E3B;
   margin: 0;
@@ -65,7 +65,7 @@
 /* ── Typography: Section label (anchor nav label) ────────── */
 /* Helvetica 400 15px / 24px #86909C — unified with body font */
 .label {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
@@ -76,9 +76,9 @@
 /* ── Typography: Sub-heading (18px bold) ─────────────────── */
 /* Helvetica 700 18px / 24px #272E3B */
 .h2 {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
@@ -87,9 +87,9 @@
 /* ── Typography: Card label (16px bold) ─────────────────── */
 /* Helvetica 700 16px / 24px #272E3B */
 .h {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
@@ -98,7 +98,7 @@
 /* ── Typography: Body regular ────────────────────────────── */
 /* Helvetica 400 16px / 24px #272E3B */
 .p {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -109,7 +109,7 @@
 /* ── Typography: Small body (info card body) ─────────────── */
 /* Helvetica 400 15px / 24px #4E5969 */
 .pSm {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 15px;
   font-weight: 400;
   line-height: 24px;
@@ -120,7 +120,7 @@
 /* ── Typography: Caption (centered, gray) ────────────────── */
 /* Helvetica 400 14px / normal CENTER #86909C */
 .caption {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
@@ -132,7 +132,7 @@
 /* ── Bullet list ─────────────────────────────────────────── */
 /* Flush-left: marker sits at x=0 (aligns with surrounding titles) */
 .bulletList {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -147,7 +147,7 @@
 /* ── Numbered list (context section item headings) ───────── */
 /* Flush-left: marker sits at x=0 (aligns with surrounding titles) */
 .numberedList {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -202,9 +202,9 @@
 
 /* ── Body bold (16px / 24px bold) ────────────────────────── */
 .pBold {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
@@ -226,16 +226,15 @@
   gap: 24px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   width: 100%;
 }
 
 /* Card title: 16px bold */
 .contextCardTitle {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
@@ -276,7 +275,6 @@
   gap: 8px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   width: 100%;
 }
@@ -350,7 +348,6 @@
   gap: 12px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   flex: 1;
   min-width: 0;
@@ -363,7 +360,6 @@
   gap: 12px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   flex: 1;
   min-width: 0;
@@ -376,7 +372,6 @@
   gap: 8px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   width: 100%;
 }
@@ -417,7 +412,6 @@
   gap: 12px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   width: 100%;
 }
@@ -501,7 +495,7 @@
   padding: 6px 14px;
   border-radius: 100px;
   border: 1px solid #272E3B;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -519,7 +513,7 @@
   padding: 6px 14px;
   border-radius: 100px;
   background: #272E3B;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -548,7 +542,6 @@
   gap: 12px;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   min-width: 0;
 }
@@ -569,7 +562,7 @@
   border-radius: 4px;
   background: #E6F4FF;
   color: #0080FF;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -582,7 +575,7 @@
 
 /* Pillar body text */
 .pillarBody {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -592,7 +585,7 @@
 
 /* Pillar answer line (italicized) */
 .pillarAnswer {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -616,7 +609,6 @@
   width: 100%;
   padding: 32px 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
   position: relative;
 }
@@ -629,7 +621,6 @@
   width: 100%;
   padding: 24px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
 }
 
@@ -664,7 +655,7 @@
   border-radius: 100px;
   background: #E6F4FF;
   color: #0080FF;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -673,16 +664,16 @@
 }
 
 .loopNodeTitle {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
 }
 
 .loopNodeBody {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -708,7 +699,7 @@
   justify-content: center;
   gap: 8px;
   padding: 12px 0 0 0;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   line-height: 20px;
   color: #86909C;
@@ -754,7 +745,7 @@
   border-radius: 100px;
   background: #E5E8ED;
   color: #4E5969;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -788,7 +779,7 @@
   padding: 12px 16px;
   border-bottom: 1px solid #E5E8ED;
   border-right: 1px solid #E5E8ED;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   line-height: 20px;
   color: #272E3B;
@@ -837,16 +828,16 @@
 }
 
 .dimensionTitle {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 24px;
   color: #272E3B;
   margin: 0;
 }
 
 .dimensionBody {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -860,7 +851,7 @@
   grid-template-columns: 110px 1fr;
   gap: 12px 16px;
   width: 100%;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   line-height: 20px;
 }
@@ -878,7 +869,7 @@
 
 /* Sub-section label (inside a section, above a sub-block) */
 .subLabel {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 11px;
   font-weight: 700;
   line-height: 16px;
@@ -902,7 +893,7 @@
 }
 
 .processBridgeCaption {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
@@ -917,9 +908,8 @@
   display: block;
   padding: 20px;
   background: #F7F9FC;
-  border: 1px solid #E5E8ED;
   border-radius: 12px;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: inherit;
   font-size: 15px;
   line-height: 24px;
   color: #4E5969;

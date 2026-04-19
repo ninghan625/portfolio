@@ -26,7 +26,7 @@ export default function SelectedWorks() {
 
   return (
     <section className="flex w-full flex-col gap-[20px]">
-      <p className="font-['Heiti_SC','PingFang_SC','Helvetica',sans-serif] text-[15px] text-[#8f959e]">
+      <p className="text-[15px] text-[#8f959e]">
         Selected Work
       </p>
       <div
