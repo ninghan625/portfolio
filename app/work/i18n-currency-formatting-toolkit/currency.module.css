@@ -917,6 +917,24 @@
   margin: 0;
 }
 
+/* ── Evidence frame: centered, shrunk image on a soft gray background ── */
+.evidenceFrame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 40px;
+  background: #F7F9FC;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.evidenceImg {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+}
+
 /* ════════════════════════════════════════════════════════════
    RESPONSIVE
    ════════════════════════════════════════════════════════════ */
@@ -939,4 +957,6 @@
   .dimensionGrid { grid-template-columns: 1fr; }
   .coverageTable { grid-template-columns: 100px 1fr 1fr; }
   .kvRow { grid-template-columns: 1fr; gap: 4px; }
+  .evidenceFrame { padding: 24px 16px; }
+  .evidenceImg { max-width: 100%; }
 }

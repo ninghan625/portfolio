@@ -716,11 +716,21 @@ export default function CurrencyCasePage() {
                 </dl>
               </div>
 
-              <p className={s.transitionQuote}>
-                Why this matters: 4 spec families plus 1,939 glossary entries exceed anyone&apos;s
-                memory. An AI Skill is the only scalable enforcement layer, and by delivering
-                it as a Skill (not a plugin), it meets people where they already work.
-              </p>
+              {/* Evidence: real Skill output */}
+              <div className={s.mediaBlock}>
+                <div className={s.evidenceFrame}>
+                  <Image
+                    src="/images/Currency/skill.png"
+                    alt="Sample output from a real i18n-checker Skill run"
+                    width={1152}
+                    height={1224}
+                    className={s.evidenceImg}
+                    unoptimized
+                  />
+                </div>
+                <p className={s.caption}>Sample output from a real Skill run</p>
+              </div>
+
             </section>
 
             <div className={s.divider} />
@@ -776,7 +786,7 @@ export default function CurrencyCasePage() {
               </div>
 
               <div className={s.outputCard}>
-                <p className={s.h}>1 · Specs ≠ enforcement</p>
+                <p className={s.h}>Specs ≠ enforcement</p>
                 <p className={s.p}>
                   A spec document, no matter how well written, doesn&apos;t change behavior by
                   itself. To actually ship i18n quality, you need <strong>mechanism</strong>
@@ -787,7 +797,7 @@ export default function CurrencyCasePage() {
               </div>
 
               <div className={s.outputCard}>
-                <p className={s.h}>2 · AI is the scalable leverage for i18n</p>
+                <p className={s.h}>AI is the scalable leverage for i18n</p>
                 <p className={s.p}>
                   At 4 spec families plus 1,939 glossary terms, human memory fails: no designer
                   or engineer can carry all that context. Reframing i18n QA as an AI Skill was
