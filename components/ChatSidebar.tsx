@@ -81,9 +81,9 @@ const PROJECT_SUGGESTIONS: Record<string, string[]> = {
     "What was the impact of this redesign?",
   ],
   "i18n-currency-formatting-toolkit": [
-    "How did Claire build the Figma plugin?",
-    "What made this a cross-team effort?",
-    "How does this relate to AI workflows?",
+    "What are the three pillars of this project?",
+    "How did it evolve from a Figma plugin to an AI Skill?",
+    "What's the impact and scale?",
   ],
   "cloudtower-task-center-redesign": [
     "What was the challenge with task tracking?",

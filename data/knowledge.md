@@ -17,9 +17,9 @@ She actively integrates AI into her daily design practice — not just as a talk
 
 - **AI-powered research workflows:** Claire uses Claude Code to process batch user interview recordings, auto-generate meeting notes and survey data, and synthesize insights — turning what used to be hours of manual synthesis into a semi-automated pipeline.
 - **Vibe coding for validation:** She uses Cursor and Claude Code to rapidly build interactive prototypes and demos for user testing. This portfolio (clairehan.cc) was built this way. In her day-to-day work, she'll vibe-code a quick demo to validate a direction with users before investing full design or engineering time.
-- **AI-assisted QA:** She built a Figma QA plugin (Cursor + GPT) to automatically flag i18n issues in designs, now used by 10+ internal teams at ByteDance.
+- **AI-assisted QA at scale:** She built and ships i18n-checker, an AI Skill that runs 4 spec families (Currency, Date/Time, Writing Style, Glossary with 1,939 terms) as executable QA across Claude Code, Cursor, Trae, and Mira. It evolved from a Figma QA plugin (Cursor + GPT) into a distributable Skill that covers design, R&D, and QA from a single source of truth.
 
-Claire sees herself as a fast learner with strong hands-on execution — someone who doesn't just recommend AI tools, but actually builds with them.
+Claire sees herself as a fast learner with strong hands-on execution — someone who doesn't just recommend AI tools, but actually builds and ships with them.
 
 ---
 
@@ -35,7 +35,7 @@ Key projects at ByteDance:
 - Redesigned the Supplier Portal sourcing workflow end-to-end, increasing online adoption from 3.9% to 19.92% (target was 15%)
 - Rebuilt the Business Travel mobile request experience, driving adoption to 31.02% of employees and an estimated ~21.1M RMB in annual savings
 - Shipped a 0→1 hotel booking map experience for 100K+ employees; 24% of orders now come through map-based search, and booking flow time dropped by 9%
-- Owned currency i18n guidelines and built an AI-assisted Figma QA plugin (Cursor + GPT), now used by 10+ design teams across 20+ product lines
+- Owns CIS's internationalization initiative (a company-level OKR covering 20+ product lines and 200K+ global employees): built the spec lifecycle, led the Currency spec end-to-end (adopted by 10+ design teams), and shipped i18n-checker — an AI Skill running across Claude Code, Cursor, Trae, and Mira
 
 ### SmartX — Product Designer (Mar 2020 – Nov 2022)
 **Location:** Beijing, China
@@ -80,20 +80,27 @@ Her approach: translating ambiguous infrastructure requirements into shippable U
 
 ---
 
-### 2. Internationalization Quality: Currency Amount Formatting Toolkit (ByteDance)
-**Tags:** i18n, Design Guidelines, Figma Plugin, Vibe Coding
+### 2. Internationalization at CIS: Mechanism, Specs, and an AI Skill (ByteDance)
+**Tags:** i18n Ownership, Spec Design, AI Skill, Design System
 
-**The problem:** As ByteDance's products scaled globally, currency amounts appeared everywhere — travel, procurement, contracts, finance — but different teams used different formats. This caused design churn, slow reviews, and avoidable engineering rework.
+**The scope:** Claire owns CIS's (Corporate Information Systems) internationalization initiative — a company-level OKR covering 20+ product lines (Travel, Procurement, Contract, Finance, ByteCanteen, etc.) and 200K+ global employees. When she took ownership, specs existed but were scattered across wikis, applied manually, and incomplete in coverage. Design, R&D, and QA all felt the pain, but none had a shared system of record or a way to enforce it at scale.
 
-**Claire's approach:**
-- Audited currency patterns across key products and tagged inconsistencies
-- Reviewed 50+ industry references to extract durable display conventions
-- Validated a 3-format model (Short / Standard / Explicit) with multiple design teams
-- Delivered a complete toolkit: format rules, decision guidance (when to use each format), reusable components, and a lightweight Figma QA plugin built with Cursor + GPT
+**Claire's approach — three pillars in parallel:**
 
-**Results:** Adopted by 10+ design teams, scaled across 20+ product lines, with code-backed components shipped into the central design system library.
+1. **Mechanism:** Designed a Collect → Iterate → Publish lifecycle so the spec system keeps improving itself. Problems flow in from walkthroughs and reviews, specs iterate through audit/synthesize/validate, and updates publish the same day into the Skill where they get enforced.
 
-**What this shows about Claire:** She thinks about systemic impact. Instead of fixing one screen, she built a toolkit that removed the problem for everyone. The Figma QA plugin is also a direct example of her building AI-powered tools to improve design quality at scale.
+2. **Specs:** Led the Currency spec end-to-end as the showcase of the methodology. Audited products, reviewed 50+ B2B/B2C references, and landed a 3-format model (Short / Standard / Explicit) with decision rules and reusable components. Also maintains the full library: Currency, Date/Time, Writing Style, Glossary.
+
+3. **Skill:** Shipped i18n-checker, an AI Skill covering 4 dimensions (Currency & Amount, Writing Style, Date & Time, Glossary) and 1,939 glossary terms across 6 product lines. It evolved from a V1 Figma QA plugin (Cursor + GPT) into a V2 distributable Skill that runs across Claude Code, Cursor, Trae, and Mira — so design, R&D, and QA all share one source of truth.
+
+**The evolution story (V1 → V2):** The original Figma plugin proved AI-assisted i18n QA was viable, but three organizational shifts broke the model: designers started vibe-coding in Claude Code / Cursor and bypassing Figma, engineers wanted checks on code, and QA wanted pre-release validation from screenshots. A tool locked inside Figma couldn't follow the work — so Claire rebuilt it as a Skill that meets people where they already work.
+
+**Results:**
+- Currency toolkit adopted by 10+ design teams across 20+ product lines, with code-backed components shipped into the central design system. Referenced by other orgs (Douyin, Volcano Engine) as reusable best practice.
+- i18n-checker shipped as a distributable Skill with the 1,939-term glossary built in; running across design, R&D, and QA from one source of truth.
+- Mechanism loop now running across CIS — the spec system is a living asset, not a one-time publish.
+
+**What this shows about Claire:** She thinks in systems, not screens. A spec document doesn't change behavior by itself, so she built three things as co-equals: the mechanism (how specs evolve), the specs themselves, and the tooling (how specs execute). She also recognized when the delivery model had to change — rebuilding a working Figma plugin as an AI Skill so it could scale to wherever the work actually happens.
 
 ---
 
