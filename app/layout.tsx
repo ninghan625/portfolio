@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Buenard } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import CustomCursor from "@/components/CustomCursor";
@@ -20,6 +20,13 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
 });
 
+const buenard = Buenard({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  display: "swap",
+  variable: "--font-bree-serif",
+});
+
 export const metadata: Metadata = {
   title: "Claire Han | Product Designer",
   description: "Portfolio homepage",
@@ -32,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${instrumentSerif.variable} antialiased`}>
+      <body className={`${inter.className} ${instrumentSerif.variable} ${buenard.variable} antialiased`}>
         <CursorProvider>
           <ChatProvider>
             <CustomCursor />

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="flex w-full flex-col gap-[20px]">
-      <p className="font-['Heiti_SC','PingFang_SC','Helvetica',sans-serif] text-[15px] text-[#8f959e]">
+      <p className="text-[15px] text-[#8f959e]">
         Where to find me
       </p>
       <div className="flex w-full flex-col gap-[8px]">

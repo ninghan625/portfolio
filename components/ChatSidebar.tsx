@@ -215,10 +215,10 @@ export default function ChatSidebar() {
       <div className="flex-1 overflow-y-auto px-6 pt-2 pb-4 flex flex-col gap-3">
         {messages.length === 0 && (
           <div className="flex-1 flex flex-col justify-center gap-2.5">
-            <p className="font-[family-name:var(--font-instrument-serif)] text-[24px] text-[rgba(0,128,255,0.4)] leading-normal">
+            <p className="font-light text-[20px] text-[rgba(0,128,255,0.4)] leading-normal">
               CC is Claire&apos;s portfolio assistant.
             </p>
-            <p className="font-[family-name:var(--font-instrument-serif)] text-[24px] text-[rgba(0,128,255,0.4)] leading-normal">
+            <p className="font-light text-[20px] text-[rgba(0,128,255,0.4)] leading-normal">
               Ask anything about Claire&apos;s work and background.
             </p>
           </div>

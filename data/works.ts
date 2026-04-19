@@ -10,11 +10,12 @@ export interface WorkItem {
   company: string;
   companyLogo: string;
   tags: string[];
+  year?: string;
 }
 
 export const works: WorkItem[] = [
   {
-    title: "Supplier Portal Sourcing Experience Optimization",
+    title: "Redesigning the supplier portal so sourcing stops falling back to email",
     subtitle: "Increased online sourcing adoption by redesigning the supplier email + portal workflows end-to-end.",
     slug: "supplier-portal-sourcing-experience-optimization",
     iconType: "procurement",
@@ -23,6 +24,7 @@ export const works: WorkItem[] = [
     company: "ByteDance",
     companyLogo: "/icons/Bytedance.png",
     tags: ["Enterprise UX", "Redesign", "User Research", "Design Strategy"],
+    year: "2025",
   },
   {
     title: "Internationalization at CIS: Mechanism, Specs, and an AI Skill",
@@ -33,6 +35,7 @@ export const works: WorkItem[] = [
     company: "ByteDance",
     companyLogo: "/icons/Bytedance.png",
     tags: ["i18n", "Design System", "AI Skill", "Vibe Coding", "Design Ops"],
+    year: "2026",
   },
   {
     title: "CloudTower Task Center Redesign",
@@ -43,6 +46,7 @@ export const works: WorkItem[] = [
     company: "SmartX",
     companyLogo: "/icons/smartx.png",
     tags: ["Infrastructure", "Redesign"],
+    year: "2023",
   },
   {
     title: "Business Travel Initiatives Across Mobile & Web",
@@ -53,6 +57,7 @@ export const works: WorkItem[] = [
     company: "ByteDance",
     companyLogo: "/icons/Bytedance.png",
     tags: ["0-1", "Map Design", "Enterprise Platform"],
+    year: "2024",
   },
 ];
 

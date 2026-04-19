@@ -59,7 +59,7 @@ export default function AnchorNav({ items }: AnchorNavProps) {
 
   return (
     <nav
-      className="sticky top-[136px] flex flex-col gap-[16px] font-['Heiti_SC','PingFang_SC','Helvetica',sans-serif] text-[15px] leading-normal text-[#86909c]"
+      className="sticky top-[136px] flex flex-col gap-[16px] text-[15px] leading-normal text-[#86909c]"
     >
       {items.map((item) => {
         const id = labelToId(item);

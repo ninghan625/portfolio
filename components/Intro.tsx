@@ -20,7 +20,7 @@ export default function Intro() {
       </div>
 
       <div className="flex w-full flex-col gap-[20px]">
-        <p className="font-['Heiti_SC','PingFang_SC','Helvetica',sans-serif] text-[15px] text-[#8f959e]">
+        <p className="text-[15px] text-[#8f959e]">
           About me
         </p>
         <div className="flex flex-col gap-[16px] text-[16px] text-[#00122E]">

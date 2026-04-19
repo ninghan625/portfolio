@@ -63,7 +63,7 @@ Her approach: translating ambiguous infrastructure requirements into shippable U
 
 ## Projects
 
-### 1. Supplier Portal Sourcing Experience Optimization (ByteDance)
+### 1. Redesigning the supplier portal so sourcing stops falling back to email (ByteDance)
 **Tags:** Enterprise UX, Redesign, User Research, Design Strategy
 
 **The problem:** Critical sourcing information was scattered across a long, multi-stage workflow. Suppliers, buyers, and legal teams couldn't find what they needed to act, so work kept leaking into email threads that were hard to track and audit.

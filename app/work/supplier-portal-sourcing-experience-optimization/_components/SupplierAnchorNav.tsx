@@ -31,10 +31,7 @@ export default function SupplierAnchorNav() {
   }, []);
 
   return (
-    <nav
-      className="sticky top-[136px] flex flex-col gap-[16px]"
-      style={{ fontFamily: "'Heiti SC','PingFang SC',Helvetica,sans-serif" }}
-    >
+    <nav className="sticky top-[136px] flex flex-col gap-[16px]">
       {ITEMS.map(({ label, id }) => (
         <button
           key={id}

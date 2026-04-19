@@ -1,5 +1,5 @@
 ---
-title: Supplier Portal Sourcing Experience Optimization
+title: Redesigning the supplier portal so sourcing stops falling back to email
 slug: supplier-portal-sourcing-experience-optimization
 date: 2025-06
 subtitle: Solved low adoption and compliance risks by pivoting to a transparent, email-first workflow with visualized timelines.

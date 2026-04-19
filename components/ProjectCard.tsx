@@ -13,15 +13,16 @@ interface Work {
   previewImage: string;
   tags: string[];
   previewObjectPosition?: string;
+  year?: string;
 }
 
 interface ProjectCardProps {
   work: Work;
-  index: number;
+  // index kept for API compatibility even though layout no longer alternates
+  index?: number;
 }
 
-export default function ProjectCard({ work, index }: ProjectCardProps) {
-  const isEven = index % 2 === 0;
+export default function ProjectCard({ work }: ProjectCardProps) {
   const { setIsProjectHovered } = useCursor();
   const cardRef = useRef<HTMLAnchorElement>(null);
 
@@ -35,87 +36,47 @@ export default function ProjectCard({ work, index }: ProjectCardProps) {
     <Link
       ref={cardRef}
       href={`/work/${work.slug}`}
-      className="relative group flex flex-col md:flex-row items-stretch bg-white overflow-hidden w-full transition-all duration-300 hover:-translate-y-1"
+      className="group flex flex-col w-full transition-transform duration-300 hover:-translate-y-1"
       onMouseEnter={() => setIsProjectHovered(true)}
       onMouseLeave={() => setIsProjectHovered(false)}
     >
-      {isEven ? (
-        <>
-          {/* Image Left */}
-          <div className="w-full md:w-1/2 aspect-[3/2] md:aspect-auto overflow-hidden">
-            <img
-              alt={work.title}
-              className="object-cover size-full transition-transform duration-500 group-hover:scale-105"
-              src={work.previewImage}
-              style={work.previewObjectPosition ? { objectPosition: work.previewObjectPosition } : undefined}
-            />
-          </div>
-          {/* Content Right */}
-          <div className="w-full md:w-1/2 bg-[rgba(248,249,250,0.8)] p-8 md:p-12 flex flex-col justify-between">
-            <div className="flex flex-col gap-5">
-              <img
-                alt={work.company}
-                className={`w-auto object-contain object-left ${work.company === 'SmartX' ? 'h-3' : 'h-4'}`}
-                src={work.companyLogo}
-              />
-              <h3 className="font-semibold text-[#1f2329] text-[24px] md:text-[28px] leading-[30px] md:leading-[34px] tracking-[-0.26px]">
-                {work.title}
-              </h3>
-              <p className="font-normal text-[#6b7280] text-[17px] leading-[24px] md:leading-[27px]">
-                {work.subtitle}
-              </p>
-            </div>
-            <div className="flex gap-2 flex-wrap mt-6">
-              {work.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-[rgba(255,255,255,0.6)] border border-[rgba(39,46,59,0.1)] px-[13px] py-[7px] rounded-full text-[#272e3b] text-[13px] leading-[18px]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </>
-      ) : (
-        <>
-          {/* Content Left */}
-          <div className="w-full md:w-1/2 bg-[rgba(248,249,250,0.8)] p-8 md:p-12 flex flex-col justify-between order-2 md:order-1">
-            <div className="flex flex-col gap-5">
-              <img
-                alt={work.company}
-                className={`w-auto object-contain object-left ${work.company === 'SmartX' ? 'h-3' : 'h-4'}`}
-                src={work.companyLogo}
-              />
-              <h3 className="font-semibold text-[#1f2329] text-[24px] md:text-[28px] leading-[30px] md:leading-[34px] tracking-[-0.26px]">
-                {work.title}
-              </h3>
-              <p className="font-normal text-[#6b7280] text-[17px] leading-[24px] md:leading-[27px]">
-                {work.subtitle}
-              </p>
-            </div>
-            <div className="flex gap-2 flex-wrap mt-6">
-              {work.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-[rgba(255,255,255,0.6)] border border-[rgba(39,46,59,0.1)] px-[13px] py-[7px] rounded-full text-[#272e3b] text-[13px] leading-[18px]"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-          {/* Image Right */}
-          <div className="w-full md:w-1/2 aspect-[3/2] md:aspect-auto overflow-hidden order-1 md:order-2">
-            <img
-              alt={work.title}
-              className="object-cover size-full transition-transform duration-500 group-hover:scale-105"
-              src={work.previewImage}
-              style={work.previewObjectPosition ? { objectPosition: work.previewObjectPosition } : undefined}
-            />
-          </div>
-        </>
+      {/* Cover image */}
+      <div className="w-full aspect-[16/10] overflow-hidden rounded-[12px] bg-[#f5f5f5]">
+        <img
+          alt={work.title}
+          className="object-cover size-full transition-transform duration-500 group-hover:scale-[1.03]"
+          src={work.previewImage}
+          style={work.previewObjectPosition ? { objectPosition: work.previewObjectPosition } : undefined}
+        />
+      </div>
+
+      {/* Year | Company — tight line-box; divider is a short 10px bar */}
+      {work.year && (
+        <p className="mt-5 text-[#8f959e] text-[13px] leading-none tracking-[0.02em] flex items-center gap-[8px]">
+          <span>{work.year}</span>
+          <span className="inline-block w-px h-[10px] bg-current opacity-60" aria-hidden="true" />
+          <span>{work.company}</span>
+        </p>
       )}
+
+      {/* Title — inherits Inter from global body */}
+      <h3
+        className="mt-2 text-[#1f2329] text-[24px] leading-[1.2] tracking-[-0.01em] font-semibold"
+      >
+        {work.title}
+      </h3>
+
+      {/* Tags */}
+      <div className="mt-5 flex gap-2 flex-wrap">
+        {work.tags.map((tag) => (
+          <span
+            key={tag}
+            className="bg-[#f1f2f4] px-[14px] py-[6px] rounded-full text-[#4e5969] text-[14px] leading-[20px]"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
     </Link>
   );
 }

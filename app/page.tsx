@@ -48,7 +48,7 @@ export default function Home() {
           {/* Introduction */}
           <div className="flex flex-col gap-3 text-[19px] leading-[28px] w-full max-w-[680px] text-center">
             <p className="text-[#1f2329]">
-              A product designer who lives in the messy middle of <Highlight>complex B2B systems</Highlight>. Currently at TikTok. Lately <Highlight>building AI workflows</Highlight> into how I research, QA, and ship.
+              A product designer who lives in the messy middle of <Highlight>complex B2B systems</Highlight>. Currently at ByteDance. Lately <Highlight>building AI workflows</Highlight> into how I research, QA, and ship.
             </p>
             <p className="text-[#8f959e] text-[18px] leading-[24px] mt-2">
               📍 Based in Dubai, open to relocate
@@ -111,7 +111,7 @@ export default function Home() {
             Selected Work
           </h2>
 
-          <div className="flex flex-col gap-[60px] w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-16 w-full">
             {works.map((work, index) => (
               <ProjectCard key={work.slug} work={work} index={index} />
             ))}
