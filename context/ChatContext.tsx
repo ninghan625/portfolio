@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { usePathname } from "next/navigation";
 
 interface ChatContextType {
@@ -15,6 +15,12 @@ export function ChatProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   // Default open only on homepage; closed on project detail pages and other routes
   const [isOpen, setIsOpen] = useState(pathname === "/");
+
+  // Re-sync open state on route change so detail pages always start closed
+  // and the homepage always starts open, regardless of navigation direction.
+  useEffect(() => {
+    setIsOpen(pathname === "/");
+  }, [pathname]);
 
   return (
     <ChatContext.Provider value={{ isOpen, setIsOpen, toggle: () => setIsOpen((v) => !v) }}>
