@@ -1,0 +1,9 @@
+.title {
+  font-family: var(--font-noto-serif), Georgia, serif;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.01em;
+}

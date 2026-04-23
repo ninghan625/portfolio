@@ -1,0 +1,9 @@
+.headline {
+  font-family: var(--font-noto-serif), Georgia, serif;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #1a1a1a;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
