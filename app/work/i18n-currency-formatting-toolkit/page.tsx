@@ -1,827 +1,478 @@
 import Image from "next/image";
-import Link from "next/link";
-import CurrencyAnchorNav from "./_components/CurrencyAnchorNav";
-import s from "./currency.module.css";
+import {
+  CaseStudyLayout,
+  PageTitle,
+  Eyebrow,
+  SectionHeadline,
+  Subheading,
+  BodyText,
+  Figure,
+  type TOCItem,
+} from "@/components/case-study-v2";
+import s from "./page.module.css";
 
-export default function CurrencyCasePage() {
+const TOC_ITEMS: TOCItem[] = [
+  { id: "context", label: "Context" },
+  { id: "design-process", label: "Design Process" },
+  { id: "solution", label: "Solution" },
+  { id: "impact", label: "Impact" },
+  { id: "reflection", label: "Reflection" },
+];
+
+export default function I18nDraftPage() {
   return (
     <div className={s.page}>
-      <div className={s.container}>
-
-        {/* Header spacer */}
-        <div style={{ height: 8 }} />
-
-        {/* ── Hero ─────────────────────────────────────────────── */}
-        <div className={s.hero}>
+      <div className={s.hero}>
+        <div className={s.heroInner}>
           <Image
             src="/images/Currency/Cover.jpg"
-            alt="Owning Internationalization at CIS"
-            width={1080}
-            height={454}
+            alt="Building a systematic internationalization library and turning it into an AI callable Skill"
+            width={956}
+            height={425}
             className={s.heroImg}
             priority
             unoptimized
           />
         </div>
-
-        {/* ── Two-column ───────────────────────────────────────── */}
-        <div className={s.twoCol}>
-          <aside className={s.sidebar}>
-            <CurrencyAnchorNav />
-          </aside>
-
-          <article className={s.article}>
-
-            {/* ════════════════════════════════════════════════════
-                TITLE
-                ════════════════════════════════════════════════════ */}
-            <h1 className={s.title}>
-              Internationalization at CIS: Mechanism, Specs, and an AI Skill
-            </h1>
-
-            {/* ════════════════════════════════════════════════════
-                TL;DR
-                ════════════════════════════════════════════════════ */}
-            <section id="tldr" className={s.section}>
-              <span className={s.label}>TL;DR</span>
-
-              <div className={s.tldrSummaryCard}>
-                <p className={s.h2}>
-                  Build the foundation of internationalization at CIS
-                </p>
-                <p className={s.p}>
-                  I own CIS&apos;s internationalization initiative, a company-level OKR covering
-                  20+ product lines and 200K+ global employees. My work spans three pillars:
-                  running the spec lifecycle, maintaining the full spec library (with Currency as
-                  a deep case), and shipping i18n-checker, an AI Skill that turns specs into
-                  executable QA across design, R&amp;D, and QA.
-                </p>
-              </div>
-
-              {/* Problem */}
-              <div className={s.infoCard}>
-                <div className={s.iconCircle} style={{ background: "#FFF4E6" }}>
-                  <img src="/images/Currency/Icon 1.svg" alt="Problem" width={20} height={20} />
-                </div>
-                <div className={s.infoTextCol}>
-                  <p className={s.h}>Problem</p>
-                  <p className={s.pSm}>
-                    Specs existed but were scattered across wikis, applied manually, and
-                    incomplete in coverage. Design, R&amp;D, and QA all felt the pain, but none
-                    had a shared system of record or a way to enforce it at scale.
-                  </p>
-                </div>
-              </div>
-
-              {/* Solution */}
-              <div className={s.infoCard}>
-                <div className={s.iconCircle} style={{ background: "#E6F4FF" }}>
-                  <img src="/images/Currency/Icon 2.svg" alt="Solution" width={20} height={20} />
-                </div>
-                <div className={s.infoTextCol}>
-                  <p className={s.h}>Solution: three pillars</p>
-                  <ul className={s.bulletList} style={{ fontSize: 15, color: "#4E5969" }}>
-                    <li><strong>Mechanism:</strong> a Collect → Iterate → Publish lifecycle so the spec system keeps improving itself</li>
-                    <li><strong>Specs:</strong> led the Currency standard end-to-end; maintain the full library (Currency, Date/Time, Writing Style, Glossary)</li>
-                    <li><strong>Skill:</strong> shipped i18n-checker, an AI Skill covering 4 dimensions and 1,939 glossary terms, running across Claude Code / Cursor / Mira</li>
-                  </ul>
-                </div>
-              </div>
-
-              {/* Impact */}
-              <div className={s.infoCard}>
-                <div className={s.iconCircle} style={{ background: "#E6F9F0" }}>
-                  <img src="/images/Currency/Icon 3.svg" alt="Impact" width={20} height={20} />
-                </div>
-                <div className={s.infoTextCol}>
-                  <p className={s.h}>Impact</p>
-                  <p className={s.pSm}>
-                    Currency toolkit adopted by 10+ design teams across 20+ product lines.
-                    i18n-checker shipped as a distributable Skill, now running across design,
-                    R&amp;D, and QA: one source of truth, enforced where the work happens.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <div className={s.dividerShort} />
-
-            {/* ════════════════════════════════════════════════════
-                CONTEXT
-                ════════════════════════════════════════════════════ */}
-            <section id="context" className={s.section}>
-              <span className={s.label}>Context</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>
-                  i18n became an ownership area because specs alone weren&apos;t moving the needle
-                </p>
-                <p className={s.p}>
-                  CIS (Corporate Information Systems) serves <strong>200K+ global employees</strong> across
-                  <strong> 20+ product lines</strong> such as Travel, Procurement, Contract, Finance,
-                  and ByteCanteen. As non-China-region employee share kept growing, i18n experience
-                  became a company-level OKR.
-                </p>
-              </div>
-
-              <p className={s.subLabel}>State of i18n when I took ownership</p>
-
-              <div className={s.pillarGrid}>
-                <div className={s.pillarCard}>
-                  <div className={s.pillarHeader}>
-                    <span className={s.pillarChip}>Problem 1</span>
-                    <p className={s.h}>Scattered</p>
-                  </div>
-                  <p className={s.pillarBody}>
-                    A 2023–2024 push built the first generation of specs (Currency, Date/Time,
-                    English Writing). They worked, but lived across different wikis with no
-                    single entry point.
-                  </p>
-                </div>
-
-                <div className={s.pillarCard}>
-                  <div className={s.pillarHeader}>
-                    <span className={`${s.pillarChip} ${s.pillarChipGreen}`}>Problem 2</span>
-                    <p className={s.h}>Manual</p>
-                  </div>
-                  <p className={s.pillarBody}>
-                    Designers read specs and cross-referenced glossary entries by hand.
-                    Coverage was inconsistent and review churn was high.
-                  </p>
-                </div>
-
-                <div className={s.pillarCard}>
-                  <div className={s.pillarHeader}>
-                    <span className={`${s.pillarChip} ${s.pillarChipPurple}`}>Problem 3</span>
-                    <p className={s.h}>Incomplete</p>
-                  </div>
-                  <p className={s.pillarBody}>
-                    Multilingual typesetting, names, addresses, numbers, and RTL had no spec
-                    at all, and it was unclear whether existing specs reached every product line.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                FRAMEWORK: 3 pillars
-                ════════════════════════════════════════════════════ */}
-            <section id="framework" className={s.section}>
-              <span className={s.label}>Framework</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>My approach: three pillars</p>
-                <p className={s.p}>
-                  A spec document, by itself, doesn&apos;t change behavior. To own i18n at CIS scale,
-                  I built three things in parallel: a mechanism that keeps the spec system
-                  evolving, the specs themselves, and an AI Skill that turns specs into
-                  enforcement.
-                </p>
-              </div>
-
-              <div className={s.pillarGrid}>
-                {/* Pillar 1 */}
-                <div className={s.pillarCard}>
-                  <div className={s.pillarHeader}>
-                    <span className={`${s.pillarChip}`}>Pillar 1</span>
-                    <p className={s.h}>Mechanism</p>
-                  </div>
-                  <p className={s.pillarBody}>
-                    A Collect → Iterate → Publish lifecycle that keeps the spec system
-                    improving itself, driven by real problems rather than guesses.
-                  </p>
-                  <p className={s.pillarAnswer}>
-                    Answers: how does the spec system sustain itself?
-                  </p>
-                </div>
-
-                {/* Pillar 2 */}
-                <div className={s.pillarCard}>
-                  <div className={s.pillarHeader}>
-                    <span className={`${s.pillarChip} ${s.pillarChipGreen}`}>Pillar 2</span>
-                    <p className={s.h}>Specs</p>
-                  </div>
-                  <p className={s.pillarBody}>
-                    Led the Currency standard end-to-end as the showcase of the methodology.
-                    Maintain the full library: Currency, Date/Time, Writing, Glossary.
-                  </p>
-                  <p className={s.pillarAnswer}>
-                    Answers: what does a great spec look like?
-                  </p>
-                </div>
-
-                {/* Pillar 3 */}
-                <div className={s.pillarCard}>
-                  <div className={s.pillarHeader}>
-                    <span className={`${s.pillarChip} ${s.pillarChipPurple}`}>Pillar 3</span>
-                    <p className={s.h}>Skill</p>
-                  </div>
-                  <p className={s.pillarBody}>
-                    i18n-checker, an AI Skill that runs the specs as executable QA across
-                    design, R&amp;D, and QA, in whatever tool people already work in.
-                  </p>
-                  <p className={s.pillarAnswer}>
-                    Answers: how do specs actually land in the product?
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                PILLAR 1: MECHANISM
-                ════════════════════════════════════════════════════ */}
-            <section id="mechanism" className={s.section}>
-              <span className={s.label}>Pillar 1 · Mechanism</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>A lifecycle loop, not a one-time publish</p>
-                <p className={s.p}>
-                  Specs don&apos;t execute themselves, and a spec that ships once and never
-                  updates rots fast. I designed the spec system as a continuous loop:
-                  problems flow in, specs are iterated, and updates flow out into the Skill
-                  where they get enforced. Every round raises the floor.
-                </p>
-              </div>
-
-              {/* Loop diagram */}
-              <div className={s.lifecycleLoop}>
-                <div className={s.loopNode}>
-                  <span className={s.loopNodeNum}>Step 1</span>
-                  <p className={s.loopNodeTitle}>Collect</p>
-                  <p className={s.loopNodeBody}>
-                    Walkthroughs, reviews, and daily feedback flow into a unified problem log.
-                    Priority is <strong>data-driven</strong>: the shape of the problems decides
-                    what specs to build or revise next.
-                  </p>
-                </div>
-                <div className={s.loopArrow}>→</div>
-                <div className={s.loopNode}>
-                  <span className={s.loopNodeNum}>Step 2</span>
-                  <p className={s.loopNodeTitle}>Iterate</p>
-                  <p className={s.loopNodeBody}>
-                    Each spec goes through audit, synthesize, validate. Currency is the
-                    showcase of this flow (see Pillar 2). The same methodology applies to
-                    every spec I own.
-                  </p>
-                </div>
-                <div className={s.loopArrow}>→</div>
-                <div className={s.loopNode}>
-                  <span className={s.loopNodeNum}>Step 3</span>
-                  <p className={s.loopNodeTitle}>Publish</p>
-                  <p className={s.loopNodeBody}>
-                    Specs publish to a single entry point <em>and</em> ship into i18n-checker
-                    the same day. Team sync happens via Bot pushes or focused sessions, so
-                    updates actually reach practitioners.
-                  </p>
-                </div>
-              </div>
-              <p className={s.loopReturnArrow}>
-                ↺ Every round: new problems → new/updated specs → updated Skill → better i18n quality
-              </p>
-            </section>
-
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                PILLAR 2: SPECS (Currency deep case)
-                ════════════════════════════════════════════════════ */}
-            <section id="specs" className={s.section}>
-              <span className={s.label}>Pillar 2 · Specs</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>Currency, as the showcase of how I build specs</p>
-                <p className={s.p}>
-                  Currency was the first spec I took from audit to production as owner. Same
-                  methodology now runs across Date/Time, Writing Style, and Glossary. Below is
-                  the Currency build, in full, so the method is legible.
-                </p>
-              </div>
-
-              {/* Currency inconsistencies */}
-              <div className={s.contextCard}>
-                <p className={s.contextCardTitle}>The problems I was solving</p>
-                <div className={s.contextItemsCluster}>
-
-                  <div className={s.contextItem}>
-                    <ol className={s.numberedList} start={1}>
-                      <li>Inconsistent ISO code placement (e.g., USD 1,000 vs 1,000 USD)</li>
-                    </ol>
-                    <Image
-                      src="/images/Currency/1.webp"
-                      alt="Inconsistent ISO code placement"
-                      width={1704}
-                      height={271}
-                      className={s.img}
-                      unoptimized
-                    />
-                  </div>
-
-                  <div className={s.contextDivider} />
-
-                  <div className={s.contextItem}>
-                    <ol className={s.numberedList} start={2}>
-                      <li>Mixed currency format ($ / USD / US$)</li>
-                    </ol>
-                    <Image
-                      src="/images/Currency/2.webp"
-                      alt="Mixed currency format"
-                      width={860}
-                      height={281}
-                      className={s.imgFixed}
-                      style={{ width: 430, height: "auto" }}
-                      unoptimized
-                    />
-                  </div>
-
-                  <div className={s.contextDivider} />
-
-                  <div className={s.contextItem}>
-                    <ol className={s.numberedList} start={3}>
-                      <li>Unclear large-number formatting (K / M / B)</li>
-                    </ol>
-                    <Image
-                      src="/images/Currency/3.webp"
-                      alt="Unclear large-number formatting"
-                      width={850}
-                      height={175}
-                      className={s.imgFixed}
-                      style={{ width: 430, height: "auto" }}
-                      unoptimized
-                    />
-                  </div>
-
-                  <div className={s.contextDivider} />
-
-                  <div className={s.contextItem}>
-                    <ol className={s.numberedList} start={4}>
-                      <li>Inconsistent currency picker options</li>
-                    </ol>
-                    <Image
-                      src="/images/Currency/4.png"
-                      alt="Inconsistent currency picker options"
-                      width={892}
-                      height={108}
-                      className={s.img}
-                      unoptimized
-                    />
-                  </div>
-
-                  <div className={s.contextDivider} />
-
-                  <div className={s.contextItem}>
-                    <ol className={s.numberedList} start={5}>
-                      <li>Undefined visual hierarchy for totals</li>
-                    </ol>
-                    <Image
-                      src="/images/Currency/5.jpg"
-                      alt="Define visual hierarchy rules for totals"
-                      width={892}
-                      height={449}
-                      className={s.img}
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* ─────────────────────────────────────────────────
-                  DESIGN PROCESS: compact 3-step strip
-                  ───────────────────────────────────────────────── */}
-              <div className={s.processCard}>
-                <p className={s.h}>Design Process</p>
-                <div className={s.processSteps}>
-                  <div className={s.loopNode}>
-                    <span className={s.loopNodeNum}>Step 1</span>
-                    <p className={s.loopNodeTitle}>Audit</p>
-                    <p className={s.loopNodeBody}>
-                      Audited key products and surfaces; tagged recurring formatting problems
-                      to build a complete picture of today&apos;s patterns.
-                    </p>
-                  </div>
-                  <div className={s.loopArrow}>→</div>
-                  <div className={s.loopNode}>
-                    <span className={s.loopNodeNum}>Step 2</span>
-                    <p className={s.loopNodeTitle}>Synthesize</p>
-                    <p className={s.loopNodeBody}>
-                      Reviewed 50+ B2B/B2C references and design systems; distilled durable
-                      currency display conventions that hold up under real UI constraints.
-                    </p>
-                  </div>
-                  <div className={s.loopArrow}>→</div>
-                  <div className={s.loopNode}>
-                    <span className={s.loopNodeNum}>Step 3</span>
-                    <p className={s.loopNodeTitle}>Validate</p>
-                    <p className={s.loopNodeBody}>
-                      Aligned the 3-format model with design teams across business lines;
-                      locked edge cases and rollout expectations.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bridge: Process output → Output intro */}
-              <div className={s.processBridge}>
-                <Image
-                  src="/images/Currency/8.png"
-                  alt="Draft 3-format framework (Short / Standard / Explicit)"
-                  width={2991}
-                  height={841}
-                  className={s.img}
-                  unoptimized
-                />
-                <p className={s.processBridgeCaption}>
-                  From the audit and 50+ references, I drafted this 3-format framework
-                  (Short / Standard / Explicit), then validated and expanded it into the full
-                  spec below.
-                </p>
-              </div>
-
-              {/* ─────────────────────────────────────────────────
-                  WHAT SHIPPED: overview callout → 3 parts
-                  ───────────────────────────────────────────────── */}
-              <div className={s.solutionCallout}>
-                <p className={s.h2}>What shipped: A toolkit, not just formatting rules</p>
-                <p className={s.p}>
-                  A 3-format framework, decision rules, and reusable components, so teams
-                  display and implement money consistently by default. Below are the three
-                  parts that make up the toolkit.
-                </p>
-              </div>
-
-              <div className={s.solutionCluster}>
-
-                {/* Part 1 */}
-                <div className={s.solutionStep}>
-                  <div className={s.subSection}>
-                    <p className={s.h2}>Part 1 · Format rules teams can implement</p>
-                    <p className={s.p}>
-                      Locked the &quot;how to format&quot; rules (ISO, spacing, separators) into a
-                      single source of truth.
-                    </p>
-                  </div>
-                  <div className={s.whatCard}>
-                    <p className={s.h}>❇️ What teams get</p>
-                    <ul className={s.bulletList}>
-                      <li>Exact formatting rules (ISO and number placement, spacing, separators)</li>
-                      <li>Correct vs incorrect examples for quick QA</li>
-                      <li>Implementation-ready for design + engineering</li>
-                    </ul>
-                  </div>
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/Currency/9.png"
-                      alt="Format rules teams can implement"
-                      width={892}
-                      height={719}
-                      className={s.img}
-                      unoptimized
-                    />
-                    <p className={s.caption}>Format rules for Short and Standard formats (USD)</p>
-                  </div>
-                </div>
-
-                {/* Part 2 */}
-                <div className={s.solutionStep}>
-                  <div className={s.subSection}>
-                    <p className={s.h2}>Part 2 · Decision guidance for choosing formats</p>
-                    <p className={s.p}>
-                      Defined decision rules so teams pick Short / Standard / Explicit
-                      consistently across scenarios.
-                    </p>
-                  </div>
-                  <div className={s.whatCard}>
-                    <p className={s.h}>❇️ What teams get</p>
-                    <ul className={s.bulletList}>
-                      <li>Decision rules: how to choose Short vs Standard vs Explicit</li>
-                      <li>Accepted exceptions: when variations are allowed</li>
-                      <li>Surface examples: table / card / form / detail</li>
-                    </ul>
-                  </div>
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/Currency/10.png"
-                      alt="Decision guidance for choosing formats"
-                      width={1623}
-                      height={4934}
-                      className={s.img}
-                      unoptimized
-                    />
-                    <p className={s.caption}>Decision guidance for Standard formats</p>
-                  </div>
-                </div>
-
-                {/* Part 3 */}
-                <div className={s.solutionStep}>
-                  <div className={s.subSection}>
-                    <p className={s.h2}>Part 3 · Components &amp; patterns for money workflows</p>
-                    <p className={s.p}>
-                      Turned the standard into reusable components, so teams ship money
-                      workflows consistently, not just format text.
-                    </p>
-                  </div>
-                  <div className={s.whatCard}>
-                    <p className={s.h}>❇️ What teams get</p>
-                    <ul className={s.bulletList}>
-                      <li>Large-number shorthand (estimate + full value)</li>
-                      <li>Patterns for conversion (original vs converted)</li>
-                      <li>Currency selector + amount input (defaults, validation, formatting states)</li>
-                    </ul>
-                  </div>
-                  <Image
-                    src="/images/Currency/11.png"
-                    alt="Components and patterns for money workflows"
-                    width={886}
-                    height={2400}
-                    className={s.img}
-                    unoptimized
-                  />
-                  <div className={s.blueCallout}>
-                    <p className={s.h}>❇️ Read the full guideline</p>
-                    <p className={s.p}>
-                      Full specification (format rules, scenario examples, component usage):{" "}
-                      <a
-                        href="/images/Currency/Currency%20Amount%20Formatting%20Guidelines.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={s.pdfLink}
-                      >
-                        Currency Amount Formatting Guidelines.pdf
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Transition to Pillar 3 */}
-              <p className={s.transitionQuote}>
-                Currency proved the methodology. But specs alone don&apos;t scale: teams can&apos;t
-                memorize every rule across Currency, Date/Time, Writing Style, and 1,939
-                glossary entries. That&apos;s what Pillar 3 is for.
-              </p>
-            </section>
-
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                PILLAR 3: SKILL (i18n-checker)
-                ════════════════════════════════════════════════════ */}
-            <section id="skill" className={s.section}>
-              <span className={s.label}>Pillar 3 · Skill</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>From a Figma plugin to i18n-checker: a Skill that follows the work</p>
-                <p className={s.p}>
-                  This tool evolved through a deliberate re-architecture. The story matters as
-                  much as the product: the plugin proved AI-assisted i18n QA worked; the Skill
-                  made it scale to where the work actually happens.
-                </p>
-              </div>
-
-              {/* Evolution: 3 acts */}
-              <div className={s.evolutionActs}>
-
-                {/* Act 1 */}
-                <div className={s.actCard}>
-                  <span className={s.actLabel}>Act 1 · V1 · Figma QA plugin</span>
-                  <p className={s.h}>The prototype</p>
-                  <p className={s.p}>
-                    I first built this as a Figma plugin (coded with Cursor + GPT). It scanned
-                    frames for i18n issues and supported one-click fixes. It worked, but only
-                    inside Figma, only for designers, only at the design stage.
-                  </p>
-                  <div className={s.mediaBlock}>
-                    <Image
-                      src="/images/Currency/12.gif"
-                      alt="V1: Figma QA plugin"
-                      width={1408}
-                      height={774}
-                      className={s.img}
-                      unoptimized
-                    />
-                    <p className={s.caption}>V1 · Figma QA plugin (Cursor + GPT)</p>
-                  </div>
-                  <div className={s.outputCard}>
-                    <p className={s.h}>What it proved</p>
-                    <p className={s.p}>AI-assisted i18n QA is viable: specs can drive a checker that people actually use.</p>
-                  </div>
-                </div>
-
-                {/* Act 2: Shift */}
-                <div className={s.actCard}>
-                  <span className={`${s.actLabel} ${s.actLabelShift}`}>Act 2 · The organizational shift</span>
-                  <p className={s.h}>The plugin stopped fitting the work</p>
-                  <p className={s.p}>
-                    Three things happened at once:
-                  </p>
-                  <ul className={s.bulletList}>
-                    <li><strong>Designers started vibe coding:</strong> shipping production code themselves via Claude Code / Cursor, often bypassing Figma entirely for iteration.</li>
-                    <li><strong>Engineers wanted i18n checks on code,</strong> not just designs, as they owned more of the shipping surface.</li>
-                    <li><strong>QA wanted pre-release validation:</strong> the ability to drop a screenshot and get a structured issue list.</li>
-                  </ul>
-                  <p className={s.p}>
-                    A tool locked inside Figma couldn&apos;t follow the work. The delivery model had
-                    to change.
-                  </p>
-                </div>
-
-                {/* Act 3 */}
-                <div className={`${s.actCard} ${s.actCardHighlight}`}>
-                  <span className={`${s.actLabel} ${s.actLabelHighlight}`}>Act 3 · V2 · i18n-checker Skill</span>
-                  <p className={s.h}>Rebuilt as an AI Skill that meets people where they already work</p>
-                  <p className={s.p}>
-                    One zip. One install. Same structured output across every tool, so design,
-                    R&amp;D, and QA all share the same source of truth.
-                  </p>
-
-                  {/* Coverage table */}
-                  <div className={s.coverageTable}>
-                    <div className={s.coverageHead}>Stage</div>
-                    <div className={s.coverageHead}>Who uses it</div>
-                    <div className={s.coverageHead}>Where it runs</div>
-
-                    <div className={s.coverageStage}>Design</div>
-                    <div>Designers</div>
-                    <div>Figma export → Mira / Cursor</div>
-
-                    <div className={s.coverageStage}>R&amp;D</div>
-                    <div>Engineers (incl. vibe-coding designers)</div>
-                    <div>Claude Code / Cursor / Trae</div>
-
-                    <div className={s.coverageStage}>QA</div>
-                    <div>PM / QA</div>
-                    <div>Mira (screenshot upload)</div>
-                  </div>
-                </div>
-              </div>
-
-              {/* 4 dimensions */}
-              <div className={s.subSection} style={{ marginTop: 20 }}>
-                <p className={s.h2}>What it checks: 4 dimensions</p>
-                <p className={s.p}>
-                  Four spec families, unified into one Skill. The Glossary alone contains 1,939
-                  terms across 6 product lines (Common, Procurement, Contract, Spend, Travel,
-                  ByteCanteen), beyond what any human can keep in their head.
-                </p>
-              </div>
-
-              <div className={s.dimensionGrid}>
-                <div className={s.dimensionCard}>
-                  <span className={s.dimensionEmoji}>💰</span>
-                  <p className={s.dimensionTitle}>Currency &amp; Amount</p>
-                  <p className={s.dimensionBody}>
-                    Symbol/ISO position, thousands &amp; decimal separators, negative amounts,
-                    large-number abbreviation, format consistency.
-                  </p>
-                </div>
-                <div className={s.dimensionCard}>
-                  <span className={s.dimensionEmoji}>✍️</span>
-                  <p className={s.dimensionTitle}>Writing Style</p>
-                  <p className={s.dimensionBody}>
-                    Title vs Sentence case, CN/EN punctuation mixing, spacing, hyphen/en-dash
-                    usage, line wrapping, abbreviations.
-                  </p>
-                </div>
-                <div className={s.dimensionCard}>
-                  <span className={s.dimensionEmoji}>🕐</span>
-                  <p className={s.dimensionTitle}>Date &amp; Time</p>
-                  <p className={s.dimensionBody}>
-                    Month abbreviations, 12/24-hour format, time ranges, time differences,
-                    timezone display, info density.
-                  </p>
-                </div>
-                <div className={s.dimensionCard}>
-                  <span className={s.dimensionEmoji}>📖</span>
-                  <p className={s.dimensionTitle}>Glossary</p>
-                  <p className={s.dimensionBody}>
-                    1,939-term CN/EN glossary across 6 product lines. Checks for incorrect or
-                    inconsistent translations within a single screen.
-                  </p>
-                </div>
-              </div>
-
-              {/* I/O spec */}
-              <div className={s.outputCard}>
-                <p className={s.h}>How it works</p>
-                <dl className={s.kvRow}>
-                  <dt>Input</dt>
-                  <dd>Screenshots, UI text, Figma exports</dd>
-                  <dt>Output</dt>
-                  <dd>Structured table per dimension (Location / Current / Expected / Rule / Severity), with a summary count</dd>
-                  <dt>Installs in</dt>
-                  <dd>Claude Code · Cursor · Trae · Mira</dd>
-                </dl>
-              </div>
-
-              {/* Evidence: real Skill output */}
-              <div className={s.mediaBlock}>
-                <div className={s.evidenceFrame}>
-                  <Image
-                    src="/images/Currency/skill.png"
-                    alt="Sample output from a real i18n-checker Skill run"
-                    width={1152}
-                    height={1224}
-                    className={s.evidenceImg}
-                    unoptimized
-                  />
-                </div>
-                <p className={s.caption}>Sample output from a real Skill run</p>
-              </div>
-
-            </section>
-
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                IMPACT
-                ════════════════════════════════════════════════════ */}
-            <section id="impact" className={s.section}>
-              <span className={s.label}>Impact</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>Three pillars, three kinds of leverage</p>
-              </div>
-
-              <div className={s.outputCard}>
-                <p className={s.h}>Currency (Pillar 2)</p>
-                <p className={s.p}>
-                  Adopted by <strong>10+ design teams</strong> across <strong>20+ product lines</strong>.
-                  Code-backed components shipped into the central design system library.
-                  Referenced by other orgs (Douyin, Volcano Engine) as a reusable best practice.
-                </p>
-              </div>
-
-              <div className={s.outputCard}>
-                <p className={s.h}>i18n-checker (Pillar 3)</p>
-                <p className={s.p}>
-                  Shipped as a distributable Skill with the <strong>1,939-term glossary</strong> built in.
-                  Runs across <strong>Claude Code · Cursor · Trae · Mira</strong>, covering design,
-                  R&amp;D, and QA from one source of truth.
-                </p>
-              </div>
-
-              <div className={s.outputCard}>
-                <p className={s.h}>Mechanism (Pillar 1)</p>
-                <p className={s.p}>
-                  Lifecycle loop running across CIS: problems continuously flow in, specs
-                  iterate, and updates land in the Skill. The spec system is now a living
-                  asset, not a one-time publish.
-                </p>
-              </div>
-            </section>
-
-            <div className={s.divider} />
-
-            {/* ════════════════════════════════════════════════════
-                REFLECTION
-                ════════════════════════════════════════════════════ */}
-            <section id="reflection" className={s.section}>
-              <span className={s.label}>Reflection</span>
-
-              <div className={s.subSection}>
-                <p className={s.h2}>Two lessons from owning i18n at scale</p>
-              </div>
-
-              <div className={s.outputCard}>
-                <p className={s.h}>Specs ≠ enforcement</p>
-                <p className={s.p}>
-                  A spec document, no matter how well written, doesn&apos;t change behavior by
-                  itself. To actually ship i18n quality, you need <strong>mechanism</strong>
-                  {" "}(how specs evolve) and <strong>tooling</strong> (how specs execute) as
-                  co-equals with the spec. Specs without a loop rot; specs without tooling
-                  live on wikis no one reads.
-                </p>
-              </div>
-
-              <div className={s.outputCard}>
-                <p className={s.h}>AI is the scalable leverage for i18n</p>
-                <p className={s.p}>
-                  At 4 spec families plus 1,939 glossary terms, human memory fails: no designer
-                  or engineer can carry all that context. Reframing i18n QA as an AI Skill was
-                  the unlock. And it only worked because the Skill distributes across wherever
-                  people already work (design, R&amp;D, QA), not just where designers happen
-                  to work.
-                </p>
-              </div>
-            </section>
-
-            {/* CTA */}
-            <div className={s.ctaRow}>
-              <Link href="/" className={s.ctaOutlined}>
-                Take Me Home
-              </Link>
-              <Link href="/work/cloudtower-task-center-redesign" className={s.ctaFilled}>
-                Next Project
-              </Link>
-            </div>
-
-          </article>
+      </div>
+
+      <CaseStudyLayout tocItems={TOC_ITEMS}>
+        <div className={s.titleBlock}>
+          <PageTitle>
+            Building a systematic i18n library, and turning it into a Skill that
+            every role could use
+          </PageTitle>
         </div>
 
-      </div>
+        {/* ══ CONTEXT ══ */}
+        <section id="context" className={s.section}>
+          <Eyebrow>Context</Eyebrow>
+          <SectionHeadline>
+            Global expansion outpaced the quality of our internationalization
+          </SectionHeadline>
+
+          <div className={s.introBody}>
+            <BodyText>
+              <p>
+                ByteDance was scaling globally, and internal tools had to keep
+                up. The design team&apos;s mandate was to raise i18n quality
+                across every product line.
+              </p>
+            </BodyText>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>Every product line was making its own i18n calls</Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  Most English interfaces were direct translations from
+                  Chinese. Currency formats, time formats, and terminology
+                  choices were inconsistent across product lines, producing an
+                  experience that visibly lagged international standards.
+                </p>
+              </BodyText>
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              I owned this project across two layers
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  As project owner, I coordinated designers across teams to
+                  build a spec library covering currency, time, writing, and
+                  terminology. <strong>The Currency spec is the piece I wrote myself.</strong>{" "}
+                  The second layer, making the full library executable across
+                  teams, is the one I drove end to end.
+                </p>
+              </BodyText>
+            </div>
+          </div>
+        </section>
+
+        {/* ══ DESIGN PROCESS ══ */}
+        <section id="design-process" className={s.section}>
+          <Eyebrow>Design Process</Eyebrow>
+
+          {/* ── Part 1: Running the Project ── */}
+          <SectionHeadline>
+            The project ran on a repeatable mechanism, not a one-time delivery
+          </SectionHeadline>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              I collected interface quality issues broadly from every product line
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  Many teams, many product lines, many problems. The first
+                  step wasn&apos;t deciding what to fix, it was surfacing
+                  everything.{" "}
+                  <strong>
+                    I systematically collected interface quality issues from
+                    every product line before picking anything to work on.
+                  </strong>
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/1.png"
+                alt="Raw issues collected across product lines"
+                width={1784}
+                height={960}
+              />
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>Prioritized by frequency and impact</Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  With the raw issue list in hand, I ranked each by{" "}
+                  <strong>how often it occurred</strong> and{" "}
+                  <strong>how widely it affected users</strong>.
+                </p>
+              </BodyText>
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              Specs had to be treated as an iterative cycle, not one time
+              deliverables
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  New scenarios keep surfacing, so a spec published once and
+                  never updated goes stale fast. I ran the spec work as a loop:{" "}
+                  <strong>
+                    collect, define, socialize, embed into tools, and collect
+                    again.
+                  </strong>
+                </p>
+              </BodyText>
+            </div>
+          </div>
+
+          {/* ── Part 2: Building the Currency Spec ── */}
+          <div className={s.partDivider}>
+            <SectionHeadline>
+              As owner of the Currency track, I carried the design from
+              research to shipped components
+            </SectionHeadline>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              Step 1: Collect every currency scenario across product lines
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  Our portfolio spans B2B (procurement, finance, HR) and B2C
+                  (travel, canteen), so one pattern couldn&apos;t cover
+                  everything. I categorized scenarios first, so the spec was
+                  grounded in real cases.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/2.png"
+                alt="Collected and categorized currency scenarios across product lines"
+                width={1880}
+                height={2480}
+              />
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              Step 2: Benchmark against 50+ products and the CLDR international
+              standard
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  We couldn&apos;t judge &ldquo;correct&rdquo; from internal
+                  instinct alone. I surveyed{" "}
+                  <strong>
+                    over 50 products across B2B and B2C and referenced the
+                    CLDR international standard
+                  </strong>{" "}
+                  to find common patterns.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/3.png"
+                alt="Competitive benchmark across 50+ products and CLDR reference"
+                width={1784}
+                height={933}
+              />
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              Step 3: Validate the draft against real designers&apos; daily needs
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  I took the draft spec back to designers across teams to
+                  confirm it covered their day to day needs, surfacing corner
+                  cases before publishing.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/4.png"
+                alt="Validation sessions with designers across teams"
+                width={1704}
+                height={480}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ══ SOLUTION ══ */}
+        <section id="solution" className={s.section}>
+          <Eyebrow>Solution</Eyebrow>
+          <SectionHeadline>
+            What made the specs actually get used across the org
+          </SectionHeadline>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              A good spec tells you which option to pick, not just what the
+              options are
+            </Subheading>
+
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  <strong>Spec rules.</strong> The foundational layer defines
+                  what&apos;s correct and what isn&apos;t for currency
+                  formatting.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/5.png"
+                alt="Base spec rules for currency formatting"
+                width={1784}
+                height={743}
+              />
+            </div>
+
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  <strong>Usage toolkit.</strong> On top of the rules, a
+                  toolkit helps teams pick the right format (Short, Standard,
+                  or Explicit) for each scenario.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/6.png"
+                alt="Usage toolkit guiding format choice by scenario"
+                width={1784}
+                height={2223}
+              />
+            </div>
+
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  <strong>Core components.</strong> Ready-to-use UI components
+                  including amount input, currency selector, and large amount
+                  abbreviation, built directly on the spec.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/7.png"
+                alt="Core UI components: amount input, currency selector, large amount abbreviation"
+                width={1501}
+                height={641}
+              />
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              A Figma plugin showed me that the spec needed to leave the design
+              tool
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  My first attempt was a Figma plugin that auto checked design
+                  files.{" "}
+                  <strong>
+                    It only caught issues at the design stage, but quality
+                    problems happen across PRD, engineering, and QA too.
+                  </strong>{" "}
+                  Maintenance was also expensive, since every spec update
+                  meant republishing.
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/8.gif"
+                alt="Figma plugin auto checking against the spec"
+                width={1928}
+                height={1076}
+              />
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              Packaging every spec into an AI Skill made them usable across
+              design, engineering, and QA
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  I packaged all the specs, including currency, time, writing,
+                  and the ~1,900 terminology entries, into{" "}
+                  <strong>
+                    a single Skill plugged into Claude Code, Cursor, and our
+                    internal AI platform
+                  </strong>
+                  .
+                </p>
+                <p>
+                  Usage was direct. Designers send a screenshot and get back a
+                  diff of violations. Engineers check their implementation
+                  against the same Skill. QA runs the check without waiting on
+                  a designer.{" "}
+                  <strong>
+                    Maintenance cost dropped to editing a single Markdown
+                    file.
+                  </strong>
+                </p>
+              </BodyText>
+            </div>
+            <div className={s.figureBlock}>
+              <Figure
+                src="/images/currency-new/9.png"
+                alt="Skill integrated with Claude Code, Cursor, and internal AI platform"
+                width={1142}
+                height={1258}
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* ══ IMPACT ══ */}
+        <section id="impact" className={s.section}>
+          <Eyebrow>Impact</Eyebrow>
+          <SectionHeadline>
+            Adopted across 10+ design teams and 20+ product lines, with the
+            Currency spec picked up beyond our org
+          </SectionHeadline>
+
+          <div className={s.introBody}>
+            <BodyText>
+              <p>
+                The work shipped in two layers: the spec library itself, and
+                the Skill that made it callable anywhere.
+              </p>
+            </BodyText>
+          </div>
+
+          <div className={s.statGrid}>
+            <div className={s.statItem}>
+              <div className={s.statLabel}>Spec Coverage</div>
+              <div className={s.statValue}>4 areas + 1,900 terms</div>
+              <div className={s.statNote}>
+                Currency, time, English writing, and a terminology library of
+                1,900+ entries
+              </div>
+            </div>
+            <div className={s.statItem}>
+              <div className={s.statLabel}>Skill Adoption</div>
+              <div className={s.statValue}>10+ teams / 20+ product lines</div>
+              <div className={s.statNote}>
+                Packaged specs accessible via Claude Code, Cursor, and the
+                internal AI platform
+              </div>
+            </div>
+            <div className={s.statItem}>
+              <div className={s.statLabel}>External Reach</div>
+              <div className={s.statValue}>Douyin, Volcano Engine</div>
+              <div className={s.statNote}>
+                Currency spec referenced beyond our org
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══ REFLECTION ══ */}
+        <section id="reflection" className={s.section}>
+          <Eyebrow>Reflection</Eyebrow>
+          <SectionHeadline>
+            Two takeaways I keep coming back to
+          </SectionHeadline>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              A good spec has to solve content and execution, or quality
+              plateaus
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  Content that&apos;s too strict gets ignored; content
+                  that&apos;s too loose means nothing. Execution that relies
+                  on human memory breaks at scale.{" "}
+                  <strong>
+                    Both sides have to be solved together for quality to
+                    actually move.
+                  </strong>
+                </p>
+              </BodyText>
+            </div>
+          </div>
+
+          <div className={s.subBlock}>
+            <Subheading>
+              A designer&apos;s leverage grows when the work lands outside the
+              design tool
+            </Subheading>
+            <div className={s.bodyBlock}>
+              <BodyText>
+                <p>
+                  Shipping the Skill meant my work ended up in engineering and
+                  QA tools, not just Figma. That was the first time I felt the
+                  scope of &ldquo;design&rdquo; widen beyond visual decisions.{" "}
+                  <strong>
+                    Once the specs were a platform capability, every role in
+                    the product flow was using them.
+                  </strong>
+                </p>
+              </BodyText>
+            </div>
+          </div>
+        </section>
+      </CaseStudyLayout>
     </div>
   );
 }
