@@ -6,11 +6,13 @@ import Highlight from "@/components/Highlight";
 import TextType from "@/components/TextType";
 import Container from "@/components/Container";
 
+const serifFont = { fontFamily: "var(--font-noto-serif), Georgia, serif" };
+
 export default function Home() {
   const scrollToWork = () => {
-    const element = document.getElementById('selected-work');
+    const element = document.getElementById("selected-work");
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -29,26 +31,31 @@ export default function Home() {
             />
           </div>
 
-          {/* Name */}
-          <TextType
-            as="h1"
-            text={[
-              "Hey, I'm Claire!",
-              "I design B2B & enterprise products.",
-              "Let's connect!"
-            ]}
-            className="font-bold text-[#1f2329] text-[32px] leading-[1.21] text-center"
-            typingSpeed={80}
-            deletingSpeed={50}
-            pauseDuration={2000}
-            loop={true}
-            cursorCharacter="_"
-          />
+          {/* Name — Noto Serif 500 to match case study titles */}
+          <div style={serifFont}>
+            <TextType
+              as="h1"
+              text={[
+                "Hey, I'm Claire!",
+                "I design B2B & enterprise products.",
+                "Let's connect!",
+              ]}
+              className="font-medium text-[#1f2329] text-[32px] leading-[1.2] text-center"
+              typingSpeed={80}
+              deletingSpeed={50}
+              pauseDuration={2000}
+              loop={true}
+              cursorCharacter="_"
+            />
+          </div>
 
           {/* Introduction */}
           <div className="flex flex-col gap-3 text-[19px] leading-[28px] w-full max-w-[680px] text-center">
             <p className="text-[#1f2329]">
-              A product designer who lives in the messy middle of <Highlight>complex B2B systems</Highlight>. Currently at ByteDance. Lately <Highlight>building AI workflows</Highlight> into how I research, QA, and ship.
+              A product designer who lives in the messy middle of{" "}
+              <Highlight>complex B2B systems</Highlight>. Currently at ByteDance.
+              Lately <Highlight>building AI workflows</Highlight> into how I
+              research, QA, and ship.
             </p>
             <p className="text-[#8f959e] text-[18px] leading-[24px] mt-2">
               📍 Based in Dubai, open to relocate
@@ -65,7 +72,13 @@ export default function Home() {
             >
               Resume
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5.83333 14.1667L14.1667 5.83333M14.1667 5.83333H5.83333M14.1667 5.83333V14.1667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M5.83333 14.1667L14.1667 5.83333M14.1667 5.83333H5.83333M14.1667 5.83333V14.1667"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
             <a
@@ -76,7 +89,13 @@ export default function Home() {
             >
               Linkedin
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5.83333 14.1667L14.1667 5.83333M14.1667 5.83333H5.83333M14.1667 5.83333V14.1667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M5.83333 14.1667L14.1667 5.83333M14.1667 5.83333H5.83333M14.1667 5.83333V14.1667"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
             <a
@@ -85,7 +104,13 @@ export default function Home() {
             >
               Email me
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                <path d="M5.83333 14.1667L14.1667 5.83333M14.1667 5.83333H5.83333M14.1667 5.83333V14.1667" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path
+                  d="M5.83333 14.1667L14.1667 5.83333M14.1667 5.83333H5.83333M14.1667 5.83333V14.1667"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
           </div>
@@ -107,7 +132,10 @@ export default function Home() {
       <div id="selected-work" className="w-full py-[80px] scroll-mt-24">
         <Container className="flex flex-col gap-8">
           {/* Section Title */}
-          <h2 className="font-normal text-[#8f959e] text-[18px] leading-[24px] w-full">
+          <h2
+            className="font-medium text-[#1f2329] text-[28px] leading-[1.25] w-full"
+            style={serifFont}
+          >
             Selected Work
           </h2>
 

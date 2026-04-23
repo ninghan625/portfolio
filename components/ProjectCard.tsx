@@ -18,7 +18,6 @@ interface Work {
 
 interface ProjectCardProps {
   work: Work;
-  // index kept for API compatibility even though layout no longer alternates
   index?: number;
 }
 
@@ -50,7 +49,7 @@ export default function ProjectCard({ work }: ProjectCardProps) {
         />
       </div>
 
-      {/* Year | Company — tight line-box; divider is a short 10px bar */}
+      {/* Year | Company */}
       {work.year && (
         <p className="mt-5 text-[#8f959e] text-[13px] leading-none tracking-[0.02em] flex items-center gap-[8px]">
           <span>{work.year}</span>
@@ -59,9 +58,10 @@ export default function ProjectCard({ work }: ProjectCardProps) {
         </p>
       )}
 
-      {/* Title — inherits Inter from global body */}
+      {/* Title — Noto Serif 500 to match case study system */}
       <h3
-        className="mt-2 text-[#1f2329] text-[24px] leading-[1.2] tracking-[-0.01em] font-semibold"
+        className="mt-2 text-[#1f2329] text-[24px] leading-[1.25] tracking-[-0.005em] font-medium"
+        style={{ fontFamily: "var(--font-noto-serif), Georgia, serif" }}
       >
         {work.title}
       </h3>
