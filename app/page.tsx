@@ -133,7 +133,7 @@ export default function Home() {
         <Container className="flex flex-col gap-8">
           {/* Section Title */}
           <h2
-            className="font-medium text-[#1f2329] text-[28px] leading-[1.25] w-full"
+            className="font-medium text-[#8f959e] text-[28px] leading-[1.25] w-full"
             style={serifFont}
           >
             Selected Work

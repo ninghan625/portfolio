@@ -55,8 +55,8 @@ export default function SupplierDraftPage() {
               <p>
                 The Supplier Portal is ByteDance&apos;s internal product for
                 suppliers to complete the full procurement process with buyers.
-                Its only users are suppliers; buyers work in a separate internal
-                system.
+                That process spans sourcing, contracting, acceptance, and
+                settlement.
               </p>
             </BodyText>
           </div>
@@ -138,7 +138,7 @@ export default function SupplierDraftPage() {
                   friction point. I tagged and clustered the issues, and they
                   converged on four areas:{" "}
                   <strong>
-                    Quote Form, Negotiation Form, Homepage, Detail Page
+                    Homepage, Detail Page, Quote Form, Negotiation Form
                   </strong>
                   .
                 </p>

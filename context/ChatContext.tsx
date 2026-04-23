@@ -1,6 +1,7 @@
 "use client";
 
 import { createContext, useContext, useState, ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 interface ChatContextType {
   isOpen: boolean;
@@ -11,7 +12,9 @@ interface ChatContextType {
 const ChatContext = createContext<ChatContextType | undefined>(undefined);
 
 export function ChatProvider({ children }: { children: ReactNode }) {
-  const [isOpen, setIsOpen] = useState(true); // default open on desktop
+  const pathname = usePathname();
+  // Default open only on homepage; closed on project detail pages and other routes
+  const [isOpen, setIsOpen] = useState(pathname === "/");
 
   return (
     <ChatContext.Provider value={{ isOpen, setIsOpen, toggle: () => setIsOpen((v) => !v) }}>
