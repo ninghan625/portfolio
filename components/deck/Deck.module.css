@@ -1,0 +1,66 @@
+.root {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9999;
+  overflow: hidden;
+  /* Root body still renders Header / ChatSidebar beneath this layer; the
+     fixed inset:0 surface with high z-index + bg #fff covers them fully.
+     Deck.tsx also locks body scroll while mounted. */
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.slide {
+  /* 16:9 safe area centered in the viewport. */
+  width: min(100%, calc((100vh - 80px) * 16 / 9));
+  aspect-ratio: 16 / 9;
+  max-height: calc(100vh - 80px);
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  z-index: 10;
+  /* No visible affordance — these are invisible click catchers. */
+}
+
+.zone:focus-visible {
+  outline: 2px solid rgba(26, 26, 26, 0.3);
+  outline-offset: -4px;
+}
+
+.zoneLeft {
+  left: 0;
+}
+
+.zoneRight {
+  right: 0;
+}
+
+@media (max-width: 700px) {
+  .stage {
+    padding: 20px;
+  }
+  .slide {
+    width: 100%;
+    max-height: calc(100vh - 40px);
+  }
+}

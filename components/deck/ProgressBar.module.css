@@ -1,0 +1,37 @@
+.root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.track {
+  flex: 1;
+  height: 2px;
+  background: rgba(26, 26, 26, 0.08);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #1a1a1a;
+  transition: width 0.3s ease;
+}
+
+.counter {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: #87867f;
+  letter-spacing: 0.06em;
+  min-width: 48px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
